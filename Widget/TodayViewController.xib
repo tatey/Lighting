@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6751"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="Widget" customModuleProvider="target">
+            <connections>
+                <outlet property="lightTargetCollectionView" destination="HZl-5k-Jf4" id="eHx-xu-4BZ"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="266" height="100"/>
+            <subviews>
+                <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" findBarPosition="aboveHorizontalRuler" translatesAutoresizingMaskIntoConstraints="NO" id="1C6-9z-VaW">
+                    <rect key="frame" x="0.0" y="0.0" width="266" height="100"/>
+                    <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="zX8-Vb-gSw">
+                        <rect key="frame" x="1" y="1" width="248" height="158"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView id="HZl-5k-Jf4">
+                                <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <outlet property="itemPrototype" destination="tMM-hb-Sef" id="mIx-Dj-M7o"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </clipView>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="4Bb-bi-O6Z"/>
+                    </constraints>
+                    <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="lm2-gp-gpO">
+                        <rect key="frame" x="1" y="144" width="233" height="15"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                    <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="VjY-eI-e6V">
+                        <rect key="frame" x="234" y="1" width="15" height="143"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </scroller>
+                </scrollView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="1C6-9z-VaW" secondAttribute="bottom" id="4uS-bt-MWG"/>
+                <constraint firstItem="1C6-9z-VaW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="BxJ-1Y-eIF"/>
+                <constraint firstAttribute="trailing" secondItem="1C6-9z-VaW" secondAttribute="trailing" id="Xnk-8c-YRu"/>
+                <constraint firstItem="1C6-9z-VaW" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="k2K-2G-NXr"/>
+            </constraints>
+            <point key="canvasLocation" x="540" y="438"/>
+        </customView>
+        <collectionViewItem id="tMM-hb-Sef">
+            <connections>
+                <outlet property="view" destination="A4V-Qm-cfD" id="dil-rY-xc3"/>
+            </connections>
+        </collectionViewItem>
+        <view id="A4V-Qm-cfD" customClass="LightingTargetView" customModule="Widget" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="84"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="62m-LC-n9T">
+                    <rect key="frame" x="0.0" y="24" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="w22-fB-Nuf"/>
+                        <constraint firstAttribute="width" constant="60" id="y0i-pi-hcL"/>
+                    </constraints>
+                </customView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="wDE-RY-eYp">
+                    <rect key="frame" x="-2" y="0.0" width="64" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="nr0-8K-3uS">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="wDE-RY-eYp" secondAttribute="trailing" id="2nt-Ma-XOE"/>
+                <constraint firstAttribute="bottom" secondItem="wDE-RY-eYp" secondAttribute="bottom" id="A7y-f6-52r"/>
+                <constraint firstAttribute="trailing" secondItem="62m-LC-n9T" secondAttribute="trailing" id="DIW-IP-D2c"/>
+                <constraint firstItem="62m-LC-n9T" firstAttribute="leading" secondItem="A4V-Qm-cfD" secondAttribute="leading" id="Y0S-Re-Ype"/>
+                <constraint firstItem="62m-LC-n9T" firstAttribute="top" secondItem="A4V-Qm-cfD" secondAttribute="top" id="Y91-zy-A4D"/>
+                <constraint firstItem="wDE-RY-eYp" firstAttribute="leading" secondItem="A4V-Qm-cfD" secondAttribute="leading" id="r5j-x7-hwI"/>
+                <constraint firstItem="wDE-RY-eYp" firstAttribute="top" secondItem="62m-LC-n9T" secondAttribute="bottom" constant="7" id="sS3-lF-KR6"/>
+            </constraints>
+            <point key="canvasLocation" x="556" y="694"/>
+        </view>
+    </objects>
+</document>
