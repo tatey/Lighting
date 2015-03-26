@@ -58,11 +58,11 @@
                 <outlet property="view" destination="A4V-Qm-cfD" id="dil-rY-xc3"/>
             </connections>
         </collectionViewItem>
-        <view id="A4V-Qm-cfD" customClass="LightingTargetView" customModule="Widget" customModuleProvider="target">
+        <view id="A4V-Qm-cfD">
             <rect key="frame" x="0.0" y="0.0" width="60" height="84"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
-                <customView translatesAutoresizingMaskIntoConstraints="NO" id="62m-LC-n9T">
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="62m-LC-n9T" customClass="LightingTargetView" customModule="Widget" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="24" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="w22-fB-Nuf"/>

@@ -10,12 +10,12 @@ class LightingTargetView: NSView {
 		self.wantsLayer = true
 	}
 
-	override func awakeFromNib() {
-		super.awakeFromNib()
+	override func mouseDown(theEvent: NSEvent) {
+	}
 
-		let layer = CALayer()
-		layer.backgroundColor = CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.5)
-		self.layer = layer
-		self.wantsLayer = true
+	override func mouseUp(theEvent: NSEvent) {
+	}
+
+	override func mouseDragged(theEvent: NSEvent) {
 	}
 }
