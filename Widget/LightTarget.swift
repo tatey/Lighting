@@ -1,6 +1,6 @@
 import Cocoa
 
-class LightTarget {
+class LightTarget: NSObject {
 	let label: String
 	let color: LIFXHTTP.Light.Color
 	var on: Bool

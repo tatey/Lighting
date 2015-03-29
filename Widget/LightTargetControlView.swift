@@ -1,6 +1,6 @@
 import Cocoa
 
-class LightingTargetView: NSView {
+class LightTargetControlView: NSView {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 

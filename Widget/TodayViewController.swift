@@ -21,9 +21,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
 		self.lightTargetManager?.update({ () -> Void in
 			if let lightTargets = self.lightTargetManager?.lightTargets {
-				self.lightTargetCollectionView?.content = lightTargets.map({ (lightTarget: LightTarget) -> String in
-					lightTarget.label
-				})
+				self.lightTargetCollectionView?.content = lightTargets
 				completionHandler(.NewData)
 			} else {
 				completionHandler(.NoData)
