@@ -38,7 +38,25 @@ class LIFXHTTP {
 		}
 
 		func setLightsPower(selector: String, on: Bool, success: (results: [Result]) -> Void, failure: () -> Void) {
+			let url = NSURL(string: "https://api.lifx.com/v1beta1/lights/\(selector)/power")!
+			let request = NSMutableURLRequest(URL: url)
+			let state = on ? "on" : "off"
+			request.HTTPMethod = "PUT"
+			request.HTTPBody = "state=\(state)".dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+			request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+			request.addValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
 
+			NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) { (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+				if let httpResponse = response as? NSHTTPURLResponse {
+					if httpResponse.statusCode == 201 || httpResponse.statusCode == 207 {
+						// FIXME
+						success(results: [])
+					} else {
+						// FIXME
+						failure()
+					}
+				}
+			}
 		}
 
 		func setLightsBrightness(selector: String, brightness: Double, success: (results: [Result]) -> Void, failure: () -> Void) {

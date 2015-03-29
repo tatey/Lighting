@@ -1,6 +1,12 @@
 import Cocoa
 
+protocol LightTargetControlViewDelegate {
+	func controlViewDidGetClicked(view: LightTargetControlView)
+}
+
 class LightTargetControlView: NSView {
+	 var delegate: LightTargetControlViewDelegate?
+
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
@@ -11,6 +17,7 @@ class LightTargetControlView: NSView {
 	}
 
 	override func mouseDown(theEvent: NSEvent) {
+		self.delegate?.controlViewDidGetClicked(self)
 	}
 
 	override func mouseUp(theEvent: NSEvent) {

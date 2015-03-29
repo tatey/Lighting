@@ -6,6 +6,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="LightTargetCollectionViewItem" customModule="Widget" customModuleProvider="target">
             <connections>
+                <outlet property="controlView" destination="oQI-EC-I0G" id="uu0-qa-tfQ"/>
                 <outlet property="view" destination="cun-NT-w6s" id="x7Q-jv-8eK"/>
             </connections>
         </customObject>
