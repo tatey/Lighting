@@ -20,15 +20,12 @@ class LIFXHTTP {
 						var jsonError: NSError?
 						let jsonData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: &jsonError) as? [NSDictionary]
 						if jsonError == nil && jsonData != nil {
-							let lights = jsonData!.map({ (lightData: NSDictionary) -> Light in
-								Light(
-									id: "1",
-									label: "Test 1",
-									on: true,
-									brightness: 0.0,
-									color: LIFXHTTP.Light.Color(hue: 0, saturation: 0, kelvin: 0)
-								)
-							})
+							let lights = jsonData!.reduce([]) { (lights: [Light], lightData: NSDictionary) -> [Light] in
+								if let light = Light.parseWithJSONData(lightData) {
+									return lights + [light]
+								}
+								return lights
+							}
 							success(lights: lights)
 						} else {
 							failure()
@@ -64,7 +61,22 @@ class LIFXHTTP {
 		struct Color {
 			let hue: Double
 			let saturation: Double
-			let kelvin: Double
+			let kelvin: Int
+
+			static func parseWithJSONData(data: NSDictionary) -> Color? {
+				if let hue = data["hue"] as? Double {
+					if let saturation = data["saturation"] as? Double {
+						if let kelvin = data["kelvin"] as? Int {
+							return Color(
+								hue: hue,
+								saturation: saturation,
+								kelvin: kelvin
+							)
+						}
+					}
+				}
+				return nil
+			}
 		}
 
 		let id: String
@@ -72,5 +84,28 @@ class LIFXHTTP {
 		let on: Bool
 		let brightness: Double
 		let color: Color
+
+		static func parseWithJSONData(data: NSDictionary) -> Light? {
+			if let id = data["id"] as? String {
+				if let label = data["label"] as? String {
+					if let rawPower = data["power"] as? String {
+						if let brightness = data["brightness"] as? Double {
+							if let rawColor = data["color"] as? NSDictionary {
+								if let color = Color.parseWithJSONData(rawColor) {
+									return Light(
+										id: id,
+										label: label,
+										on: rawPower == "on",
+										brightness: brightness,
+										color: color
+									)
+								}
+							}
+						}
+					}
+				}
+			}
+			return nil;
+		}
 	}
 }
