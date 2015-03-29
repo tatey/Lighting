@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D1409591AC41ADD00A6B686 /* LightTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1409581AC41ADD00A6B686 /* LightTarget.swift */; };
 		5D5DA0AA1AC2CB2B00F80D04 /* LightingTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5DA0A91AC2CB2B00F80D04 /* LightingTargetView.swift */; };
 		5DBD84791AC2784C00AF6B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */; };
 		5DBD847B1AC2784C00AF6B1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847A1AC2784C00AF6B1A /* Images.xcassets */; };
@@ -17,6 +18,8 @@
 		5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */; };
 		5DBD84A51AC2785500AF6B1A /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */; };
 		5DBD84A81AC2785500AF6B1A /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5DBD84971AC2785500AF6B1A /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5DFFA71B1AC6C2EC001B1340 /* LIFXHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFA71A1AC6C2EC001B1340 /* LIFXHTTP.swift */; };
+		5DFFA71D1AC79BAC001B1340 /* LightTargetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFA71C1AC79BAC001B1340 /* LightTargetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D1409581AC41ADD00A6B686 /* LightTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTarget.swift; sourceTree = "<group>"; };
 		5D5DA0A91AC2CB2B00F80D04 /* LightingTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightingTargetView.swift; sourceTree = "<group>"; };
 		5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIFXWidgetMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +71,8 @@
 		5DBD84A01AC2785500AF6B1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
+		5DFFA71A1AC6C2EC001B1340 /* LIFXHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIFXHTTP.swift; sourceTree = "<group>"; };
+		5DFFA71C1AC79BAC001B1340 /* LightTargetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +169,9 @@
 		5DBD849B1AC2785500AF6B1A /* Widget */ = {
 			isa = PBXGroup;
 			children = (
+				5DFFA71A1AC6C2EC001B1340 /* LIFXHTTP.swift */,
+				5D1409581AC41ADD00A6B686 /* LightTarget.swift */,
+				5DFFA71C1AC79BAC001B1340 /* LightTargetManager.swift */,
 				5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */,
 				5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */,
 				5D5DA0A91AC2CB2B00F80D04 /* LightingTargetView.swift */,
@@ -328,8 +337,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFFA71D1AC79BAC001B1340 /* LightTargetManager.swift in Sources */,
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,
+				5DFFA71B1AC6C2EC001B1340 /* LIFXHTTP.swift in Sources */,
 				5D5DA0AA1AC2CB2B00F80D04 /* LightingTargetView.swift in Sources */,
+				5D1409591AC41ADD00A6B686 /* LightTarget.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

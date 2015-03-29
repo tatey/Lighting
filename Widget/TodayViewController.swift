@@ -2,6 +2,8 @@ import Cocoa
 import NotificationCenter
 
 class TodayViewController: NSViewController, NCWidgetProviding {
+	var lightTargetManager: LightTargetManager?
+
 	@IBOutlet var lightTargetCollectionView: NSCollectionView?
 
     override var nibName: String? {
@@ -11,12 +13,23 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		self.lightTargetManager = LightTargetManager()
 		self.lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
-		self.lightTargetCollectionView?.content = ["Test 0", "Test 1", "Test 2"]
 	}
 
 	// MARK: NCWidgetProviding
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-        completionHandler(.NoData)
+		self.lightTargetManager?.update({ () -> Void in
+			if let lightTargets = self.lightTargetManager?.lightTargets {
+				self.lightTargetCollectionView?.content = lightTargets.map({ (lightTarget: LightTarget) -> String in
+					lightTarget.label
+				})
+				completionHandler(.NewData)
+			} else {
+				completionHandler(.NoData)
+			}
+		}, failure: { () -> Void in
+			completionHandler(.Failed)
+		})
     }
 }
