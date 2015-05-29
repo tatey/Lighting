@@ -12,11 +12,16 @@ class LightTargetManager {
 	func update(success: () -> Void, failure: () -> Void) {
 		self.client.lights({ (lights: [LIFXHTTP.Light]) -> Void in
 			self.lightTargets = lights.map({ (light: LIFXHTTP.Light) -> LightTarget in
-				LightTarget(
+				return LightTarget(
 					client: self.client,
 					selector: "id:\(light.id)",
 					label: light.label,
-					color: light.color,
+					color: NSColor(
+						hue: CGFloat(light.color.hue),
+						saturation: CGFloat(light.color.saturation),
+						brightness: CGFloat(light.brightness),
+						alpha: 1.0
+					),
 					on: light.on,
 					brightness: light.brightness
 				)

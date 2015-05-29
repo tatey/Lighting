@@ -5,14 +5,12 @@ protocol LightTargetControlViewDelegate {
 }
 
 class LightTargetControlView: NSView {
-	 var delegate: LightTargetControlViewDelegate?
+	var delegate: LightTargetControlViewDelegate?
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
-		let layer = CALayer()
-		layer.backgroundColor = CGColorCreateGenericRGB(0.0, 0.0, 0.0, 0.5)
-		self.layer = layer
+		self.layer = CALayer()
 		self.wantsLayer = true
 	}
 

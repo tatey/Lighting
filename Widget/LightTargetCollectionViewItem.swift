@@ -4,6 +4,11 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	@IBOutlet var controlView: LightTargetControlView?
 
 	override func viewWillAppear() {
+		super.viewWillAppear()
+
+		if let lightTarget = self.representedObject as? LightTarget {
+			self.controlView?.layer?.backgroundColor = lightTarget.color.CGColor
+		}
 		self.controlView?.delegate = self
 	}
 

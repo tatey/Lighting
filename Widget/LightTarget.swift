@@ -2,7 +2,7 @@ import Cocoa
 
 class LightTarget: NSObject {
 	let label: String
-	let color: LIFXHTTP.Light.Color
+	let color: NSColor
 	var on: Bool {
 		didSet {
 			self.client.setLightsPower(self.selector, on: self.on, success: { (results) -> Void in
@@ -17,7 +17,7 @@ class LightTarget: NSObject {
 	private let client: LIFXHTTP.Client
 	private let selector: String
 
-	init(client: LIFXHTTP.Client, selector: String, label: String, color: LIFXHTTP.Light.Color, on: Bool, brightness: Double) {
+	init(client: LIFXHTTP.Client, selector: String, label: String, color: NSColor, on: Bool, brightness: Double) {
 		self.client = client
 		self.selector = selector
 		self.label = label
