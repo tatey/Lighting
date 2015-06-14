@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D1409591AC41ADD00A6B686 /* LightTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1409581AC41ADD00A6B686 /* LightTarget.swift */; };
+		5D1BE8A51B2D558200198129 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; };
+		5D1BE8A61B2D55E600198129 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; };
+		5D1BE8A71B2D55E600198129 /* LIFXHTTPKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */; };
 		5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */; };
 		5D82AB221AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */; };
@@ -20,10 +22,6 @@
 		5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */; };
 		5DBD84A51AC2785500AF6B1A /* TodayViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */; };
 		5DBD84A81AC2785500AF6B1A /* Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5DBD84971AC2785500AF6B1A /* Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5DF649D31B2D21EA0006EE03 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649D21B2D21EA0006EE03 /* LIFXHTTPKit.framework */; };
-		5DF649D41B2D21EA0006EE03 /* LIFXHTTPKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649D21B2D21EA0006EE03 /* LIFXHTTPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5DFFA71B1AC6C2EC001B1340 /* LIFXHTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFA71A1AC6C2EC001B1340 /* LIFXHTTP.swift */; };
-		5DFFA71D1AC79BAC001B1340 /* LightTargetManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFFA71C1AC79BAC001B1340 /* LightTargetManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5DF649D41B2D21EA0006EE03 /* LIFXHTTPKit.framework in Embed Frameworks */,
+				5D1BE8A71B2D55E600198129 /* LIFXHTTPKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,7 +67,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D1409581AC41ADD00A6B686 /* LightTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTarget.swift; sourceTree = "<group>"; };
 		5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetControlView.swift; sourceTree = "<group>"; };
 		5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionViewItem.swift; sourceTree = "<group>"; };
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
@@ -88,9 +85,7 @@
 		5DBD84A01AC2785500AF6B1A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayViewController.xib; sourceTree = "<group>"; };
-		5DF649D21B2D21EA0006EE03 /* LIFXHTTPKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LIFXHTTPKit.framework; path = Carthage/Build/Mac/LIFXHTTPKit.framework; sourceTree = "<group>"; };
-		5DFFA71A1AC6C2EC001B1340 /* LIFXHTTP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LIFXHTTP.swift; sourceTree = "<group>"; };
-		5DFFA71C1AC79BAC001B1340 /* LightTargetManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetManager.swift; sourceTree = "<group>"; };
+		5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LIFXHTTPKit.framework; path = Carthage/Build/Mac/LIFXHTTPKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DF649D31B2D21EA0006EE03 /* LIFXHTTPKit.framework in Frameworks */,
+				5D1BE8A61B2D55E600198129 /* LIFXHTTPKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -113,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1BE8A51B2D558200198129 /* LIFXHTTPKit.framework in Frameworks */,
 				5DBD849A1AC2785500AF6B1A /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -180,8 +176,8 @@
 		5DBD84981AC2785500AF6B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */,
 				5DBD84991AC2785500AF6B1A /* NotificationCenter.framework */,
-				5DF649D21B2D21EA0006EE03 /* LIFXHTTPKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,9 +185,6 @@
 		5DBD849B1AC2785500AF6B1A /* Widget */ = {
 			isa = PBXGroup;
 			children = (
-				5DFFA71A1AC6C2EC001B1340 /* LIFXHTTP.swift */,
-				5D1409581AC41ADD00A6B686 /* LightTarget.swift */,
-				5DFFA71C1AC79BAC001B1340 /* LightTargetManager.swift */,
 				5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */,
 				5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */,
 				5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */,
@@ -361,11 +354,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DFFA71D1AC79BAC001B1340 /* LightTargetManager.swift in Sources */,
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,
-				5DFFA71B1AC6C2EC001B1340 /* LIFXHTTP.swift in Sources */,
 				5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */,
-				5D1409591AC41ADD00A6B686 /* LightTarget.swift in Sources */,
 				5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +546,10 @@
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -573,6 +567,10 @@
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

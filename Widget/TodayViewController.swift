@@ -1,8 +1,10 @@
 import Cocoa
 import NotificationCenter
+import LIFXHTTPKit
 
 class TodayViewController: NSViewController, NCWidgetProviding {
-	var lightTargetManager: LightTargetManager?
+	var client: Client!
+	var lights: LightTarget!
 
 	@IBOutlet var lightTargetCollectionView: NSCollectionView?
 
@@ -13,21 +15,21 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		self.lightTargetManager = LightTargetManager()
-		self.lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
+		client = Client(accessToken: "cea46dfc99b012ad8f3373204ac11c80d09ef49d69f1b8f97a64e050e6f75b77")
+		lights = client.allLightTarget()
+		lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
 	}
 
 	// MARK: NCWidgetProviding
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-		self.lightTargetManager?.update({ () -> Void in
-			if let lightTargets = self.lightTargetManager?.lightTargets {
-				self.lightTargetCollectionView?.content = lightTargets
-				completionHandler(.NewData)
-			} else {
-				completionHandler(.NoData)
+		client.fetch { (error) in
+			if error != nil {
+				completionHandler(.Failed)
+				return
 			}
-		}, failure: { () -> Void in
-			completionHandler(.Failed)
-		})
+
+			self.lightTargetCollectionView?.content = self.lights.toLightTargets()
+			completionHandler(.NewData)
+		}
     }
 }
