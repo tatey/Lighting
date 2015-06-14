@@ -1,3 +1,4 @@
+# Xcode
 build/
 *.pbxuser
 !default.pbxuser
@@ -14,3 +15,6 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
+
+# Carthage
+Carthage/
