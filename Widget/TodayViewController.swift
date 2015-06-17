@@ -29,6 +29,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		}
 	}
 
+	private func getLightTargetsSortedByLabel() -> [LightTarget] {
+		return self.lights.toLightTargets().sorted { (lhs, rhs) in
+			return lhs.label < rhs.label
+		}
+	}
+
 	// MARK: NCWidgetProviding
 
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
@@ -38,7 +44,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 				return
 			}
 
-			self.lightTargetCollectionView?.content = self.lights.toLightTargets()
+			self.lightTargetCollectionView?.content = self.getLightTargetsSortedByLabel()
 			self.view.needsLayout = true
 			completionHandler(.NewData)
 		}
