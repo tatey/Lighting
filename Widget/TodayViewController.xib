@@ -6,7 +6,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="Widget" customModuleProvider="target">
             <connections>
+                <outlet property="accessTokenTextField" destination="LUO-EO-FCT" id="00o-ks-tHA"/>
                 <outlet property="lightTargetCollectionView" destination="HZl-5k-Jf4" id="eHx-xu-4BZ"/>
+                <outlet property="settingsView" destination="Wr9-6H-wWt" id="cD0-Nh-2Vl"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -41,11 +43,36 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="Wr9-6H-wWt">
+                    <rect key="frame" x="0.0" y="50" width="266" height="50"/>
+                    <subviews>
+                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="LUO-EO-FCT">
+                            <rect key="frame" x="20" y="14" width="226" height="22"/>
+                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="VuK-DL-7aZ">
+                                <font key="font" metaFont="system"/>
+                                <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            </textFieldCell>
+                            <connections>
+                                <outlet property="delegate" destination="-2" id="AZB-n4-WtI"/>
+                            </connections>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="LUO-EO-FCT" firstAttribute="leading" secondItem="Wr9-6H-wWt" secondAttribute="leading" constant="20" id="b94-Mk-A0H"/>
+                        <constraint firstAttribute="centerY" secondItem="LUO-EO-FCT" secondAttribute="centerY" id="bDv-or-4i0"/>
+                        <constraint firstAttribute="trailing" secondItem="LUO-EO-FCT" secondAttribute="trailing" constant="20" id="e4K-E0-e06"/>
+                        <constraint firstAttribute="height" constant="50" id="gGS-jy-2zi"/>
+                    </constraints>
+                </customView>
             </subviews>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Wr9-6H-wWt" secondAttribute="trailing" id="3pQ-59-0hL"/>
                 <constraint firstAttribute="bottom" secondItem="1C6-9z-VaW" secondAttribute="bottom" id="4uS-bt-MWG"/>
                 <constraint firstItem="1C6-9z-VaW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="BxJ-1Y-eIF"/>
                 <constraint firstAttribute="trailing" secondItem="1C6-9z-VaW" secondAttribute="trailing" id="Xnk-8c-YRu"/>
+                <constraint firstItem="Wr9-6H-wWt" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="g5N-DC-fFZ"/>
+                <constraint firstItem="Wr9-6H-wWt" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="gR2-kI-yEP"/>
                 <constraint firstItem="1C6-9z-VaW" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="k2K-2G-NXr"/>
             </constraints>
             <point key="canvasLocation" x="540" y="438"/>

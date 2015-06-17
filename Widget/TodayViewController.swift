@@ -5,8 +5,12 @@ import LIFXHTTPKit
 class TodayViewController: NSViewController, NCWidgetProviding {
 	@IBOutlet weak var lightTargetCollectionView: LightTargetCollectionView?
 
+	@IBOutlet weak var settingsView: NSView?
+	@IBOutlet weak var accessTokenTextField: NSTextField?
+
 	var client: Client!
 	var lights: LightTarget!
+	private var editing: Bool = false
 
     override var nibName: String? {
         return "TodayViewController"
@@ -17,21 +21,37 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 
 		client = Client(accessToken: "")
 		lights = client.allLightTarget()
+
 		lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
 	}
 
 	override func viewWillLayout() {
 		super.viewWillLayout()
 
-		if let lightTargetCollectionView = self.lightTargetCollectionView {
-			let sizeThatFits = lightTargetCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
-			preferredContentSize = NSSize(width: view.frame.width, height: sizeThatFits.height)
+		settingsView?.hidden = !editing
+		lightTargetCollectionView?.hidden = editing
+
+		if editing {
+			if let settingsView = self.settingsView {
+				preferredContentSize = NSSize(width: view.frame.width, height: settingsView.frame.height)
+			}
+		} else {
+			if let lightTargetCollectionView = self.lightTargetCollectionView {
+				let sizeThatFits = lightTargetCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
+				preferredContentSize = NSSize(width: view.frame.width, height: sizeThatFits.height)
+			}
 		}
 	}
 
 	private func getLightTargetsSortedByLabel() -> [LightTarget] {
 		return self.lights.toLightTargets().sorted { (lhs, rhs) in
 			return lhs.label < rhs.label
+		}
+	}
+
+	override func controlTextDidEndEditing(notification: NSNotification) {
+		if let accessTokenTextField = self.accessTokenTextField where notification.object === accessTokenTextField {
+
 		}
 	}
 
@@ -52,5 +72,19 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 
 	func widgetMarginInsetsForProposedMarginInsets(defaultMarginInset: NSEdgeInsets) -> NSEdgeInsets {
 		return NSEdgeInsets(top: defaultMarginInset.top, left: 0, bottom: defaultMarginInset.bottom, right: 0)
+	}
+
+	var widgetAllowsEditing: Bool {
+		return true
+	}
+
+	func widgetDidBeginEditing() {
+		editing = true
+		view.needsLayout = true
+	}
+
+	func widgetDidEndEditing() {
+		editing = false
+		view.needsLayout = true
 	}
 }
