@@ -13,6 +13,7 @@
 		5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */; };
 		5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */; };
 		5D82AB221AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */; };
+		5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */; };
 		5DBD84791AC2784C00AF6B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */; };
 		5DBD847B1AC2784C00AF6B1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847A1AC2784C00AF6B1A /* Images.xcassets */; };
 		5DBD847E1AC2784C00AF6B1A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847C1AC2784C00AF6B1A /* MainMenu.xib */; };
@@ -70,6 +71,7 @@
 		5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetControlView.swift; sourceTree = "<group>"; };
 		5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionViewItem.swift; sourceTree = "<group>"; };
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
+		5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionView.swift; sourceTree = "<group>"; };
 		5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIFXWidgetMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 			children = (
 				5DBD84A21AC2785500AF6B1A /* TodayViewController.swift */,
 				5DBD84A41AC2785500AF6B1A /* TodayViewController.xib */,
+				5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */,
 				5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */,
 				5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */,
 				5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */,
@@ -354,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */,
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,
 				5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */,
 				5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */,

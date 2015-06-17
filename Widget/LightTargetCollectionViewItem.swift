@@ -34,6 +34,7 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	}
 
 	// MARK: LightControlViewDelegate
+
 	func controlViewDidGetClicked(view: LightTargetControlView) {
 		lightTarget.setPower(!lightTarget.power, duration: 0.5)
 	}

@@ -3,10 +3,10 @@ import NotificationCenter
 import LIFXHTTPKit
 
 class TodayViewController: NSViewController, NCWidgetProviding {
+	@IBOutlet weak var lightTargetCollectionView: LightTargetCollectionView?
+
 	var client: Client!
 	var lights: LightTarget!
-
-	@IBOutlet var lightTargetCollectionView: NSCollectionView?
 
     override var nibName: String? {
         return "TodayViewController"
@@ -15,21 +15,36 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		client = Client(accessToken: "cea46dfc99b012ad8f3373204ac11c80d09ef49d69f1b8f97a64e050e6f75b77")
+		client = Client(accessToken: "")
 		lights = client.allLightTarget()
 		lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
 	}
 
+	override func viewWillLayout() {
+		super.viewWillLayout()
+
+		if let lightTargetCollectionView = self.lightTargetCollectionView {
+			let sizeThatFits = lightTargetCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
+			preferredContentSize = NSSize(width: view.frame.width, height: sizeThatFits.height)
+		}
+	}
+
 	// MARK: NCWidgetProviding
+
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-		client.fetch { (error) in
+		client.fetch { [unowned self] (error) in
 			if error != nil {
 				completionHandler(.Failed)
 				return
 			}
 
 			self.lightTargetCollectionView?.content = self.lights.toLightTargets()
+			self.view.needsLayout = true
 			completionHandler(.NewData)
 		}
     }
+
+	func widgetMarginInsetsForProposedMarginInsets(defaultMarginInset: NSEdgeInsets) -> NSEdgeInsets {
+		return NSEdgeInsets(top: defaultMarginInset.top, left: 0, bottom: defaultMarginInset.bottom, right: 0)
+	}
 }
