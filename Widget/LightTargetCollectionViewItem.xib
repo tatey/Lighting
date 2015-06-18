@@ -7,26 +7,26 @@
         <customObject id="-2" userLabel="File's Owner" customClass="LightTargetCollectionViewItem" customModule="Widget" customModuleProvider="target">
             <connections>
                 <outlet property="controlView" destination="oQI-EC-I0G" id="uu0-qa-tfQ"/>
-                <outlet property="labelTextField" destination="lem-nG-v1Z" id="yPj-xm-b8A"/>
+                <outlet property="labelTextField" destination="mYp-xU-wv4" id="FSm-ib-TOZ"/>
                 <outlet property="view" destination="cun-NT-w6s" id="x7Q-jv-8eK"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <view id="cun-NT-w6s">
-            <rect key="frame" x="0.0" y="0.0" width="100" height="84"/>
+            <rect key="frame" x="0.0" y="0.0" width="100" height="115"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="oQI-EC-I0G" customClass="LightTargetControlView" customModule="Widget" customModuleProvider="target">
-                    <rect key="frame" x="20" y="24" width="60" height="60"/>
+                    <rect key="frame" x="20" y="55" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="hJq-ZV-LC9"/>
                         <constraint firstAttribute="height" constant="60" id="mkc-0H-xF9"/>
                     </constraints>
                 </customView>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lem-nG-v1Z">
-                    <rect key="frame" x="18" y="0.0" width="64" height="17"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="center" title="Label" id="9g2-ey-2yn">
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYp-xU-wv4">
+                    <rect key="frame" x="18" y="18" width="64" height="34"/>
+                    <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Multiline Label" id="vh1-KV-tfV">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -34,11 +34,10 @@
                 </textField>
             </subviews>
             <constraints>
-                <constraint firstItem="lem-nG-v1Z" firstAttribute="top" secondItem="oQI-EC-I0G" secondAttribute="bottom" constant="7" id="GPw-2N-nPo"/>
-                <constraint firstAttribute="bottom" secondItem="lem-nG-v1Z" secondAttribute="bottom" id="I9R-Fj-2UN"/>
+                <constraint firstAttribute="centerX" secondItem="mYp-xU-wv4" secondAttribute="centerX" id="IaN-qr-G4W"/>
                 <constraint firstAttribute="centerX" secondItem="oQI-EC-I0G" secondAttribute="centerX" id="LGQ-bq-2i9"/>
-                <constraint firstItem="lem-nG-v1Z" firstAttribute="width" secondItem="oQI-EC-I0G" secondAttribute="width" id="ZUH-H1-BpC"/>
-                <constraint firstAttribute="centerX" secondItem="lem-nG-v1Z" secondAttribute="centerX" id="ckH-t6-QQz"/>
+                <constraint firstItem="oQI-EC-I0G" firstAttribute="width" secondItem="mYp-xU-wv4" secondAttribute="width" id="aDj-cI-6tJ"/>
+                <constraint firstItem="mYp-xU-wv4" firstAttribute="top" secondItem="oQI-EC-I0G" secondAttribute="bottom" constant="3" id="kDx-JX-7T2"/>
                 <constraint firstItem="oQI-EC-I0G" firstAttribute="top" secondItem="cun-NT-w6s" secondAttribute="top" id="ppS-r4-cBJ"/>
             </constraints>
             <point key="canvasLocation" x="388" y="524"/>

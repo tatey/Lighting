@@ -71,7 +71,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
     }
 
 	func widgetMarginInsetsForProposedMarginInsets(defaultMarginInset: NSEdgeInsets) -> NSEdgeInsets {
-		return NSEdgeInsets(top: defaultMarginInset.top, left: 0, bottom: defaultMarginInset.bottom, right: 0)
+		return NSEdgeInsets(top: defaultMarginInset.top + 3.0, left: defaultMarginInset.left - 20.0, bottom: 0.0, right: 0.0)
 	}
 
 	var widgetAllowsEditing: Bool {
