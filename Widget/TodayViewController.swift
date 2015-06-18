@@ -64,7 +64,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 				return
 			}
 
-			self.lightTargetCollectionView?.content = self.getLightTargetsSortedByLabel()
+			self.lightTargetCollectionView?.content = [self.lights] + self.getLightTargetsSortedByLabel()
 			self.view.needsLayout = true
 			completionHandler(.NewData)
 		}
