@@ -24,12 +24,19 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	}
 
 	private func updateUI() {
-		if lightTarget.power {
-			controlView?.layer?.backgroundColor = NSColor.whiteColor().CGColor
+		if lightTarget.connected {
+			if lightTarget.power {
+				controlView?.layer?.backgroundColor = NSColor.whiteColor().CGColor
+			} else {
+				controlView?.layer?.backgroundColor = NSColor.blackColor().CGColor
+			}
+			controlView?.layer?.opacity = 1.0
+			controlView?.enabled = true
 		} else {
-			controlView?.layer?.backgroundColor = NSColor.blackColor().CGColor
+			controlView?.layer?.backgroundColor = NSColor.darkGrayColor().CGColor
+			controlView?.layer?.opacity = 0.2
+			controlView?.enabled = false
 		}
-
 		labelTextField?.stringValue = lightTarget.label
 	}
 

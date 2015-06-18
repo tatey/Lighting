@@ -6,6 +6,7 @@ protocol LightTargetControlViewDelegate {
 
 class LightTargetControlView: NSView {
 	var delegate: LightTargetControlViewDelegate?
+	var enabled: Bool = true
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
@@ -15,12 +16,16 @@ class LightTargetControlView: NSView {
 	}
 
 	override func mouseDown(theEvent: NSEvent) {
-		self.delegate?.controlViewDidGetClicked(self)
+		if enabled {
+			self.delegate?.controlViewDidGetClicked(self)
+		}
 	}
 
 	override func mouseUp(theEvent: NSEvent) {
+
 	}
 
 	override func mouseDragged(theEvent: NSEvent) {
+
 	}
 }
