@@ -44,7 +44,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	}
 
 	private func getLightTargetsSortedByLabel() -> [LightTarget] {
-		return self.lights.toLightTargets().sorted { (lhs, rhs) in
+		return lights.toLightTargets().sorted { (lhs, rhs) in
 			return lhs.label < rhs.label
 		}
 	}

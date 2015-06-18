@@ -11,13 +11,13 @@ class LightTargetControlView: NSView {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
-		self.layer = CALayer()
-		self.wantsLayer = true
+		layer = CALayer()
+		wantsLayer = true
 	}
 
 	override func mouseDown(theEvent: NSEvent) {
 		if enabled {
-			self.delegate?.controlViewDidGetClicked(self)
+			delegate?.controlViewDidGetClicked(self)
 		}
 	}
 
