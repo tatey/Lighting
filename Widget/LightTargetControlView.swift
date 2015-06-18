@@ -12,6 +12,7 @@ class LightTargetControlView: NSView {
 		super.init(coder: coder)
 
 		layer = CALayer()
+		layer?.cornerRadius = 5.0
 		wantsLayer = true
 	}
 
