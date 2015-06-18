@@ -1,11 +1,11 @@
 import Cocoa
 
-protocol LightTargetControlViewDelegate {
+protocol LightTargetControlViewDelegate: class {
 	func controlViewDidGetClicked(view: LightTargetControlView)
 }
 
 class LightTargetControlView: NSView {
-	var delegate: LightTargetControlViewDelegate?
+	weak var delegate: LightTargetControlViewDelegate?
 	var enabled: Bool = true
 
 	required init?(coder: NSCoder) {
