@@ -25,7 +25,7 @@
                     </constraints>
                 </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYp-xU-wv4">
-                    <rect key="frame" x="18" y="18" width="64" height="34"/>
+                    <rect key="frame" x="8" y="18" width="84" height="34"/>
                     <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" title="Multiline Label" id="vh1-KV-tfV">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -36,7 +36,8 @@
             <constraints>
                 <constraint firstAttribute="centerX" secondItem="mYp-xU-wv4" secondAttribute="centerX" id="IaN-qr-G4W"/>
                 <constraint firstAttribute="centerX" secondItem="oQI-EC-I0G" secondAttribute="centerX" id="LGQ-bq-2i9"/>
-                <constraint firstItem="oQI-EC-I0G" firstAttribute="width" secondItem="mYp-xU-wv4" secondAttribute="width" id="aDj-cI-6tJ"/>
+                <constraint firstItem="mYp-xU-wv4" firstAttribute="leading" secondItem="cun-NT-w6s" secondAttribute="leading" constant="10" id="M3A-Pv-wNB"/>
+                <constraint firstAttribute="trailing" secondItem="mYp-xU-wv4" secondAttribute="trailing" constant="10" id="OB7-gc-zrw"/>
                 <constraint firstItem="mYp-xU-wv4" firstAttribute="top" secondItem="oQI-EC-I0G" secondAttribute="bottom" constant="3" id="kDx-JX-7T2"/>
                 <constraint firstItem="oQI-EC-I0G" firstAttribute="top" secondItem="cun-NT-w6s" secondAttribute="top" id="ppS-r4-cBJ"/>
             </constraints>
