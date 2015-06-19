@@ -1,4 +1,2 @@
-/* Display name and description for this extension. */
-"CFBundleDisplayName" = "Widget";
-"com.apple.notificationcenter.widget.description" = "Sample description";
-
+"CFBundleDisplayName" = "Lighting";
+"com.apple.notificationcenter.widget.description" = "Toggle lights on and off";
