@@ -17,6 +17,10 @@
 		5DA7AB0D1B34EFA9008A8130 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; };
 		5DA7AB0E1B34EFA9008A8130 /* SSKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5DA7AB0F1B34EFC4008A8130 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; };
+		5DA7AB181B34FDF0008A8130 /* DarwinNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */; };
+		5DA7AB191B34FDF0008A8130 /* DarwinNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */; };
+		5DA7AB1B1B359E59008A8130 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */; };
+		5DA7AB1D1B359FD5008A8130 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA7AB1C1B359FD5008A8130 /* PreferencesWindowController.xib */; };
 		5DBD84791AC2784C00AF6B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */; };
 		5DBD847B1AC2784C00AF6B1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847A1AC2784C00AF6B1A /* Images.xcassets */; };
 		5DBD847E1AC2784C00AF6B1A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847C1AC2784C00AF6B1A /* MainMenu.xib */; };
@@ -77,6 +81,12 @@
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
 		5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionView.swift; sourceTree = "<group>"; };
 		5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/Mac/SSKeychain.framework; sourceTree = "<group>"; };
+		5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LIFXWidgetMac-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		5DA7AB151B34FDF0008A8130 /* Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Widget-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarwinNotification.h; sourceTree = "<group>"; };
+		5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarwinNotification.m; sourceTree = "<group>"; };
+		5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		5DA7AB1C1B359FD5008A8130 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
 		5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIFXWidgetMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,9 +135,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5DA7AB131B34FDCF008A8130 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */,
+				5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		5DBD846A1AC2784C00AF6B1A = {
 			isa = PBXGroup;
 			children = (
+				5DA7AB131B34FDCF008A8130 /* Library */,
 				5DBD84751AC2784C00AF6B1A /* LIFXWidgetMac */,
 				5DBD84861AC2784C00AF6B1A /* LIFXWidgetMacTests */,
 				5DBD849B1AC2785500AF6B1A /* Widget */,
@@ -150,8 +170,10 @@
 			isa = PBXGroup;
 			children = (
 				5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */,
-				5DBD847A1AC2784C00AF6B1A /* Images.xcassets */,
 				5DBD847C1AC2784C00AF6B1A /* MainMenu.xib */,
+				5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */,
+				5DA7AB1C1B359FD5008A8130 /* PreferencesWindowController.xib */,
+				5DBD847A1AC2784C00AF6B1A /* Images.xcassets */,
 				5DBD84761AC2784C00AF6B1A /* Supporting Files */,
 			);
 			path = LIFXWidgetMac;
@@ -160,6 +182,7 @@
 		5DBD84761AC2784C00AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac-Bridging-Header.h */,
 				5DBD84771AC2784C00AF6B1A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -209,6 +232,7 @@
 		5DBD849C1AC2785500AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5DA7AB151B34FDF0008A8130 /* Widget-Bridging-Header.h */,
 				5DBD849D1AC2785500AF6B1A /* Info.plist */,
 				5DBD849E1AC2785500AF6B1A /* Widget.entitlements */,
 				5DBD849F1AC2785500AF6B1A /* InfoPlist.strings */,
@@ -320,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA7AB1D1B359FD5008A8130 /* PreferencesWindowController.xib in Resources */,
 				5DBD847B1AC2784C00AF6B1A /* Images.xcassets in Resources */,
 				5DBD847E1AC2784C00AF6B1A /* MainMenu.xib in Resources */,
 			);
@@ -349,7 +374,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA7AB1B1B359E59008A8130 /* PreferencesWindowController.swift in Sources */,
 				5DBD84791AC2784C00AF6B1A /* AppDelegate.swift in Sources */,
+				5DA7AB181B34FDF0008A8130 /* DarwinNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +392,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DA7AB191B34FDF0008A8130 /* DarwinNotification.m in Sources */,
 				5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */,
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,
 				5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */,
@@ -488,6 +516,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -497,6 +526,8 @@
 				INFOPLIST_FILE = LIFXWidgetMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -504,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -513,6 +545,7 @@
 				INFOPLIST_FILE = LIFXWidgetMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -555,6 +588,7 @@
 		5DBD84AA1AC2785500AF6B1A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -570,12 +604,15 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Widget-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		5DBD84AB1AC2785500AF6B1A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -587,6 +624,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Widget-Bridging-Header.h";
 			};
 			name = Release;
 		};
