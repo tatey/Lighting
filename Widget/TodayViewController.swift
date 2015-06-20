@@ -1,6 +1,7 @@
 import Cocoa
 import NotificationCenter
 import LIFXHTTPKit
+import SSKeychain
 
 class TodayViewController: NSViewController, NCWidgetProviding {
 	@IBOutlet weak var lightTargetCollectionView: LightTargetCollectionView?
