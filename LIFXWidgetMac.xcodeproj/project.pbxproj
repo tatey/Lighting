@@ -83,13 +83,13 @@
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
 		5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionView.swift; sourceTree = "<group>"; };
 		5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/Mac/SSKeychain.framework; sourceTree = "<group>"; };
-		5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LIFXWidgetMac; sourceTree = SOURCE_ROOT; };
-		5DA7AB151B34FDF0008A8130 /* Widget */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Widget; sourceTree = SOURCE_ROOT; };
 		5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarwinNotification.h; sourceTree = "<group>"; };
 		5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarwinNotification.m; sourceTree = "<group>"; };
 		5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		5DA7AB1C1B359FD5008A8130 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
 		5DA7AB201B365EC3008A8130 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
+		5DA7AB241B366BCD008A8130 /* Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Widget-Bridging-Header.h"; sourceTree = "<group>"; };
+		5DA7AB261B366C6F008A8130 /* LIFXWidgetMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LIFXWidgetMac-Bridging-Header.h"; sourceTree = "<group>"; };
 		5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIFXWidgetMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		5DBD84761AC2784C00AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac */,
+				5DA7AB261B366C6F008A8130 /* LIFXWidgetMac-Bridging-Header.h */,
 				5DBD84771AC2784C00AF6B1A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -236,7 +236,7 @@
 		5DBD849C1AC2785500AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DA7AB151B34FDF0008A8130 /* Widget */,
+				5DA7AB241B366BCD008A8130 /* Widget-Bridging-Header.h */,
 				5DBD849D1AC2785500AF6B1A /* Info.plist */,
 				5DBD849E1AC2785500AF6B1A /* Widget.entitlements */,
 				5DBD849F1AC2785500AF6B1A /* InfoPlist.strings */,
@@ -321,6 +321,7 @@
 					};
 					5DBD84961AC2785500AF6B1A = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = L4YRHAJ8LQ;
 					};
 				};
 			};
@@ -534,7 +535,7 @@
 				INFOPLIST_FILE = LIFXWidgetMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac/LIFXWidgetMac-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -554,7 +555,7 @@
 				INFOPLIST_FILE = LIFXWidgetMac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac/LIFXWidgetMac-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -599,7 +600,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -613,7 +614,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Widget-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Widget/Widget-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -623,7 +624,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Widget/Widget.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Developer ID Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -633,7 +634,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Widget-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Widget/Widget-Bridging-Header.h";
 			};
 			name = Release;
 		};
