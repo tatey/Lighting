@@ -24,13 +24,6 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
 	}
 
-	private func accessTokenDidChange() {
-		updateClientAndLights()
-		client.fetch { [unowned self] (error) in
-			self.updateLightTargetCollectionView()
-		}
-	}
-
 	private func updateClientAndLights() {
 		client = Client(accessToken: AccessToken.getAccessToken() ?? "")
 		lights = client.allLightTarget()
@@ -44,6 +37,15 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		if let lightTargetCollectionView = self.lightTargetCollectionView {
 			let sizeThatFits = lightTargetCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
 			preferredContentSize = NSSize(width: view.frame.width, height: sizeThatFits.height)
+		}
+	}
+
+	// MARK: Access token did change notification
+
+	private func accessTokenDidChange() {
+		updateClientAndLights()
+		client.fetch { [unowned self] (error) in
+			self.updateLightTargetCollectionView()
 		}
 	}
 
