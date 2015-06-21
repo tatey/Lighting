@@ -21,6 +21,8 @@
 		5DA7AB191B34FDF0008A8130 /* DarwinNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */; };
 		5DA7AB1B1B359E59008A8130 /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */; };
 		5DA7AB1D1B359FD5008A8130 /* PreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DA7AB1C1B359FD5008A8130 /* PreferencesWindowController.xib */; };
+		5DA7AB211B365EC3008A8130 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB201B365EC3008A8130 /* AccessToken.swift */; };
+		5DA7AB221B365EDE008A8130 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB201B365EC3008A8130 /* AccessToken.swift */; };
 		5DBD84791AC2784C00AF6B1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */; };
 		5DBD847B1AC2784C00AF6B1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847A1AC2784C00AF6B1A /* Images.xcassets */; };
 		5DBD847E1AC2784C00AF6B1A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DBD847C1AC2784C00AF6B1A /* MainMenu.xib */; };
@@ -87,6 +89,7 @@
 		5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarwinNotification.m; sourceTree = "<group>"; };
 		5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		5DA7AB1C1B359FD5008A8130 /* PreferencesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PreferencesWindowController.xib; sourceTree = "<group>"; };
+		5DA7AB201B365EC3008A8130 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIFXWidgetMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +141,7 @@
 		5DA7AB131B34FDCF008A8130 /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				5DA7AB201B365EC3008A8130 /* AccessToken.swift */,
 				5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */,
 				5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */,
 			);
@@ -377,6 +381,7 @@
 				5DA7AB1B1B359E59008A8130 /* PreferencesWindowController.swift in Sources */,
 				5DBD84791AC2784C00AF6B1A /* AppDelegate.swift in Sources */,
 				5DA7AB181B34FDF0008A8130 /* DarwinNotification.m in Sources */,
+				5DA7AB211B365EC3008A8130 /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +402,7 @@
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,
 				5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */,
 				5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */,
+				5DA7AB221B365EDE008A8130 /* AccessToken.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

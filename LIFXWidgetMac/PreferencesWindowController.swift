@@ -1,19 +1,22 @@
 import Cocoa
 
 class PreferencesWindowController: NSWindowController {
-	var test: DarwinNotification?
+	@IBOutlet weak var accessTokenField: NSSecureTextField?
 
 	override var windowNibName: String? {
 		return "PreferencesWindowController"
 	}
 
 	override func windowDidLoad() {
-		test = DarwinNotification(name: "com.tatey.LIFXWidgetMac.hello") { [unowned self] in
-			println("Hello")
-		}
+		super.windowDidLoad()
+
+		accessTokenField?.stringValue = AccessToken.getAccessToken() ?? ""
 	}
 
-	@IBAction func buttonDidGetClicked(sender: AnyObject) {
-		DarwinNotification.postNotification("com.tatey.LIFXWidgetMac.hello")
+	@IBAction func applyButtonDidGetClicked(sender: AnyObject) {
+		if let accessTokenField = self.accessTokenField {
+			AccessToken.setAccessToken(accessTokenField.stringValue)
+			DarwinNotification.postNotification(AccessToken.AccessTokenDidChangeNotificationName)
+		}
 	}
 }
