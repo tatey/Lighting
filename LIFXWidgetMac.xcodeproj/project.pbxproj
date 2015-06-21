@@ -83,8 +83,8 @@
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
 		5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionView.swift; sourceTree = "<group>"; };
 		5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/Mac/SSKeychain.framework; sourceTree = "<group>"; };
-		5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LIFXWidgetMac-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
-		5DA7AB151B34FDF0008A8130 /* Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Widget-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac */ = {isa = PBXFileReference; lastKnownFileType = folder; path = LIFXWidgetMac; sourceTree = SOURCE_ROOT; };
+		5DA7AB151B34FDF0008A8130 /* Widget */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Widget; sourceTree = SOURCE_ROOT; };
 		5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarwinNotification.h; sourceTree = "<group>"; };
 		5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarwinNotification.m; sourceTree = "<group>"; };
 		5DA7AB1A1B359E59008A8130 /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		5DBD84761AC2784C00AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac-Bridging-Header.h */,
+				5DA7AB141B34FDF0008A8130 /* LIFXWidgetMac */,
 				5DBD84771AC2784C00AF6B1A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -236,7 +236,7 @@
 		5DBD849C1AC2785500AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DA7AB151B34FDF0008A8130 /* Widget-Bridging-Header.h */,
+				5DA7AB151B34FDF0008A8130 /* Widget */,
 				5DBD849D1AC2785500AF6B1A /* Info.plist */,
 				5DBD849E1AC2785500AF6B1A /* Widget.entitlements */,
 				5DBD849F1AC2785500AF6B1A /* InfoPlist.strings */,
