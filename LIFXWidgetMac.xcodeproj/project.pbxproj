@@ -145,7 +145,7 @@
 				5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */,
 				5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */,
 			);
-			name = Library;
+			path = Library;
 			sourceTree = "<group>";
 		};
 		5DBD846A1AC2784C00AF6B1A = {
