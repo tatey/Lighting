@@ -8,7 +8,7 @@ Control your LIFX lights from your Mac. Uses the LIFX HTTP API to implement a To
 
 Install application dependencies using [Carthage](https://github.com/Carthage/Carthage)
 
-    $ carthage bootstrap
+    $ carthage bootstrap --platform Mac
 
 Open LIFXWidgetMac.xcodeproj and build the "Widget > My Mac" target.
 Choose "Widget Simulator" when prompted to run the application.
