@@ -13,4 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 		preferencesWindowController?.close()
 		preferencesWindowController = nil
 	}
+
+	func applicationShouldTerminateAfterLastWindowClosed(sender: NSApplication) -> Bool {
+		return true
+	}
 }
