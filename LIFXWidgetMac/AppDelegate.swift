@@ -6,6 +6,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 	func applicationDidFinishLaunching(aNotification: NSNotification) {
 		preferencesWindowController = PreferencesWindowController()
+	}
+
+	func applicationDidBecomeActive(notification: NSNotification) {
 		preferencesWindowController?.window?.makeKeyAndOrderFront(self)
 	}
 
