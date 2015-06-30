@@ -45,7 +45,9 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	private func accessTokenDidChange() {
 		updateClientAndLights()
 		client.fetch { [unowned self] (error) in
-			self.updateLightTargetCollectionView()
+			dispatch_async(dispatch_get_main_queue()) {
+				self.updateLightTargetCollectionView()
+			}
 		}
 	}
 
@@ -53,13 +55,15 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
 		client.fetch { [unowned self] (error) in
-			if error != nil {
-				completionHandler(.Failed)
-				return
-			}
+			dispatch_async(dispatch_get_main_queue()) {
+				if error != nil {
+					completionHandler(.Failed)
+					return
+				}
 
-			self.updateLightTargetCollectionView()
-			completionHandler(.NewData)
+				self.updateLightTargetCollectionView()
+				completionHandler(.NewData)
+			}
 		}
     }
 

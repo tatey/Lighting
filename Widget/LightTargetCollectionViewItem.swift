@@ -12,7 +12,11 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 		super.viewWillAppear()
 
 		updateUI()
-		observer = lightTarget.addObserver { [unowned self] in self.updateUI() }
+		observer = lightTarget.addObserver { [unowned self] in
+			dispatch_async(dispatch_get_main_queue()) {
+				self.updateUI()
+			}
+		}
 		controlView?.delegate = self
 	}
 
