@@ -382,8 +382,8 @@
         <scene sceneID="S9j-vj-hcA">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="HAo-e1-c3R" customClass="AppWindowController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="4Gc-yD-9EV">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                    <window key="window" title="Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="4Gc-yD-9EV">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
@@ -398,78 +398,94 @@
             <objects>
                 <viewController storyboardIdentifier="LoggedOutViewController" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Pjp-Xq-8qU">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="104"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iuF-ol-OoN">
-                                <rect key="frame" x="202" y="127" width="77" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Logged Out" id="w2c-OD-J3S">
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-Ip-TQp">
+                                <rect key="frame" x="17" y="51" width="446" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Generate a personal acess token at https://cloud.lifx.com/settings and paste it into the field below." id="A5b-8W-pNd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="OFX-wG-oR7">
-                                <rect key="frame" x="207" y="89" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fEm-Tv-drX">
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-HB-Kkf">
+                                <rect key="frame" x="392" y="13" width="75" height="32"/>
+                                <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lAP-31-UP3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="buttonDidGetTapped:" target="BqS-zR-elC" id="dcb-Tt-I4l"/>
+                                    <action selector="loginButtonDidGetTapped:" target="BqS-zR-elC" id="GJJ-44-3bk"/>
                                 </connections>
                             </button>
+                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-x7-1He">
+                                <rect key="frame" x="19" y="19" width="371" height="22"/>
+                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="9UE-e9-UxS">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                    <allowedInputSourceLocales>
+                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                                    </allowedInputSourceLocales>
+                                </secureTextFieldCell>
+                            </secureTextField>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="OFX-wG-oR7" firstAttribute="top" secondItem="iuF-ol-OoN" secondAttribute="bottom" constant="10" id="1Wf-d3-ogH"/>
-                            <constraint firstAttribute="centerY" secondItem="iuF-ol-OoN" secondAttribute="centerY" id="G2M-Sj-2g7"/>
-                            <constraint firstAttribute="centerX" secondItem="iuF-ol-OoN" secondAttribute="centerX" id="N8A-dM-uma"/>
-                            <constraint firstAttribute="centerX" secondItem="OFX-wG-oR7" secondAttribute="centerX" id="Rx7-aW-JV9"/>
+                            <constraint firstAttribute="trailing" secondItem="Wxq-Ip-TQp" secondAttribute="trailing" constant="19" id="F8Y-Tp-DBF"/>
+                            <constraint firstItem="ubg-x7-1He" firstAttribute="top" secondItem="Wxq-Ip-TQp" secondAttribute="bottom" constant="10" id="VNL-oi-t5R"/>
+                            <constraint firstItem="ubg-x7-1He" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="Wak-mz-epQ"/>
+                            <constraint firstItem="Wxq-Ip-TQp" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="Yho-sR-8bU"/>
+                            <constraint firstItem="Wxq-Ip-TQp" firstAttribute="top" secondItem="Pjp-Xq-8qU" secondAttribute="top" constant="19" id="da6-rr-xmo"/>
+                            <constraint firstAttribute="trailing" secondItem="zQe-HB-Kkf" secondAttribute="trailing" constant="19" id="lNZ-ky-rMA"/>
+                            <constraint firstItem="zQe-HB-Kkf" firstAttribute="centerY" secondItem="ubg-x7-1He" secondAttribute="centerY" id="oOV-Au-1Zg"/>
+                            <constraint firstItem="zQe-HB-Kkf" firstAttribute="leading" secondItem="ubg-x7-1He" secondAttribute="trailing" constant="8" id="qOG-u9-QjT"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="MM1-3p-Iqj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="257"/>
+            <point key="canvasLocation" x="649" y="174"/>
         </scene>
         <!--Logged In View Controller-->
         <scene sceneID="mZH-is-6u5">
             <objects>
                 <viewController storyboardIdentifier="LoggedInViewController" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="5Pd-kl-ByC">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="269" height="87"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iHu-av-fHS">
-                                <rect key="frame" x="192" y="142" width="66" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Logged In" id="Sn1-mX-FEI">
+                                <rect key="frame" x="17" y="51" width="235" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Logged In" id="Sn1-mX-FEI">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-lQ-ANI">
-                                <rect key="frame" x="192" y="104" width="66" height="32"/>
-                                <buttonCell key="cell" type="push" title="Test" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vXW-3g-hTK">
+                                <rect key="frame" x="93" y="13" width="84" height="32"/>
+                                <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vXW-3g-hTK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="buttonDidGetTapped:" target="0Gt-aU-jyb" id="y7b-3H-gUw"/>
+                                    <action selector="logoutButtonDidgetTapped:" target="0Gt-aU-jyb" id="mJV-Dw-XLd"/>
                                 </connections>
                             </button>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="iHu-av-fHS" firstAttribute="leading" secondItem="5Pd-kl-ByC" secondAttribute="leading" constant="19" id="JMF-cx-7yC"/>
                             <constraint firstAttribute="centerX" secondItem="iGH-lQ-ANI" secondAttribute="centerX" id="S99-EY-ZJH"/>
-                            <constraint firstAttribute="centerY" secondItem="iHu-av-fHS" secondAttribute="centerY" id="SRf-xe-TqB"/>
+                            <constraint firstItem="iHu-av-fHS" firstAttribute="top" secondItem="5Pd-kl-ByC" secondAttribute="top" constant="19" id="WvV-sm-5ey"/>
+                            <constraint firstAttribute="trailing" secondItem="iHu-av-fHS" secondAttribute="trailing" constant="19" id="XdI-Rs-fEw"/>
                             <constraint firstItem="iGH-lQ-ANI" firstAttribute="top" secondItem="iHu-av-fHS" secondAttribute="bottom" constant="10" id="Ylf-CP-QLV"/>
-                            <constraint firstAttribute="centerX" secondItem="iHu-av-fHS" secondAttribute="centerX" id="acB-Zq-kbc"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="dPE-z4-We1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="766" y="632"/>
+            <point key="canvasLocation" x="543.5" y="348.5"/>
         </scene>
     </scenes>
 </document>

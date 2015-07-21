@@ -1,13 +1,13 @@
 import Cocoa
 
 protocol LoggedInViewControllerDelegate: class {
-	func loggedInViewControllerDidFinished(viewController: LoggedInViewController)
+	func loggedInViewControllerDidLogout(viewController: LoggedInViewController)
 }
 
 class LoggedInViewController: NSViewController {
 	weak var delegate: LoggedInViewControllerDelegate?
 
-	@IBAction func buttonDidGetTapped(sender: AnyObject?) {
-		delegate?.loggedInViewControllerDidFinished(self)
+	@IBAction func logoutButtonDidgetTapped(sender: AnyObject?) {
+		delegate?.loggedInViewControllerDidLogout(self)
 	}
 }

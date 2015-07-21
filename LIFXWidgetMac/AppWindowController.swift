@@ -9,14 +9,13 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 	override func windowDidLoad() {
 		super.windowDidLoad()
 
-		accessToken = AccessToken()
-
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
 		loggedInViewController = storyboard!.instantiateControllerWithIdentifier("LoggedInViewController") as! LoggedInViewController
 		loggedInViewController.delegate = self
 		loggedOutViewController = storyboard!.instantiateControllerWithIdentifier("LoggedOutViewController") as! LoggedOutViewController
 		loggedOutViewController.delegate = self
 
+		accessToken = AccessToken()
 		if accessToken.token != nil {
 			contentViewController = loggedInViewController
 		} else {
@@ -26,13 +25,13 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 
 	// MARK: LoggedInViewControllerDelegate
 
-	func loggedInViewControllerDidFinished(viewController: LoggedInViewController) {
+	func loggedInViewControllerDidLogout(viewController: LoggedInViewController) {
 		contentViewController = loggedOutViewController
 	}
 
 	// MARK: LoggedOutViewControllerDelegate
 
-	func loggedOutViewControllerDidFinish(controller: LoggedOutViewController) {
+	func loggedOutViewControllerDidLogin(controller: LoggedOutViewController) {
 		contentViewController = loggedInViewController
 	}
 }
