@@ -25,7 +25,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	}
 
 	private func updateClientAndLights() {
-		client = Client(accessToken: AccessToken.getAccessToken() ?? "")
+		client = Client(accessToken: "")
 		lights = client.allLightTarget()
 	}
 

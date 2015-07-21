@@ -17,13 +17,13 @@ class LightTargetControlView: NSView {
 	}
 
 	override func mouseDown(theEvent: NSEvent) {
-		if enabled {
-			delegate?.controlViewDidGetClicked(self)
-		}
+		
 	}
 
 	override func mouseUp(theEvent: NSEvent) {
-
+		if enabled {
+			delegate?.controlViewDidGetClicked(self)
+		}
 	}
 
 	override func mouseDragged(theEvent: NSEvent) {
