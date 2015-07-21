@@ -1,4 +1,3 @@
-import LIFXHTTPKit
 import SSKeychain
 
 class AccessToken {
@@ -18,21 +17,6 @@ class AccessToken {
 			} else {
 				SSKeychain.deletePasswordForService(AccessToken.KeychainService, account: AccessToken.KeychainAccount)
 			}
-		}
-	}
-
-	func testAuthenticity(completionHandler: ((isAuthentic: Bool, error: NSError?) -> Void)) {
-		if let token = self.token {
-			let client = Client(accessToken: token)
-			client.fetch(completionHandler: { (error) in
-				if error != nil {
-					completionHandler(isAuthentic: true, error: nil)
-				} else {
-					completionHandler(isAuthentic: false, error: error)
-				}
-			})
-		} else {
-			completionHandler(isAuthentic: false, error: NSError(domain: "", code: 0, userInfo: nil))
 		}
 	}
 }

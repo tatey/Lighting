@@ -442,6 +442,10 @@
                             <constraint firstItem="zQe-HB-Kkf" firstAttribute="leading" secondItem="ubg-x7-1He" secondAttribute="trailing" constant="8" id="qOG-u9-QjT"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessTokenSecureTextField" destination="ubg-x7-1He" id="voC-9c-pZR"/>
+                        <outlet property="loginButton" destination="zQe-HB-Kkf" id="IIN-qr-3kT"/>
+                    </connections>
                 </viewController>
                 <customObject id="MM1-3p-Iqj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
