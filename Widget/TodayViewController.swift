@@ -5,7 +5,7 @@ import LIFXHTTPKit
 class TodayViewController: NSViewController, NCWidgetProviding {
 	@IBOutlet weak var lightTargetCollectionView: LightTargetCollectionView?
 
-	var accessTokenObserver: DarwinNotification!
+	var accessToken: AccessToken!
 	var client: Client!
 	var lights: LightTarget!
 
@@ -16,17 +16,16 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
-		updateClientAndLights()
-		accessTokenObserver = DarwinNotification(name: AccessToken.AccessTokenDidChangeNotificationName) { [unowned self] in
-			self.accessTokenDidChange()
+		accessToken = AccessToken()
+		client = Client(accessToken: accessToken.token ?? "")
+		lights = client.allLightTarget()
+
+		accessToken.addObserver {
+			self.client = Client(accessToken: self.accessToken.token ?? "")
+			self.updateLightTargetCollectionView()
 		}
 
 		lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
-	}
-
-	private func updateClientAndLights() {
-		client = Client(accessToken: "")
-		lights = client.allLightTarget()
 	}
 
 	private func updateLightTargetCollectionView() {
@@ -40,21 +39,10 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		}
 	}
 
-	// MARK: Access token did change notification
-
-	private func accessTokenDidChange() {
-		updateClientAndLights()
-		client.fetch { [unowned self] (error) in
-			dispatch_async(dispatch_get_main_queue()) {
-				self.updateLightTargetCollectionView()
-			}
-		}
-	}
-
 	// MARK: NCWidgetProviding
 
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-		client.fetch { [unowned self] (error) in
+		client.fetch { (error) in
 			dispatch_async(dispatch_get_main_queue()) {
 				if error != nil {
 					completionHandler(.Failed)

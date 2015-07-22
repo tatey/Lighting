@@ -388,6 +388,9 @@
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
                     </window>
+                    <connections>
+                        <segue destination="BqS-zR-elC" kind="relationship" relationship="window.shadowedContentViewController" id="KZ3-J7-xwc"/>
+                    </connections>
                 </windowController>
                 <customObject id="Bxr-rS-Jlc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -419,32 +422,29 @@
                                     <action selector="loginButtonDidGetTapped:" target="BqS-zR-elC" id="GJJ-44-3bk"/>
                                 </connections>
                             </button>
-                            <secureTextField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-x7-1He">
+                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-So-iYz">
                                 <rect key="frame" x="19" y="19" width="371" height="22"/>
-                                <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="9UE-e9-UxS">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="gD6-QZ-osP">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                    <allowedInputSourceLocales>
-                                        <string>NSAllRomanInputSourcesLocaleIdentifier</string>
-                                    </allowedInputSourceLocales>
-                                </secureTextFieldCell>
-                            </secureTextField>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="zQe-HB-Kkf" firstAttribute="centerY" secondItem="XTL-So-iYz" secondAttribute="centerY" id="04d-Bw-hjM"/>
+                            <constraint firstItem="XTL-So-iYz" firstAttribute="top" secondItem="Wxq-Ip-TQp" secondAttribute="bottom" constant="10" id="C37-Pf-xCo"/>
                             <constraint firstAttribute="trailing" secondItem="Wxq-Ip-TQp" secondAttribute="trailing" constant="19" id="F8Y-Tp-DBF"/>
-                            <constraint firstItem="ubg-x7-1He" firstAttribute="top" secondItem="Wxq-Ip-TQp" secondAttribute="bottom" constant="10" id="VNL-oi-t5R"/>
-                            <constraint firstItem="ubg-x7-1He" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="Wak-mz-epQ"/>
+                            <constraint firstItem="XTL-So-iYz" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="NrK-Qz-2am"/>
+                            <constraint firstItem="zQe-HB-Kkf" firstAttribute="leading" secondItem="XTL-So-iYz" secondAttribute="trailing" constant="8" id="U3m-Zu-gbC"/>
                             <constraint firstItem="Wxq-Ip-TQp" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="Yho-sR-8bU"/>
                             <constraint firstItem="Wxq-Ip-TQp" firstAttribute="top" secondItem="Pjp-Xq-8qU" secondAttribute="top" constant="19" id="da6-rr-xmo"/>
                             <constraint firstAttribute="trailing" secondItem="zQe-HB-Kkf" secondAttribute="trailing" constant="19" id="lNZ-ky-rMA"/>
-                            <constraint firstItem="zQe-HB-Kkf" firstAttribute="centerY" secondItem="ubg-x7-1He" secondAttribute="centerY" id="oOV-Au-1Zg"/>
-                            <constraint firstItem="zQe-HB-Kkf" firstAttribute="leading" secondItem="ubg-x7-1He" secondAttribute="trailing" constant="8" id="qOG-u9-QjT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="accessTokenSecureTextField" destination="ubg-x7-1He" id="voC-9c-pZR"/>
                         <outlet property="loginButton" destination="zQe-HB-Kkf" id="IIN-qr-3kT"/>
+                        <outlet property="tokenTextField" destination="XTL-So-iYz" id="PFA-1M-uNi"/>
                     </connections>
                 </viewController>
                 <customObject id="MM1-3p-Iqj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

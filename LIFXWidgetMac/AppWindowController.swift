@@ -26,12 +26,14 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 	// MARK: LoggedInViewControllerDelegate
 
 	func loggedInViewControllerDidLogout(viewController: LoggedInViewController) {
+		accessToken.token = nil
 		contentViewController = loggedOutViewController
 	}
 
 	// MARK: LoggedOutViewControllerDelegate
 
-	func loggedOutViewControllerDidLogin(controller: LoggedOutViewController) {
+	func loggedOutViewControllerDidLogin(controller: LoggedOutViewController, withToken token: String) {
+		accessToken.token = token
 		contentViewController = loggedInViewController
 	}
 }
