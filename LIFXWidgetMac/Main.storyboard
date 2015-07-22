@@ -25,15 +25,26 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="vGN-5O-dk0"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="u3f-jv-AGo"/>
-                                        <menuItem title="Hide aaaaaa" keyEquivalent="h" id="zfe-9M-eAS"/>
+                                        <menuItem title="Hide LIFXWidgetMac" keyEquivalent="h" id="zfe-9M-eAS">
+                                            <connections>
+                                                <action selector="hide:" target="2lJ-7H-Gxm" id="6sr-jY-GP0"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Hide Others" keyEquivalent="h" id="8l4-Ym-2rV">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="hideOtherApplications:" target="2lJ-7H-Gxm" id="Bak-4e-r51"/>
+                                            </connections>
                                         </menuItem>
                                         <menuItem title="Show All" id="DDq-2L-oH4">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="1Rg-Uf-GnT"/>
-                                        <menuItem title="Quit aaaaaa" keyEquivalent="q" id="KQj-gY-7EJ"/>
+                                        <menuItem title="Quit LIFXWidgetMac" keyEquivalent="q" id="KQj-gY-7EJ">
+                                            <connections>
+                                                <action selector="terminate:" target="qlP-Kx-Ac6" id="qy0-KS-n9g"/>
+                                            </connections>
+                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -72,19 +83,42 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Edit" id="Nnb-TE-nkZ">
                                     <items>
-                                        <menuItem title="Undo" keyEquivalent="z" id="Y7B-7z-bCX"/>
+                                        <menuItem title="Undo" keyEquivalent="z" id="Y7B-7z-bCX">
+                                            <connections>
+                                                <action selector="undo:" target="2lJ-7H-Gxm" id="JEk-v1-4c8"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Redo" keyEquivalent="Z" id="uyg-lc-UsT"/>
                                         <menuItem isSeparatorItem="YES" id="GnU-Lt-PGX"/>
-                                        <menuItem title="Cut" keyEquivalent="x" id="X9L-Yp-TJb"/>
-                                        <menuItem title="Copy" keyEquivalent="c" id="w5p-TC-kSm"/>
-                                        <menuItem title="Paste" keyEquivalent="v" id="VfQ-ep-NkU"/>
+                                        <menuItem title="Cut" keyEquivalent="x" id="X9L-Yp-TJb">
+                                            <connections>
+                                                <action selector="cut:" target="2lJ-7H-Gxm" id="yFn-jU-ZB0"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Copy" keyEquivalent="c" id="w5p-TC-kSm">
+                                            <connections>
+                                                <action selector="copy:" target="2lJ-7H-Gxm" id="Gx4-Xd-xkr"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste" keyEquivalent="v" id="VfQ-ep-NkU">
+                                            <connections>
+                                                <action selector="paste:" target="2lJ-7H-Gxm" id="da6-hl-7vy"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem title="Paste and Match Style" keyEquivalent="V" id="1Rp-s0-XZ2">
                                             <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
                                         </menuItem>
                                         <menuItem title="Delete" id="OAl-qa-nQK">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="delete:" target="2lJ-7H-Gxm" id="Y9B-3G-7Lx"/>
+                                            </connections>
                                         </menuItem>
-                                        <menuItem title="Select All" keyEquivalent="a" id="Sa3-tC-kbX"/>
+                                        <menuItem title="Select All" keyEquivalent="a" id="Sa3-tC-kbX">
+                                            <connections>
+                                                <action selector="selectAll:" target="2lJ-7H-Gxm" id="3c8-LY-aLt"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="Kv2-Sc-pbI"/>
                                         <menuItem title="Find" id="WgM-on-bZm">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -424,7 +458,7 @@
                             </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-So-iYz">
                                 <rect key="frame" x="19" y="19" width="371" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="gD6-QZ-osP">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="gD6-QZ-osP">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
