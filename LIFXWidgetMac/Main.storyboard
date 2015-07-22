@@ -363,7 +363,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="zaj-zz-HJZ">
                                     <items>
-                                        <menuItem title="aaaaaa Help" keyEquivalent="?" id="Oam-fr-6RL"/>
+                                        <menuItem title="LIFXWidgetMac Help" keyEquivalent="?" id="Oam-fr-6RL"/>
                                     </items>
                                 </menu>
                             </menuItem>
