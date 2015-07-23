@@ -25,7 +25,7 @@
                     </constraints>
                 </customView>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mYp-xU-wv4">
-                    <rect key="frame" x="8" y="18" width="84" height="34"/>
+                    <rect key="frame" x="8" y="35" width="84" height="17"/>
                     <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" alignment="center" id="vh1-KV-tfV">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
