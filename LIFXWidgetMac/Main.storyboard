@@ -435,19 +435,19 @@
             <objects>
                 <viewController storyboardIdentifier="LoggedOutViewController" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Pjp-Xq-8qU">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="104"/>
+                        <rect key="frame" x="0.0" y="0.0" width="447" height="113"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-Ip-TQp">
-                                <rect key="frame" x="17" y="51" width="446" height="34"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Generate a personal acess token at https://cloud.lifx.com/settings and paste it into the field below." id="A5b-8W-pNd">
+                                <rect key="frame" x="17" y="60" width="413" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="To get started, generate a personal acess token from your LIFX Cloud account and paste it in the field:" id="A5b-8W-pNd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-HB-Kkf">
-                                <rect key="frame" x="392" y="13" width="75" height="32"/>
+                                <rect key="frame" x="359" y="14" width="75" height="32"/>
                                 <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lAP-31-UP3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -457,52 +457,72 @@
                                 </connections>
                             </button>
                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-So-iYz">
-                                <rect key="frame" x="19" y="19" width="371" height="22"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="gD6-QZ-osP">
+                                <rect key="frame" x="136" y="20" width="221" height="22"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Required" drawsBackground="YES" usesSingleLineMode="YES" id="gD6-QZ-osP">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oup-w4-BFl">
+                                <rect key="frame" x="39" y="23" width="93" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Access Token:" id="qlI-5t-tz8">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="yia-In-XTn">
+                                <rect key="frame" x="19" y="23" width="16" height="16"/>
+                            </progressIndicator>
                         </subviews>
                         <constraints>
                             <constraint firstItem="zQe-HB-Kkf" firstAttribute="centerY" secondItem="XTL-So-iYz" secondAttribute="centerY" id="04d-Bw-hjM"/>
-                            <constraint firstItem="XTL-So-iYz" firstAttribute="top" secondItem="Wxq-Ip-TQp" secondAttribute="bottom" constant="10" id="C37-Pf-xCo"/>
+                            <constraint firstItem="yia-In-XTn" firstAttribute="centerY" secondItem="XTL-So-iYz" secondAttribute="centerY" id="Bu4-HA-wwu"/>
+                            <constraint firstItem="XTL-So-iYz" firstAttribute="top" secondItem="Wxq-Ip-TQp" secondAttribute="bottom" constant="18" id="C37-Pf-xCo"/>
                             <constraint firstAttribute="trailing" secondItem="Wxq-Ip-TQp" secondAttribute="trailing" constant="19" id="F8Y-Tp-DBF"/>
-                            <constraint firstItem="XTL-So-iYz" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="NrK-Qz-2am"/>
+                            <constraint firstItem="Oup-w4-BFl" firstAttribute="leading" secondItem="yia-In-XTn" secondAttribute="trailing" constant="6" id="OVm-OU-Hgz"/>
+                            <constraint firstItem="Oup-w4-BFl" firstAttribute="centerY" secondItem="XTL-So-iYz" secondAttribute="centerY" id="QTr-2e-V6z"/>
                             <constraint firstItem="zQe-HB-Kkf" firstAttribute="leading" secondItem="XTL-So-iYz" secondAttribute="trailing" constant="8" id="U3m-Zu-gbC"/>
                             <constraint firstItem="Wxq-Ip-TQp" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="Yho-sR-8bU"/>
+                            <constraint firstItem="yia-In-XTn" firstAttribute="leading" secondItem="Pjp-Xq-8qU" secondAttribute="leading" constant="19" id="ZLX-W1-2Px"/>
+                            <constraint firstItem="XTL-So-iYz" firstAttribute="leading" secondItem="Oup-w4-BFl" secondAttribute="trailing" constant="6" id="bEx-2c-SRp"/>
                             <constraint firstItem="Wxq-Ip-TQp" firstAttribute="top" secondItem="Pjp-Xq-8qU" secondAttribute="top" constant="19" id="da6-rr-xmo"/>
                             <constraint firstAttribute="trailing" secondItem="zQe-HB-Kkf" secondAttribute="trailing" constant="19" id="lNZ-ky-rMA"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="zQe-HB-Kkf" id="IIN-qr-3kT"/>
+                        <outlet property="spinner" destination="yia-In-XTn" id="mzC-Vb-W63"/>
                         <outlet property="tokenTextField" destination="XTL-So-iYz" id="PFA-1M-uNi"/>
                     </connections>
                 </viewController>
                 <customObject id="MM1-3p-Iqj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="649" y="174"/>
+            <point key="canvasLocation" x="632.5" y="178.5"/>
         </scene>
         <!--Logged In View Controller-->
         <scene sceneID="mZH-is-6u5">
             <objects>
                 <viewController storyboardIdentifier="LoggedInViewController" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="5Pd-kl-ByC">
-                        <rect key="frame" x="0.0" y="0.0" width="269" height="87"/>
+                    <view key="view" wantsLayer="YES" id="5Pd-kl-ByC">
+                        <rect key="frame" x="0.0" y="0.0" width="287" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iHu-av-fHS">
-                                <rect key="frame" x="17" y="51" width="235" height="17"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Logged In" id="Sn1-mX-FEI">
-                                    <font key="font" metaFont="system"/>
+                                <rect key="frame" x="17" y="171" width="253" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="You're logged in!" id="Sn1-mX-FEI">
+                                    <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-Wi-cBF">
+                                <rect key="frame" x="119" y="113" width="49" height="48"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logged-in-icon-success" id="wtu-eP-mS0"/>
+                            </imageView>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-lQ-ANI">
-                                <rect key="frame" x="93" y="13" width="84" height="32"/>
+                                <rect key="frame" x="101" y="13" width="84" height="32"/>
                                 <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vXW-3g-hTK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -511,19 +531,35 @@
                                     <action selector="logoutButtonDidgetTapped:" target="0Gt-aU-jyb" id="mJV-Dw-XLd"/>
                                 </connections>
                             </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQg-CN-cFM">
+                                <rect key="frame" x="17" y="60" width="253" height="34"/>
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Control lighting using the widget in Notification Center." id="es6-Dq-nbf">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vQg-CN-cFM" secondAttribute="trailing" constant="19" id="4fW-BD-Ope"/>
+                            <constraint firstAttribute="centerX" secondItem="3Gf-Wi-cBF" secondAttribute="centerX" id="5ca-DR-jRT"/>
                             <constraint firstItem="iHu-av-fHS" firstAttribute="leading" secondItem="5Pd-kl-ByC" secondAttribute="leading" constant="19" id="JMF-cx-7yC"/>
-                            <constraint firstAttribute="centerX" secondItem="iGH-lQ-ANI" secondAttribute="centerX" id="S99-EY-ZJH"/>
+                            <constraint firstItem="3Gf-Wi-cBF" firstAttribute="top" secondItem="iHu-av-fHS" secondAttribute="bottom" constant="10" id="Kvs-sa-B6k"/>
+                            <constraint firstItem="iGH-lQ-ANI" firstAttribute="top" secondItem="vQg-CN-cFM" secondAttribute="bottom" constant="19" id="Mio-QA-gQY"/>
+                            <constraint firstItem="vQg-CN-cFM" firstAttribute="top" secondItem="3Gf-Wi-cBF" secondAttribute="bottom" constant="19" id="SYc-hz-tg1"/>
                             <constraint firstItem="iHu-av-fHS" firstAttribute="top" secondItem="5Pd-kl-ByC" secondAttribute="top" constant="19" id="WvV-sm-5ey"/>
                             <constraint firstAttribute="trailing" secondItem="iHu-av-fHS" secondAttribute="trailing" constant="19" id="XdI-Rs-fEw"/>
-                            <constraint firstItem="iGH-lQ-ANI" firstAttribute="top" secondItem="iHu-av-fHS" secondAttribute="bottom" constant="10" id="Ylf-CP-QLV"/>
+                            <constraint firstItem="vQg-CN-cFM" firstAttribute="leading" secondItem="5Pd-kl-ByC" secondAttribute="leading" constant="19" id="bux-vw-yoq"/>
+                            <constraint firstAttribute="centerX" secondItem="iGH-lQ-ANI" secondAttribute="centerX" id="hcy-wa-DXW"/>
                         </constraints>
                     </view>
                 </viewController>
                 <customObject id="dPE-z4-We1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543.5" y="348.5"/>
+            <point key="canvasLocation" x="562.5" y="471.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logged-in-icon-success" width="49" height="48"/>
+    </resources>
 </document>
