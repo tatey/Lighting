@@ -27,6 +27,7 @@ class LightTargetControlView: NSView {
 		wantsLayer = true
 
 		let stateLayer = CAShapeLayer()
+		stateLayer.actions = ["transform": NSNull()]
 		layer?.addSublayer(stateLayer)
 		self.stateLayer = stateLayer
 	}
@@ -40,8 +41,6 @@ class LightTargetControlView: NSView {
 		stateLayer?.bounds = stateFrame
 		stateLayer?.path = statePath
 		stateTransform = stateLayer?.transform
-
-		setPower(power, animated: true)
 	}
 
 	func setPower(power: Bool, animated: Bool) {
