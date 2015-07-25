@@ -13,7 +13,7 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 
 		observer = lightTarget.addObserver { [unowned self] in
 			dispatch_async(dispatch_get_main_queue()) {
-				self.updateViewsAnimated(true)
+				self.setNeedsUpdateAnimated(true)
 			}
 		}
 		controlView?.delegate = self
@@ -22,7 +22,7 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	override func viewDidAppear() {
 		super.viewDidAppear()
 
-		updateViewsAnimated(false)
+		setNeedsUpdateAnimated(false)
 	}
 
 	override func viewWillDisappear() {
@@ -34,8 +34,10 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 		controlView?.delegate = nil
 	}
 
-	private func updateViewsAnimated(animated: Bool) {
-		controlView?.setPower(lightTarget.power, animated: animated)
+	private func setNeedsUpdateAnimated(animated: Bool) {
+		controlView?.enabled = lightTarget.connected
+		controlView?.power = lightTarget.power
+		controlView?.setNeedsUpdateAnimated(animated)
 		labelTextField?.stringValue = lightTarget.label
 	}
 

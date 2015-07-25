@@ -21,15 +21,17 @@ class LightTargetControlView: NSView {
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
 
-		layer = CALayer()
-		layer?.cornerRadius = 5.0
-		layer?.masksToBounds = true
+		let newLayer = CALayer()
+		newLayer.backgroundColor = NSColor(red:0.349, green:0.362, blue:0.374, alpha:1).CGColor
+		newLayer.cornerRadius = 5.0
+		newLayer.masksToBounds = true
+		self.layer = newLayer
 		wantsLayer = true
 
-		let stateLayer = CAShapeLayer()
-		stateLayer.actions = ["transform": NSNull()]
-		layer?.addSublayer(stateLayer)
-		self.stateLayer = stateLayer
+		let newStateLayer = CAShapeLayer()
+		newStateLayer.actions = ["transform": NSNull()]
+		layer?.addSublayer(newStateLayer)
+		self.stateLayer = newStateLayer
 	}
 
 	override func layout() {
@@ -43,12 +45,24 @@ class LightTargetControlView: NSView {
 		stateTransform = stateLayer?.transform
 	}
 
-	func setPower(power: Bool, animated: Bool) {
-		if let stateLayer = self.stateLayer, stateTransform = self.stateTransform {
-			if power {
-				stateLayer.transform = CATransform3DScale(stateTransform, 5.0, 5.0, 5.0)
+	func setNeedsUpdateAnimated(animated: Bool) {
+		if let layer = self.layer, stateLayer = self.stateLayer, stateTransform = self.stateTransform {
+			if enabled {
+				stateLayer.hidden = false
+				layer.opacity = 1.0
+
+				let toValue = power ? CATransform3DScale(stateTransform, 5.0, 5.0, 5.0) : stateTransform
+				if animated {
+					let animation = CABasicAnimation(keyPath: "transform.scale")
+					animation.duration = 0.3
+					animation.fromValue = NSValue(CATransform3D: stateLayer.transform)
+					animation.toValue = NSValue(CATransform3D: toValue)
+					stateLayer.addAnimation(animation, forKey: "toggle")
+				}
+				stateLayer.transform = toValue
 			} else {
-				stateLayer.transform = stateTransform
+				stateLayer.hidden = true
+				layer.opacity = 0.3
 			}
 		}
 	}
