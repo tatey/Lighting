@@ -30,9 +30,11 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	private func updateUI() {
 		if lightTarget.connected {
 			if lightTarget.power {
-				controlView?.layer?.backgroundColor = NSColor.whiteColor().CGColor
+				controlView?.setPower(true, animated: true)
+				//controlView?.layer?.backgroundColor = NSColor.whiteColor().CGColor
 			} else {
-				controlView?.layer?.backgroundColor = NSColor.blackColor().CGColor
+				controlView?.setPower(false, animated: true)
+				//controlView?.layer?.backgroundColor = NSColor.blackColor().CGColor
 			}
 			controlView?.layer?.opacity = 1.0
 			controlView?.enabled = true
