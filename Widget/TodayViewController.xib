@@ -17,7 +17,7 @@
             <rect key="frame" x="0.0" y="-5" width="266" height="120"/>
             <subviews>
                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wii-mz-Z4y">
-                    <rect key="frame" x="9" y="0.0" width="259" height="17"/>
+                    <rect key="frame" x="18" y="0.0" width="250" height="17"/>
                     <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" id="oxp-bw-fSu">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -53,7 +53,7 @@
             </subviews>
             <constraints>
                 <constraint firstItem="1C6-9z-VaW" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="5bh-Ig-rAs"/>
-                <constraint firstItem="wii-mz-Z4y" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="11" id="AOI-kt-iH6"/>
+                <constraint firstItem="wii-mz-Z4y" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="20" id="AOI-kt-iH6"/>
                 <constraint firstAttribute="trailing" secondItem="1C6-9z-VaW" secondAttribute="trailing" id="Bfw-Nn-mAC"/>
                 <constraint firstAttribute="trailing" secondItem="wii-mz-Z4y" secondAttribute="trailing" id="Dpa-Ze-inn"/>
                 <constraint firstItem="wii-mz-Z4y" firstAttribute="top" secondItem="1C6-9z-VaW" secondAttribute="bottom" constant="5" id="H1H-1y-iId"/>
