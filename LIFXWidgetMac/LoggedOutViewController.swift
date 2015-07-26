@@ -1,3 +1,8 @@
+//
+//  Created by Tate Johnson on 21/07/2015.
+//  Copyright (c) 2015 Tate Johnson. All rights reserved.
+//
+
 import Cocoa
 import LIFXHTTPKit
 

@@ -1,3 +1,8 @@
+//
+//  Created by Tate Johnson on 25/07/2015.
+//  Copyright (c) 2015 Tate Johnson. All rights reserved.
+//
+
 // https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CocoaDrawingGuide/Paths/Paths.html#//apple_ref/doc/uid/TP40003290-CH206-SW2
 
 #import "NSBezierPath+CGPath.h"

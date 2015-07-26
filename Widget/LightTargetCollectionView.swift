@@ -1,3 +1,8 @@
+//
+//  Created by Tate Johnson on 17/06/2015.
+//  Copyright (c) 2015 Tate Johnson. All rights reserved.
+//
+
 import Cocoa
 
 class LightTargetCollectionView: NSCollectionView {
