@@ -10,11 +10,11 @@
                 <application id="qlP-Kx-Ac6" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="oBV-W3-Z69">
                         <items>
-                            <menuItem title="LIFXWidgetMac" id="hdw-om-b5X">
+                            <menuItem title="Lighting" id="hdw-om-b5X">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="LIFXWidgetMac" systemMenu="apple" id="fyL-PB-JMW">
+                                <menu key="submenu" title="Lighting" systemMenu="apple" id="fyL-PB-JMW">
                                     <items>
-                                        <menuItem title="About LIFXWidgetMac" id="YZZ-wJ-gI8">
+                                        <menuItem title="About Lighting" id="YZZ-wJ-gI8">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="W81-UZ-1bo"/>
@@ -25,7 +25,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="vGN-5O-dk0"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="u3f-jv-AGo"/>
-                                        <menuItem title="Hide LIFXWidgetMac" keyEquivalent="h" id="zfe-9M-eAS">
+                                        <menuItem title="Hide Lighting" keyEquivalent="h" id="zfe-9M-eAS">
                                             <connections>
                                                 <action selector="hide:" target="2lJ-7H-Gxm" id="6sr-jY-GP0"/>
                                             </connections>
@@ -40,7 +40,7 @@
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="1Rg-Uf-GnT"/>
-                                        <menuItem title="Quit LIFXWidgetMac" keyEquivalent="q" id="KQj-gY-7EJ">
+                                        <menuItem title="Quit Lighting" keyEquivalent="q" id="KQj-gY-7EJ">
                                             <connections>
                                                 <action selector="terminate:" target="qlP-Kx-Ac6" id="qy0-KS-n9g"/>
                                             </connections>
@@ -397,7 +397,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="zaj-zz-HJZ">
                                     <items>
-                                        <menuItem title="LIFXWidgetMac Help" keyEquivalent="?" id="Oam-fr-6RL"/>
+                                        <menuItem title="Lighting Help" keyEquivalent="?" id="Oam-fr-6RL"/>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -407,7 +407,7 @@
                         <outlet property="delegate" destination="Nqm-Y4-29n" id="bHo-NP-S8v"/>
                     </connections>
                 </application>
-                <customObject id="Nqm-Y4-29n" customClass="AppDelegate" customModule="LIFXWidgetMac" customModuleProvider="target"/>
+                <customObject id="Nqm-Y4-29n" customClass="AppDelegate" customModule="Main" customModuleProvider="target"/>
                 <customObject id="2lJ-7H-Gxm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -415,7 +415,7 @@
         <!--Window Controller-->
         <scene sceneID="S9j-vj-hcA">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="HAo-e1-c3R" customClass="AppWindowController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="HAo-e1-c3R" customClass="AppWindowController" customModule="Main" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="4Gc-yD-9EV">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -432,7 +432,7 @@
         <!--Logged Out View Controller-->
         <scene sceneID="k0m-iY-xCj">
             <objects>
-                <viewController storyboardIdentifier="LoggedOutViewController" showSeguePresentationStyle="single" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedOutViewController" showSeguePresentationStyle="single" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="Main" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Pjp-Xq-8qU">
                         <rect key="frame" x="0.0" y="0.0" width="447" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -514,7 +514,7 @@
         <!--Logged In View Controller-->
         <scene sceneID="mZH-is-6u5">
             <objects>
-                <viewController storyboardIdentifier="LoggedInViewController" showSeguePresentationStyle="single" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedInViewController" showSeguePresentationStyle="single" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="Main" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="5Pd-kl-ByC">
                         <rect key="frame" x="0.0" y="0.0" width="287" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>

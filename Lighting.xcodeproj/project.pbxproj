@@ -90,7 +90,7 @@
 		5DA7AB201B365EC3008A8130 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		5DA7AB241B366BCD008A8130 /* Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Widget-Bridging-Header.h"; sourceTree = "<group>"; };
 		5DA7AB261B366C6F008A8130 /* Main-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Main-Bridging-Header.h"; sourceTree = "<group>"; };
-		5DBD84731AC2784C00AF6B1A /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DBD84731AC2784C00AF6B1A /* Lighting.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lighting.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DBD847A1AC2784C00AF6B1A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -151,7 +151,7 @@
 		5DBD84741AC2784C00AF6B1A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DBD84731AC2784C00AF6B1A /* Main.app */,
+				5DBD84731AC2784C00AF6B1A /* Lighting.app */,
 				5DBD84971AC2785500AF6B1A /* Widget.appex */,
 			);
 			name = Products;
@@ -237,8 +237,8 @@
 				5DBD84A71AC2785500AF6B1A /* PBXTargetDependency */,
 			);
 			name = Main;
-			productName = LIFXWidgetMac;
-			productReference = 5DBD84731AC2784C00AF6B1A /* Main.app */;
+			productName = Lighting;
+			productReference = 5DBD84731AC2784C00AF6B1A /* Lighting.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5DBD84961AC2785500AF6B1A /* Widget */ = {
@@ -277,7 +277,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "LIFXWidgetMac" */;
+			buildConfigurationList = 5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "Lighting" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -459,7 +459,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lighting;
 				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -478,7 +478,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Lighting;
 				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 			};
 			name = Release;
@@ -527,7 +527,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "LIFXWidgetMac" */ = {
+		5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "Lighting" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DBD848B1AC2784C00AF6B1A /* Debug */,

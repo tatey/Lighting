@@ -1,20 +1,30 @@
-# LIFX Widget for Mac OS X
+# Lighting - Control LIFX lights from your Mac
 
-Control your LIFX lights from your Mac. Uses the LIFX HTTP API to implement a Today Extension. Very much a work-in-progress.
+A Mac OS X widget for controlling lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
+Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
 ![Video recording of using the widget](Screenshot-Preview.gif)
 
+## System Dependencies
+
+* Xcode 6.4
+* Swift 1.3
+* Mac OS X 10.10
+* Carthage
+
 ## Development
 
-Install application dependencies using [Carthage](https://github.com/Carthage/Carthage)
+Install application dependencies using [Carthage](https://github.com/Carthage/Carthage).
 
     $ carthage bootstrap --platform Mac
+
+Then build one of the targets.
 
 ### Main target
 
 ![Configure access token](Screenshot-Main-Target.jpg)
 
-1. Open LIFXWidgetMac.xcodeproj
+1. Open Lighting.xcodeproj
 2. Select "Main > My Mac"
 3. Run
 
@@ -22,7 +32,7 @@ Install application dependencies using [Carthage](https://github.com/Carthage/Ca
 
 ![Control lighting](Screenshot-Widget-Target.jpg)
 
-1. Open LIFXWidgetMac.xcodeproj
+1. Open Lighting.xcodeproj
 2. Select "Widget > My Mac"
 3. Run
 4. Pick "Widget Simulator" when prompted to run the application

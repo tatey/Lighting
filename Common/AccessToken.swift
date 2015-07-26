@@ -6,8 +6,8 @@
 import SSKeychain
 
 class AccessToken {
-	private static let AccessTokenDidChangeNotificationName: String = "com.tatey.LIFXWidgetMac.notification.access-token-did-change"
-	private static let KeychainService: String = "com.tatey.LIFXWidgetMac"
+	private static let AccessTokenDidChangeNotificationName: String = "com.tatey.Lighting.notification.access-token-did-change"
+	private static let KeychainService: String = "com.tatey.Lighting"
 	private static let KeychainAccount: String = "access-token"
 
 	private var observers: [DarwinNotification]
