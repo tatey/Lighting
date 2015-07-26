@@ -5,10 +5,10 @@ protocol LightTargetControlViewDelegate: class {
 }
 
 class LightTargetControlView: NSView {
-	static let enabledBackgroundColor: CGColorRef = NSColor.whiteColor().colorWithAlphaComponent(0.1).CGColor
-	static let disabledBackgroundColor: CGColorRef = NSColor.blackColor().colorWithAlphaComponent(0.2).CGColor
-	static let defaultScale: CGFloat = 0.35
-	static let zoomScale: CGFloat = 6.0
+	static let EnabledBackgroundColor: CGColorRef = NSColor.whiteColor().colorWithAlphaComponent(0.1).CGColor
+	static let DisabledBackgroundColor: CGColorRef = NSColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+	static let DefaultScale: CGFloat = 0.35
+	static let ZoomScale: CGFloat = 6.0
 
 	weak var delegate: LightTargetControlViewDelegate?
 
@@ -27,7 +27,7 @@ class LightTargetControlView: NSView {
 		super.init(coder: coder)
 
 		let newLayer = CALayer()
-		newLayer.backgroundColor = LightTargetControlView.enabledBackgroundColor
+		newLayer.backgroundColor = LightTargetControlView.EnabledBackgroundColor
 		newLayer.cornerRadius = 5.0
 		newLayer.masksToBounds = true
 		self.layer = newLayer
@@ -42,8 +42,8 @@ class LightTargetControlView: NSView {
 	override func layout() {
 		super.layout()
 
-		let stateWidth = bounds.width * LightTargetControlView.defaultScale
-		let stateHeight = bounds.height * LightTargetControlView.defaultScale
+		let stateWidth = bounds.width * LightTargetControlView.DefaultScale
+		let stateHeight = bounds.height * LightTargetControlView.DefaultScale
 		let stateFrame = CGRect(x: CGRectGetMidX(bounds) - stateWidth / 2, y: CGRectGetMidY(bounds) - stateHeight / 2, width: stateWidth, height: stateHeight)
 		let statePath = NSBezierPath(ovalInRect: stateFrame).CGPath().takeUnretainedValue() as CGPathRef
 		stateLayer?.frame = stateFrame
@@ -55,7 +55,7 @@ class LightTargetControlView: NSView {
 	func setNeedsUpdateAnimated(animated: Bool) {
 		if let layer = self.layer, stateLayer = self.stateLayer, stateTransform = self.stateTransform {
 			if enabled {
-				let toValue = power ? CATransform3DScale(stateTransform, LightTargetControlView.zoomScale, LightTargetControlView.zoomScale, LightTargetControlView.zoomScale) : stateTransform
+				let toValue = power ? CATransform3DScale(stateTransform, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale) : stateTransform
 				if animated {
 					let animation = CABasicAnimation(keyPath: "transform.scale")
 					animation.duration = 0.3
@@ -66,10 +66,10 @@ class LightTargetControlView: NSView {
 
 				stateLayer.transform = toValue
 				stateLayer.hidden = false
-				layer.backgroundColor = LightTargetControlView.enabledBackgroundColor
+				layer.backgroundColor = LightTargetControlView.EnabledBackgroundColor
 			} else {
 				stateLayer.hidden = true
-				layer.backgroundColor = LightTargetControlView.disabledBackgroundColor
+				layer.backgroundColor = LightTargetControlView.DisabledBackgroundColor
 			}
 		}
 	}
