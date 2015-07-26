@@ -35,11 +35,14 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	}
 
 	private func setNeedsUpdateAnimated(animated: Bool) {
+		let newAlpha: CGFloat = lightTarget.connected ? 1.0 : 0.5
+		labelTextField?.alphaValue = newAlpha
+		labelTextField?.stringValue = lightTarget.label
+
 		controlView?.color = lightTarget.color.toNSColor()
 		controlView?.enabled = lightTarget.connected
 		controlView?.power = lightTarget.power
 		controlView?.setNeedsUpdateAnimated(animated)
-		labelTextField?.stringValue = lightTarget.label
 	}
 
 	// MARK: LightControlViewDelegate
