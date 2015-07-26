@@ -5,8 +5,10 @@ protocol LightTargetControlViewDelegate: class {
 }
 
 class LightTargetControlView: NSView {
-	static let stateLayerLayoutScale: CGFloat = 0.35
-	static let stateLayerZoomScale: CGFloat = 6.0
+	static let enabledBackgroundColor: CGColorRef = NSColor.whiteColor().colorWithAlphaComponent(0.1).CGColor
+	static let disabledBackgroundColor: CGColorRef = NSColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+	static let defaultScale: CGFloat = 0.35
+	static let zoomScale: CGFloat = 6.0
 
 	weak var delegate: LightTargetControlViewDelegate?
 
@@ -25,7 +27,7 @@ class LightTargetControlView: NSView {
 		super.init(coder: coder)
 
 		let newLayer = CALayer()
-		newLayer.backgroundColor = NSColor(red:0.349, green:0.362, blue:0.374, alpha:1).CGColor
+		newLayer.backgroundColor = LightTargetControlView.enabledBackgroundColor
 		newLayer.cornerRadius = 5.0
 		newLayer.masksToBounds = true
 		self.layer = newLayer
@@ -40,8 +42,8 @@ class LightTargetControlView: NSView {
 	override func layout() {
 		super.layout()
 
-		let stateWidth = bounds.width * LightTargetControlView.stateLayerLayoutScale
-		let stateHeight = bounds.height * LightTargetControlView.stateLayerLayoutScale
+		let stateWidth = bounds.width * LightTargetControlView.defaultScale
+		let stateHeight = bounds.height * LightTargetControlView.defaultScale
 		let stateFrame = CGRect(x: CGRectGetMidX(bounds) - stateWidth / 2, y: CGRectGetMidY(bounds) - stateHeight / 2, width: stateWidth, height: stateHeight)
 		let statePath = NSBezierPath(ovalInRect: stateFrame).CGPath().takeUnretainedValue() as CGPathRef
 		stateLayer?.frame = stateFrame
@@ -53,10 +55,7 @@ class LightTargetControlView: NSView {
 	func setNeedsUpdateAnimated(animated: Bool) {
 		if let layer = self.layer, stateLayer = self.stateLayer, stateTransform = self.stateTransform {
 			if enabled {
-				stateLayer.hidden = false
-				layer.opacity = 1.0
-
-				let toValue = power ? CATransform3DScale(stateTransform, LightTargetControlView.stateLayerZoomScale, LightTargetControlView.stateLayerZoomScale, LightTargetControlView.stateLayerZoomScale) : stateTransform
+				let toValue = power ? CATransform3DScale(stateTransform, LightTargetControlView.zoomScale, LightTargetControlView.zoomScale, LightTargetControlView.zoomScale) : stateTransform
 				if animated {
 					let animation = CABasicAnimation(keyPath: "transform.scale")
 					animation.duration = 0.3
@@ -64,10 +63,13 @@ class LightTargetControlView: NSView {
 					animation.toValue = NSValue(CATransform3D: toValue)
 					stateLayer.addAnimation(animation, forKey: "toggle")
 				}
+
 				stateLayer.transform = toValue
+				stateLayer.hidden = false
+				layer.backgroundColor = LightTargetControlView.enabledBackgroundColor
 			} else {
 				stateLayer.hidden = true
-				layer.opacity = 0.3
+				layer.backgroundColor = LightTargetControlView.disabledBackgroundColor
 			}
 		}
 	}
