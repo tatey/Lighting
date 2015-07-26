@@ -17,9 +17,19 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 
 		accessToken = AccessToken()
 		if accessToken.token != nil {
-			contentViewController = loggedInViewController
+			setContentViewController(loggedInViewController)
 		} else {
-			contentViewController = loggedOutViewController
+			setContentViewController(loggedOutViewController)
+		}
+	}
+
+	private func setContentViewController(viewController: NSViewController) {
+		if let window = self.window {
+			let newSize = viewController.preferredContentSize
+			let oldFrame = window.frame
+			let newFrame = CGRect(x: oldFrame.origin.x + (oldFrame.width - newSize.width) / 2, y: oldFrame.origin.y + oldFrame.height - newSize.height, width: newSize.width, height: newSize.height)
+			window.contentViewController = viewController
+			window.setFrame(newFrame, display: true, animate: false)
 		}
 	}
 
@@ -27,13 +37,13 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 
 	func loggedInViewControllerDidLogout(viewController: LoggedInViewController) {
 		accessToken.token = nil
-		contentViewController = loggedOutViewController
+		setContentViewController(loggedOutViewController)
 	}
 
 	// MARK: LoggedOutViewControllerDelegate
 
 	func loggedOutViewControllerDidLogin(controller: LoggedOutViewController, withToken token: String) {
 		accessToken.token = token
-		contentViewController = loggedInViewController
+		setContentViewController(loggedInViewController)
 	}
 }
