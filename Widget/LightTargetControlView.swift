@@ -34,7 +34,7 @@ class LightTargetControlView: NSView {
 		wantsLayer = true
 
 		let newStateLayer = CAShapeLayer()
-		newStateLayer.actions = ["transform": NSNull()]
+		newStateLayer.actions = ["transform": NSNull()] // Disable implicit animations
 		layer?.addSublayer(newStateLayer)
 		self.stateLayer = newStateLayer
 	}
