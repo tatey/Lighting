@@ -39,7 +39,11 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 		labelTextField?.alphaValue = newAlpha
 		labelTextField?.stringValue = lightTarget.label
 
-		controlView?.color = lightTarget.color.toNSColor()
+		if lightTarget.selector.type == .All {
+			controlView?.color = NSColor.whiteColor()
+		} else {
+			controlView?.color = lightTarget.color.toNSColor()
+		}
 		controlView?.enabled = lightTarget.connected
 		controlView?.power = lightTarget.power
 		controlView?.setNeedsUpdateAnimated(animated)
