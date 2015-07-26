@@ -416,7 +416,7 @@
         <scene sceneID="S9j-vj-hcA">
             <objects>
                 <windowController showSeguePresentationStyle="single" id="HAo-e1-c3R" customClass="AppWindowController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
-                    <window key="window" title="Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="4Gc-yD-9EV">
+                    <window key="window" title="Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="4Gc-yD-9EV">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -433,7 +433,7 @@
         <!--Logged Out View Controller-->
         <scene sceneID="k0m-iY-xCj">
             <objects>
-                <viewController storyboardIdentifier="LoggedOutViewController" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedOutViewController" showSeguePresentationStyle="single" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Pjp-Xq-8qU">
                         <rect key="frame" x="0.0" y="0.0" width="447" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -515,7 +515,7 @@
         <!--Logged In View Controller-->
         <scene sceneID="mZH-is-6u5">
             <objects>
-                <viewController storyboardIdentifier="LoggedInViewController" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedInViewController" showSeguePresentationStyle="single" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="LIFXWidgetMac" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="5Pd-kl-ByC">
                         <rect key="frame" x="0.0" y="0.0" width="287" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>

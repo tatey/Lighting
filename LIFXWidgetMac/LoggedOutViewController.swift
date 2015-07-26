@@ -13,6 +13,12 @@ class LoggedOutViewController: NSViewController {
 
 	weak var delegate: LoggedOutViewControllerDelegate?
 
+	override func awakeFromNib() {
+		super.awakeFromNib()
+
+		preferredContentSize = view.frame.size
+	}
+
 	@IBAction func loginButtonDidGetTapped(sender: AnyObject?) {
 		if let newToken = tokenTextField?.stringValue {
 			let client = Client(accessToken: newToken)
