@@ -10,7 +10,7 @@
 		5D1BE8A51B2D558200198129 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; };
 		5D1BE8A61B2D55E600198129 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; };
 		5D1BE8A71B2D55E600198129 /* LIFXHTTPKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5D271DFD1B61129300EB78B2 /* NSBezierPath+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D271DFC1B61129300EB78B2 /* NSBezierPath+Extension.m */; };
+		5D271DFD1B61129300EB78B2 /* NSBezierPath+CGPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D271DFC1B61129300EB78B2 /* NSBezierPath+CGPath.m */; };
 		5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */; };
 		5D64B93B1B5E62E300FDEAD8 /* AppWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B93A1B5E62E300FDEAD8 /* AppWindowController.swift */; };
 		5D64B93D1B5E62EF00FDEAD8 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B93C1B5E62EF00FDEAD8 /* LoggedInViewController.swift */; };
@@ -81,8 +81,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5D271DFB1B61129300EB78B2 /* NSBezierPath+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+Extension.h"; sourceTree = "<group>"; };
-		5D271DFC1B61129300EB78B2 /* NSBezierPath+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+Extension.m"; sourceTree = "<group>"; };
+		5D271DFB1B61129300EB78B2 /* NSBezierPath+CGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+CGPath.h"; sourceTree = "<group>"; };
+		5D271DFC1B61129300EB78B2 /* NSBezierPath+CGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+CGPath.m"; sourceTree = "<group>"; };
 		5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetControlView.swift; sourceTree = "<group>"; };
 		5D64B93A1B5E62E300FDEAD8 /* AppWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppWindowController.swift; sourceTree = "<group>"; };
 		5D64B93C1B5E62EF00FDEAD8 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
@@ -236,8 +236,8 @@
 				5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */,
 				5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */,
 				5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */,
-				5D271DFB1B61129300EB78B2 /* NSBezierPath+Extension.h */,
-				5D271DFC1B61129300EB78B2 /* NSBezierPath+Extension.m */,
+				5D271DFB1B61129300EB78B2 /* NSBezierPath+CGPath.h */,
+				5D271DFC1B61129300EB78B2 /* NSBezierPath+CGPath.m */,
 				5D66CBB91B64696000F049A3 /* Color+NSColor.swift */,
 				5DBD849C1AC2785500AF6B1A /* Supporting Files */,
 			);
@@ -418,7 +418,7 @@
 				5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */,
 				5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */,
 				5DA7AB221B365EDE008A8130 /* AccessToken.swift in Sources */,
-				5D271DFD1B61129300EB78B2 /* NSBezierPath+Extension.m in Sources */,
+				5D271DFD1B61129300EB78B2 /* NSBezierPath+CGPath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

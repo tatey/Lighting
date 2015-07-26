@@ -1,2 +1,2 @@
 #import "DarwinNotification.h"
-#import "NSBezierPath+Extension.h"
+#import "NSBezierPath+CGPath.h"

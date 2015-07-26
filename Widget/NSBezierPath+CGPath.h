@@ -1,6 +1,6 @@
 #import <Cocoa/Cocoa.h>
 
-@interface NSBezierPath (Extension)
+@interface NSBezierPath (CGPath)
 
 - (CGPathRef)CGPath;
 

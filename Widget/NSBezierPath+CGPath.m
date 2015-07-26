@@ -1,8 +1,8 @@
 // https://developer.apple.com/library/mac/documentation/cocoa/Conceptual/CocoaDrawingGuide/Paths/Paths.html#//apple_ref/doc/uid/TP40003290-CH206-SW2
 
-#import "NSBezierPath+Extension.h"
+#import "NSBezierPath+CGPath.h"
 
-@implementation NSBezierPath (Extension)
+@implementation NSBezierPath (CGPath)
 
 - (CGPathRef)CGPath
 {
