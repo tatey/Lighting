@@ -3,7 +3,8 @@ import NotificationCenter
 import LIFXHTTPKit
 
 class TodayViewController: NSViewController, NCWidgetProviding {
-	@IBOutlet weak var lightTargetCollectionView: LightTargetCollectionView?
+	@IBOutlet weak var lightsCollectionView: LightTargetCollectionView?
+	@IBOutlet weak var errorLabel: NSTextField?
 
 	var accessToken: AccessToken!
 	var client: Client!
@@ -22,20 +23,27 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 
 		accessToken.addObserver {
 			self.client = Client(accessToken: self.accessToken.token ?? "")
-			self.updateLightTargetCollectionView()
+			self.lightsCollectionView?.content = [self.lights] + self.lights.toLightTargets().sorted { (lhs, rhs) in
+				return lhs.label < rhs.label
+			}
+			self.setNeedsUpdate()
 		}
 
-		lightTargetCollectionView?.backgroundColors = [NSColor.clearColor()]
+		lightsCollectionView?.backgroundColors = [NSColor.clearColor()]
 	}
 
-	private func updateLightTargetCollectionView() {
-		lightTargetCollectionView?.content = [lights] + lights.toLightTargets().sorted { (lhs, rhs) in
-			return lhs.label < rhs.label
-		}
+	private func setNeedsUpdate() {
+		if let lightsCollectionView = self.lightsCollectionView, errorLabel = self.errorLabel {
+			var newSize = lightsCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
 
-		if let lightTargetCollectionView = self.lightTargetCollectionView {
-			let sizeThatFits = lightTargetCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
-			preferredContentSize = NSSize(width: view.frame.width, height: sizeThatFits.height)
+			if errorLabel.stringValue == "" {
+				errorLabel.frame = CGRectZero
+			} else {
+				errorLabel.sizeToFit()
+			}
+			newSize.height += errorLabel.frame.height
+
+			preferredContentSize = NSSize(width: view.frame.width, height: newSize.height + 5.0)
 		}
 	}
 
@@ -45,17 +53,22 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		client.fetch { (error) in
 			dispatch_async(dispatch_get_main_queue()) {
 				if error != nil {
+					self.errorLabel?.stringValue = "An error occured fetching lights."
 					completionHandler(.Failed)
-					return
+				} else {
+					self.errorLabel?.stringValue = ""
+					self.lightsCollectionView?.content = [self.lights] + self.lights.toLightTargets().sorted { (lhs, rhs) in
+						return lhs.label < rhs.label
+					}
+					completionHandler(.NewData)
 				}
 
-				self.updateLightTargetCollectionView()
-				completionHandler(.NewData)
+				self.setNeedsUpdate()
 			}
 		}
     }
 
 	func widgetMarginInsetsForProposedMarginInsets(defaultMarginInset: NSEdgeInsets) -> NSEdgeInsets {
-		return NSEdgeInsets(top: defaultMarginInset.top + 3.0, left: defaultMarginInset.left - 20.0, bottom: 0.0, right: 0.0)
+		return NSEdgeInsets(top: defaultMarginInset.top + 3.0, left: defaultMarginInset.left - 20.0, bottom: defaultMarginInset.bottom, right: 0.0)
 	}
 }

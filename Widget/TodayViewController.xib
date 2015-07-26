@@ -1,22 +1,31 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TodayViewController" customModule="Widget" customModuleProvider="target">
             <connections>
-                <outlet property="lightTargetCollectionView" destination="HZl-5k-Jf4" id="eHx-xu-4BZ"/>
+                <outlet property="errorLabel" destination="wii-mz-Z4y" id="HlT-rX-UKT"/>
+                <outlet property="lightsCollectionView" destination="HZl-5k-Jf4" id="u30-Uc-vQn"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView simulatedAppContext="notificationCenter" translatesAutoresizingMaskIntoConstraints="NO" id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="266" height="100"/>
+            <rect key="frame" x="0.0" y="-5" width="266" height="120"/>
             <subviews>
+                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wii-mz-Z4y">
+                    <rect key="frame" x="9" y="0.0" width="259" height="17"/>
+                    <textFieldCell key="cell" controlSize="mini" truncatesLastVisibleLine="YES" sendsActionOnEndEditing="YES" id="oxp-bw-fSu">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" findBarPosition="aboveHorizontalRuler" translatesAutoresizingMaskIntoConstraints="NO" id="1C6-9z-VaW">
-                    <rect key="frame" x="0.0" y="0.0" width="266" height="100"/>
+                    <rect key="frame" x="0.0" y="22" width="266" height="98"/>
                     <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="zX8-Vb-gSw">
                         <rect key="frame" x="1" y="1" width="248" height="158"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,12 +52,15 @@
                 </scrollView>
             </subviews>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="1C6-9z-VaW" secondAttribute="bottom" id="4uS-bt-MWG"/>
-                <constraint firstItem="1C6-9z-VaW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="BxJ-1Y-eIF"/>
-                <constraint firstAttribute="trailing" secondItem="1C6-9z-VaW" secondAttribute="trailing" id="Xnk-8c-YRu"/>
-                <constraint firstItem="1C6-9z-VaW" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="k2K-2G-NXr"/>
+                <constraint firstItem="1C6-9z-VaW" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="5bh-Ig-rAs"/>
+                <constraint firstItem="wii-mz-Z4y" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="11" id="AOI-kt-iH6"/>
+                <constraint firstAttribute="trailing" secondItem="1C6-9z-VaW" secondAttribute="trailing" id="Bfw-Nn-mAC"/>
+                <constraint firstAttribute="trailing" secondItem="wii-mz-Z4y" secondAttribute="trailing" id="Dpa-Ze-inn"/>
+                <constraint firstItem="wii-mz-Z4y" firstAttribute="top" secondItem="1C6-9z-VaW" secondAttribute="bottom" constant="5" id="H1H-1y-iId"/>
+                <constraint firstAttribute="bottom" secondItem="wii-mz-Z4y" secondAttribute="bottom" id="OF9-ne-40m"/>
+                <constraint firstItem="1C6-9z-VaW" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="crg-1f-tCE"/>
             </constraints>
-            <point key="canvasLocation" x="540" y="438"/>
+            <point key="canvasLocation" x="540" y="448"/>
         </customView>
         <collectionViewItem nibName="LightTargetCollectionViewItem" id="tMM-hb-Sef" customClass="LightTargetCollectionViewItem" customModule="Widget" customModuleProvider="target"/>
     </objects>
