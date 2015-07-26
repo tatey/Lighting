@@ -89,8 +89,8 @@
 		5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarwinNotification.m; sourceTree = "<group>"; };
 		5DA7AB201B365EC3008A8130 /* AccessToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccessToken.swift; sourceTree = "<group>"; };
 		5DA7AB241B366BCD008A8130 /* Widget-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Widget-Bridging-Header.h"; sourceTree = "<group>"; };
-		5DA7AB261B366C6F008A8130 /* LIFXWidgetMac-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LIFXWidgetMac-Bridging-Header.h"; sourceTree = "<group>"; };
-		5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LIFXWidgetMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DA7AB261B366C6F008A8130 /* Main-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Main-Bridging-Header.h"; sourceTree = "<group>"; };
+		5DBD84731AC2784C00AF6B1A /* Main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DBD84771AC2784C00AF6B1A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DBD84781AC2784C00AF6B1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DBD847A1AC2784C00AF6B1A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -127,21 +127,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5DA7AB131B34FDCF008A8130 /* Library */ = {
+		5DA7AB131B34FDCF008A8130 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				5DA7AB201B365EC3008A8130 /* AccessToken.swift */,
 				5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */,
 				5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */,
 			);
-			path = Library;
+			path = Common;
 			sourceTree = "<group>";
 		};
 		5DBD846A1AC2784C00AF6B1A = {
 			isa = PBXGroup;
 			children = (
-				5DA7AB131B34FDCF008A8130 /* Library */,
-				5DBD84751AC2784C00AF6B1A /* LIFXWidgetMac */,
+				5DA7AB131B34FDCF008A8130 /* Common */,
+				5DBD84751AC2784C00AF6B1A /* Main */,
 				5DBD849B1AC2785500AF6B1A /* Widget */,
 				5DBD84981AC2785500AF6B1A /* Frameworks */,
 				5DBD84741AC2784C00AF6B1A /* Products */,
@@ -151,13 +151,13 @@
 		5DBD84741AC2784C00AF6B1A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */,
+				5DBD84731AC2784C00AF6B1A /* Main.app */,
 				5DBD84971AC2785500AF6B1A /* Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5DBD84751AC2784C00AF6B1A /* LIFXWidgetMac */ = {
+		5DBD84751AC2784C00AF6B1A /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				5D64B9421B5E661300FDEAD8 /* Main.storyboard */,
@@ -168,13 +168,13 @@
 				5DBD847A1AC2784C00AF6B1A /* Images.xcassets */,
 				5DBD84761AC2784C00AF6B1A /* Supporting Files */,
 			);
-			path = LIFXWidgetMac;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		5DBD84761AC2784C00AF6B1A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				5DA7AB261B366C6F008A8130 /* LIFXWidgetMac-Bridging-Header.h */,
+				5DA7AB261B366C6F008A8130 /* Main-Bridging-Header.h */,
 				5DBD84771AC2784C00AF6B1A /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -221,9 +221,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5DBD84721AC2784C00AF6B1A /* LIFXWidgetMac */ = {
+		5DBD84721AC2784C00AF6B1A /* Main */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5DBD848D1AC2784C00AF6B1A /* Build configuration list for PBXNativeTarget "LIFXWidgetMac" */;
+			buildConfigurationList = 5DBD848D1AC2784C00AF6B1A /* Build configuration list for PBXNativeTarget "Main" */;
 			buildPhases = (
 				5DBD846F1AC2784C00AF6B1A /* Sources */,
 				5DBD84701AC2784C00AF6B1A /* Frameworks */,
@@ -236,9 +236,9 @@
 			dependencies = (
 				5DBD84A71AC2785500AF6B1A /* PBXTargetDependency */,
 			);
-			name = LIFXWidgetMac;
+			name = Main;
 			productName = LIFXWidgetMac;
-			productReference = 5DBD84731AC2784C00AF6B1A /* LIFXWidgetMac.app */;
+			productReference = 5DBD84731AC2784C00AF6B1A /* Main.app */;
 			productType = "com.apple.product-type.application";
 		};
 		5DBD84961AC2785500AF6B1A /* Widget */ = {
@@ -290,7 +290,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5DBD84721AC2784C00AF6B1A /* LIFXWidgetMac */,
+				5DBD84721AC2784C00AF6B1A /* Main */,
 				5DBD84961AC2785500AF6B1A /* Widget */,
 			);
 		};
@@ -457,10 +457,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = LIFXWidgetMac/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac/LIFXWidgetMac-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -476,10 +476,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
-				INFOPLIST_FILE = LIFXWidgetMac/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "LIFXWidgetMac/LIFXWidgetMac-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -536,7 +536,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5DBD848D1AC2784C00AF6B1A /* Build configuration list for PBXNativeTarget "LIFXWidgetMac" */ = {
+		5DBD848D1AC2784C00AF6B1A /* Build configuration list for PBXNativeTarget "Main" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5DBD848E1AC2784C00AF6B1A /* Debug */,
