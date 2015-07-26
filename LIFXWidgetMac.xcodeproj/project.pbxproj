@@ -16,6 +16,7 @@
 		5D64B93D1B5E62EF00FDEAD8 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B93C1B5E62EF00FDEAD8 /* LoggedInViewController.swift */; };
 		5D64B93F1B5E62F800FDEAD8 /* LoggedOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D64B93E1B5E62F800FDEAD8 /* LoggedOutViewController.swift */; };
 		5D64B9431B5E661300FDEAD8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D64B9421B5E661300FDEAD8 /* Main.storyboard */; };
+		5D66CBBA1B64696000F049A3 /* Color+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D66CBB91B64696000F049A3 /* Color+NSColor.swift */; };
 		5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */; };
 		5D82AB221AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */; };
 		5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */; };
@@ -87,6 +88,7 @@
 		5D64B93C1B5E62EF00FDEAD8 /* LoggedInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		5D64B93E1B5E62F800FDEAD8 /* LoggedOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoggedOutViewController.swift; sourceTree = "<group>"; };
 		5D64B9421B5E661300FDEAD8 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		5D66CBB91B64696000F049A3 /* Color+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+NSColor.swift"; sourceTree = "<group>"; };
 		5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionViewItem.swift; sourceTree = "<group>"; };
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
 		5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionView.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */,
 				5D271DFB1B61129300EB78B2 /* NSBezierPath+Extension.h */,
 				5D271DFC1B61129300EB78B2 /* NSBezierPath+Extension.m */,
+				5D66CBB91B64696000F049A3 /* Color+NSColor.swift */,
 				5DBD849C1AC2785500AF6B1A /* Supporting Files */,
 			);
 			path = Widget;
@@ -408,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D66CBBA1B64696000F049A3 /* Color+NSColor.swift in Sources */,
 				5DA7AB191B34FDF0008A8130 /* DarwinNotification.m in Sources */,
 				5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */,
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,

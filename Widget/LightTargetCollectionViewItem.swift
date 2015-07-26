@@ -35,6 +35,7 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	}
 
 	private func setNeedsUpdateAnimated(animated: Bool) {
+		controlView?.color = lightTarget.color.toNSColor()
 		controlView?.enabled = lightTarget.connected
 		controlView?.power = lightTarget.power
 		controlView?.setNeedsUpdateAnimated(animated)
