@@ -19,6 +19,12 @@ class LoggedOutViewController: NSViewController {
 		preferredContentSize = view.frame.size
 	}
 
+	override func viewDidAppear() {
+		super.viewDidAppear()
+
+		tokenTextField?.becomeFirstResponder()
+	}
+
 	@IBAction func loginButtonDidGetTapped(sender: AnyObject?) {
 		if let newToken = tokenTextField?.stringValue {
 			let client = Client(accessToken: newToken)
