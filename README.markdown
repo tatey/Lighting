@@ -1,13 +1,13 @@
 # Lighting - Control LIFX lights from your Mac
 
-A Mac OS X widget for controlling lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
+A Mac OS X widget for toggling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
 Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
 ![Video recording of using the widget](Screenshot-Preview.gif)
 
 *Note: This is not an official LIFX project.*
 
-## System Dependencies
+## Build Dependencies
 
 * Xcode 6.4
 * Swift 1.3
