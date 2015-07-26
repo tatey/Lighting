@@ -265,17 +265,6 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0620;
-				ORGANIZATIONNAME = "Tate Johnson";
-				TargetAttributes = {
-					5DBD84721AC2784C00AF6B1A = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = L4YRHAJ8LQ;
-					};
-					5DBD84961AC2785500AF6B1A = {
-						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = L4YRHAJ8LQ;
-					};
-				};
 			};
 			buildConfigurationList = 5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "Lighting" */;
 			compatibilityVersion = "Xcode 3.2";
