@@ -3,6 +3,8 @@
 A Mac OS X widget for controlling lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
 Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
+*Note: This is not an official LIFX project.*
+
 ![Video recording of using the widget](Screenshot-Preview.gif)
 
 ## System Dependencies
