@@ -25,17 +25,11 @@ Build the Widget target for controlling lights:
 
 ## Copyright
 
-Copyright (C) 2015 Tate Johnson
+Following files, directories and their contents are copyright [Webalys Limited](http://streamlineicons.com).
+You may not reuse anything therein without purchasing a license:
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+* Main/Images.xcassets/logged-in-icon-success.imageset/Icons-48px.png
+* Main/Images.xcassets/logged-in-icon-success.imageset/Icons-48px@2x.png
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see [LICENSE.txt](LICENSE.txt).
+All other files and directories are copyright Tate Johnson and licensed under
+the GPLv3 license. See [LICENSE](LICENSE.txt)
