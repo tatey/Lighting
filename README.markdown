@@ -1,30 +1,41 @@
 # Lighting - Control LIFX lights from your Mac
 
-A Mac OS X widget for toggling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
+A Mac OS X widget for toggling LIFX lights on and off via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
 Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
 ![Video recording of using the widget](Screenshot-Preview.gif)
 
 *Note: This is not an official LIFX project.*
 
-## Build Dependencies
+## Installation
 
-* Xcode 6.4
-* Swift 1.3
-* Mac OS X 10.10
-* Carthage
+Requires Mac OS X 10.10 Yosemite.
+
+1. Download the [latest binary](https://github.com/tatey/Lighting/releases/latest)
+   and drag into your Application folder.
+2. Open "Lighting.app" and login with your personal access token.
+3. Open Notification Center and add the "Lighting" widget.
 
 ## Development
 
-Install application dependencies using [Carthage](https://github.com/Carthage/Carthage).
+First, you need the following system dependencies:
+
+* Swift 1.3 (Xcode 6.4)
+* Mac OS X 10.10 Yosemite
+* [Carthage](https://github.com/Carthage/Carthage)
+
+Then, install the appplication dependenices:
 
     $ carthage bootstrap --platform Mac
 
-Then build one of the targets.
+Finally, build the "Main" or "Widget" target.
 
 ### Main target
 
-![Configure access token](Screenshot-Main-Target.jpg)
+The main target is responsible for configuring the access token. It notifies
+the widget when the access token changes.
+
+![](Screenshot-Main-Target.jpg)
 
 1. Open Lighting.xcodeproj
 2. Select "Main > My Mac"
@@ -32,7 +43,10 @@ Then build one of the targets.
 
 ### Widget Target
 
-![Control lighting](Screenshot-Widget-Target.jpg)
+The widget target implements a view controller conforming to `NCWidgetProviding`
+for toggling lights on and off.
+
+![](Screenshot-Widget-Target.jpg)
 
 1. Open Lighting.xcodeproj
 2. Select "Widget > My Mac"
