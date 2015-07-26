@@ -11,8 +11,8 @@ Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
 Requires Mac OS X 10.10 Yosemite.
 
-1. Download the [latest binary](https://github.com/tatey/Lighting/releases/latest)
-   and drag into your Application folder.
+1. Download the [latest zip file](https://github.com/tatey/Lighting/releases/latest),
+   extract the binary, and drag into your Application folder.
 2. Open "Lighting.app" and login with your personal access token.
 3. Open Notification Center and add the "Lighting" widget.
 
@@ -24,7 +24,7 @@ First, you need the following system dependencies:
 * Mac OS X 10.10 Yosemite
 * [Carthage](https://github.com/Carthage/Carthage)
 
-Then, install the appplication dependenices:
+Then, install the ppplication dependencies:
 
     $ carthage bootstrap --platform Mac
 
