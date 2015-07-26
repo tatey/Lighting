@@ -5,6 +5,9 @@ protocol LightTargetControlViewDelegate: class {
 }
 
 class LightTargetControlView: NSView {
+	static let stateLayerLayoutScale: CGFloat = 0.35
+	static let stateLayerZoomScale: CGFloat = 6.0
+
 	weak var delegate: LightTargetControlViewDelegate?
 
 	var power: Bool = true
@@ -37,7 +40,9 @@ class LightTargetControlView: NSView {
 	override func layout() {
 		super.layout()
 
-		let stateFrame = CGRect(x: CGRectGetMidX(bounds) - bounds.width / 4, y: CGRectGetMidY(bounds) - bounds.height / 4, width: bounds.width / 2, height: bounds.height / 2)
+		let stateWidth = bounds.width * LightTargetControlView.stateLayerLayoutScale
+		let stateHeight = bounds.height * LightTargetControlView.stateLayerLayoutScale
+		let stateFrame = CGRect(x: CGRectGetMidX(bounds) - stateWidth / 2, y: CGRectGetMidY(bounds) - stateHeight / 2, width: stateWidth, height: stateHeight)
 		let statePath = NSBezierPath(ovalInRect: stateFrame).CGPath().takeUnretainedValue() as CGPathRef
 		stateLayer?.frame = stateFrame
 		stateLayer?.bounds = stateFrame
@@ -51,7 +56,7 @@ class LightTargetControlView: NSView {
 				stateLayer.hidden = false
 				layer.opacity = 1.0
 
-				let toValue = power ? CATransform3DScale(stateTransform, 5.0, 5.0, 5.0) : stateTransform
+				let toValue = power ? CATransform3DScale(stateTransform, LightTargetControlView.stateLayerZoomScale, LightTargetControlView.stateLayerZoomScale, LightTargetControlView.stateLayerZoomScale) : stateTransform
 				if animated {
 					let animation = CABasicAnimation(keyPath: "transform.scale")
 					animation.duration = 0.3
