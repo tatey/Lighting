@@ -1,7 +1,6 @@
 # Lighting - Control LIFX lights from your Mac [![GitHub release](https://img.shields.io/github/release/tatey/Lighting.svg)](https://github.com/tatey/Lighting/releases/latest) [![GitHub license](https://img.shields.io/github/license/tatey/Lighting.svg)](https://raw.githubusercontent.com/tatey/Lighting/master/LICENSE.txt)
 
 A Mac OS X widget for toggling LIFX lights on and off via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
-[Download the latest version](https://github.com/tatey/Lighting/releases/latest).
 
 ![Video recording of using the widget](Screenshot-Preview.gif)
 
@@ -15,6 +14,10 @@ Requires Mac OS X 10.10 Yosemite.
    extract the binary, and drag into your Application folder.
 2. Open "Lighting.app" and login with your personal access token.
 3. Open Notification Center and add the "Lighting" widget.
+
+Alternatively, you can install via Homebrew-Cask (Thanks @jamesottaway).
+
+    $ brew cask install lighting
 
 ## Development
 
