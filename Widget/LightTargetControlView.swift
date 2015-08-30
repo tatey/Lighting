@@ -81,88 +81,76 @@ class LightTargetControlView: NSView {
 		}
 	}
 
-	override func mouseDown(theEvent: NSEvent) {
-		
-	}
-
 	override func mouseUp(theEvent: NSEvent) {
-		if enabled {
-			delegate?.controlViewDidGetClicked(self)
+		if !enabled {
+			return
 		}
+
+		delegate?.controlViewDidGetClicked(self)
 	}
-
-    override func rightMouseDown(theEvent: NSEvent) {
-
-    }
 
     override func rightMouseUp(theEvent: NSEvent) {
-        if enabled {
-            let mainMenu = NSMenu(title: "Context menu")
-            mainMenu.autoenablesItems = false
+		if !enabled {
+			return
+		}
 
-            var brightnessMenu = addSubmenu("Brightness", mainMenu: mainMenu)
-            brightnessMenu.addItem(brightnessItemFor("100%"))
-            brightnessMenu.addItem(brightnessItemFor("80%"))
-            brightnessMenu.addItem(brightnessItemFor("60%"))
-            brightnessMenu.addItem(brightnessItemFor("40%"))
-            brightnessMenu.addItem(brightnessItemFor("20%"))
+		let mainMenu = NSMenu(title: "Context Menu")
+		mainMenu.autoenablesItems = false
 
-            var whitesMenu = addSubmenu("Whites", mainMenu: mainMenu)
-            whitesMenu.addItem(colorItemFor("Hot White"))
-            whitesMenu.addItem(colorItemFor("Warm White"))
-            whitesMenu.addItem(colorItemFor("Cool White"))
-            whitesMenu.addItem(colorItemFor("Cold White"))
-            whitesMenu.addItem(colorItemFor("Blue White"))
+		let brightnessMenu = addSubmenu("Brightness", mainMenu: mainMenu)
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent100)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent80)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent60)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent40)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent20)))
 
+		let whitesMenu = addSubmenu("Whites", mainMenu: mainMenu)
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.HotWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.WarmWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.CoolWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.ColdWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.BlueWhite)))
 
-            var colorsMenu = addSubmenu("Colors", mainMenu: mainMenu)
-            colorsMenu.addItem(colorItemFor("Red"))
-            colorsMenu.addItem(colorItemFor("Blue"))
-            colorsMenu.addItem(colorItemFor("Green"))
-            colorsMenu.addItem(colorItemFor("Orange"))
-            colorsMenu.addItem(colorItemFor("Yellow"))
-            colorsMenu.addItem(colorItemFor("Cyan"))
-            colorsMenu.addItem(colorItemFor("Purple"))
-            colorsMenu.addItem(colorItemFor("Pink"))
+		let colorsMenu = addSubmenu("Colors", mainMenu: mainMenu)
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Red)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Blue)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Green)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Orange)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Yellow)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Cyan)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Purple)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Pink)))
 
-            NSMenu.popUpContextMenu(mainMenu, withEvent: theEvent, forView: self)
-        }
+		NSMenu.popUpContextMenu(mainMenu, withEvent: theEvent, forView: self)
     }
 
-	override func mouseDragged(theEvent: NSEvent) {
-
-	}
-
-    // Menu creation helpers
-
-    func addSubmenu(title: String, mainMenu: NSMenu) -> NSMenu {
-        var submenuItem = NSMenuItem(title: title, action:nil, keyEquivalent: "")
-        var submenu = NSMenu()
+    private func addSubmenu(title: String, mainMenu: NSMenu) -> NSMenu {
+        let submenuItem = NSMenuItem(title: title, action: nil, keyEquivalent: "")
+        let submenu = NSMenu()
         mainMenu.setSubmenu(submenu, forItem: submenuItem)
         mainMenu.addItem(submenuItem)
         return submenu
     }
 
-    func colorItemFor(title: String) -> NSMenuItem{
-        var menuItem = NSMenuItem()
-        menuItem.title = title
+	private func brightnessItemFor(value: BrightnessMap.Value) -> NSMenuItem{
+		let menuItem = NSMenuItem()
+		menuItem.title = value.description
+		menuItem.action = "controlViewDidSetBrightness:"
+		menuItem.target = delegate
+		menuItem.keyEquivalent = ""
+		menuItem.representedObject = value
+		menuItem.enabled = true
+		return menuItem
+	}
+
+    private func colorItemFor(value: ColorMap.Value) -> NSMenuItem{
+        let menuItem = NSMenuItem()
+        menuItem.title = value.description
         menuItem.action = "controlViewDidSetColor:"
         menuItem.target = delegate
         menuItem.keyEquivalent = ""
-        menuItem.representedObject = title
+        menuItem.representedObject = value
         menuItem.enabled = true
         return menuItem
     }
-
-    func brightnessItemFor(title: String) -> NSMenuItem{
-        var menuItem = NSMenuItem()
-        menuItem.title = title
-        menuItem.action = "controlViewDidSetBrightness:"
-        menuItem.target = delegate
-        menuItem.keyEquivalent = ""
-        menuItem.representedObject = title
-        menuItem.enabled = true
-        return menuItem
-    }
-
 }

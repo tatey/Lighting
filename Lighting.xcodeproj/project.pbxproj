@@ -19,6 +19,8 @@
 		5D66CBBA1B64696000F049A3 /* Color+NSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D66CBB91B64696000F049A3 /* Color+NSColor.swift */; };
 		5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */; };
 		5D82AB221AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */; };
+		5D875A041B931C9B00DA5425 /* ColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D875A031B931C9B00DA5425 /* ColorMap.swift */; };
+		5D875A061B931CA800DA5425 /* BrightnessMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D875A051B931CA800DA5425 /* BrightnessMap.swift */; };
 		5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */; };
 		5DA7AB0D1B34EFA9008A8130 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; };
 		5DA7AB0E1B34EFA9008A8130 /* SSKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -83,6 +85,8 @@
 		5D66CBB91B64696000F049A3 /* Color+NSColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+NSColor.swift"; sourceTree = "<group>"; };
 		5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionViewItem.swift; sourceTree = "<group>"; };
 		5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LightTargetCollectionViewItem.xib; sourceTree = "<group>"; };
+		5D875A031B931C9B00DA5425 /* ColorMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorMap.swift; sourceTree = "<group>"; };
+		5D875A051B931CA800DA5425 /* BrightnessMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrightnessMap.swift; sourceTree = "<group>"; };
 		5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetCollectionView.swift; sourceTree = "<group>"; };
 		5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSKeychain.framework; path = Carthage/Build/Mac/SSKeychain.framework; sourceTree = "<group>"; };
 		5DA7AB161B34FDF0008A8130 /* DarwinNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarwinNotification.h; sourceTree = "<group>"; };
@@ -199,6 +203,8 @@
 				5D82AB1D1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift */,
 				5D82AB211AC7B55C005FDC0F /* LightTargetCollectionViewItem.xib */,
 				5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */,
+				5D875A051B931CA800DA5425 /* BrightnessMap.swift */,
+				5D875A031B931C9B00DA5425 /* ColorMap.swift */,
 				5D271DFB1B61129300EB78B2 /* NSBezierPath+CGPath.h */,
 				5D271DFC1B61129300EB78B2 /* NSBezierPath+CGPath.m */,
 				5D66CBB91B64696000F049A3 /* Color+NSColor.swift */,
@@ -328,11 +334,13 @@
 				5D66CBBA1B64696000F049A3 /* Color+NSColor.swift in Sources */,
 				5DA7AB191B34FDF0008A8130 /* DarwinNotification.m in Sources */,
 				5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */,
+				5D875A061B931CA800DA5425 /* BrightnessMap.swift in Sources */,
 				5DBD84A31AC2785500AF6B1A /* TodayViewController.swift in Sources */,
 				5D5DA0AA1AC2CB2B00F80D04 /* LightTargetControlView.swift in Sources */,
 				5D82AB1E1AC7B4FA005FDC0F /* LightTargetCollectionViewItem.swift in Sources */,
 				5DA7AB221B365EDE008A8130 /* AccessToken.swift in Sources */,
 				5D271DFD1B61129300EB78B2 /* NSBezierPath+CGPath.m in Sources */,
+				5D875A041B931C9B00DA5425 /* ColorMap.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

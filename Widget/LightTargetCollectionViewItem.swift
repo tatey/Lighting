@@ -7,6 +7,8 @@ import Cocoa
 import LIFXHTTPKit
 
 class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlViewDelegate {
+	static let duration: Float = 0.5
+
 	@IBOutlet weak var controlView: LightTargetControlView?
 	@IBOutlet weak var labelTextField: NSTextField?
 
@@ -57,42 +59,18 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 	// MARK: LightControlViewDelegate
 
 	func controlViewDidGetClicked(view: LightTargetControlView) {
-		lightTarget.setPower(!lightTarget.power, duration: 0.5)
+		lightTarget.setPower(!lightTarget.power, duration: LightTargetCollectionViewItem.duration)
 	}
 
     func controlViewDidSetColor(view: NSMenuItem) {
-        let color_string = view.representedObject as? String
-
-        var mapping = [
-            "Hot White": Color.white(2500),
-            "Warm White": Color.white(3500),
-            "Cool White": Color.white(4500),
-            "Cold White": Color.white(5500),
-            "Blue White": Color.white(9000),
-            "Red":        Color.color(0,   saturation: 1),
-            "Orange":     Color.color(40,  saturation: 1),
-            "Yellow":     Color.color(60,  saturation: 1),
-            "Green":      Color.color(120, saturation: 1),
-            "Cyan":       Color.color(180, saturation: 1),
-            "Blue":       Color.color(240, saturation: 1),
-            "Purple":     Color.color(280, saturation: 1),
-            "Pink":       Color.color(320, saturation: 1),
-        ]
-
-        lightTarget.setColor(mapping[color_string!]!, duration: 0.5)
+		if let color = view.representedObject as? ColorMap.Value {
+			lightTarget.setColor(color.value, duration: LightTargetCollectionViewItem.duration)
+		}
     }
 
     func controlViewDidSetBrightness(view: NSMenuItem) {
-        let brightness = view.representedObject as? String
-        var mapping = [
-            "100%": 1.0,
-            "80%":  0.8,
-            "60%":  0.6,
-            "40%":  0.4,
-            "20%":  0.2,
-        ]
-
-        lightTarget.setBrightness(mapping[brightness!]!, duration: 0.5)
+		if let brightness = view.representedObject as? BrightnessMap.Value {
+			lightTarget.setBrightness(brightness.value, duration: LightTargetCollectionViewItem.duration)
+		}
     }
-
 }
