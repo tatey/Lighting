@@ -14,6 +14,7 @@ protocol LightTargetControlViewDelegate: class {
 class LightTargetControlView: NSView {
 	static let EnabledBackgroundColor: CGColorRef = NSColor.whiteColor().colorWithAlphaComponent(0.1).CGColor
 	static let DisabledBackgroundColor: CGColorRef = NSColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+	static let DefaultDuration: CFTimeInterval = 0.3
 	static let DefaultScale: CGFloat = 0.35
 	static let ZoomScale: CGFloat = 6.0
 
@@ -21,11 +22,7 @@ class LightTargetControlView: NSView {
 
 	var power: Bool = true
 	var enabled: Bool = true
-	var color: NSColor = NSColor.clearColor() {
-		didSet {
-			stateLayer?.fillColor = color.CGColor
-		}
-	}
+	var color: NSColor = NSColor.clearColor()
 
 	private weak var stateLayer: CAShapeLayer?
 	private var stateTransform: CATransform3D?
@@ -62,16 +59,25 @@ class LightTargetControlView: NSView {
 	func setNeedsUpdateAnimated(animated: Bool) {
 		if let layer = self.layer, stateLayer = self.stateLayer, stateTransform = self.stateTransform {
 			if enabled {
-				let toValue = power ? CATransform3DScale(stateTransform, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale) : stateTransform
+				let newFillColor = color.CGColor
+				let newTransform = power ? CATransform3DScale(stateTransform, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale) : stateTransform
+
 				if animated {
-					let animation = CABasicAnimation(keyPath: "transform.scale")
-					animation.duration = 0.3
-					animation.fromValue = NSValue(CATransform3D: stateLayer.transform)
-					animation.toValue = NSValue(CATransform3D: toValue)
-					stateLayer.addAnimation(animation, forKey: "toggle")
+					let colorAnimation = CABasicAnimation(keyPath: "fillColor")
+					colorAnimation.duration = LightTargetControlView.DefaultDuration
+					colorAnimation.fromValue = stateLayer.fillColor
+					colorAnimation.toValue = newFillColor
+					stateLayer.addAnimation(colorAnimation, forKey: "color")
+
+					let toggleAnimation = CABasicAnimation(keyPath: "transform.scale")
+					toggleAnimation.duration = LightTargetControlView.DefaultDuration
+					toggleAnimation.fromValue = NSValue(CATransform3D: stateLayer.transform)
+					toggleAnimation.toValue = NSValue(CATransform3D: newTransform)
+					stateLayer.addAnimation(toggleAnimation, forKey: "toggle")
 				}
 
-				stateLayer.transform = toValue
+				stateLayer.fillColor = newFillColor
+				stateLayer.transform = newTransform
 				stateLayer.hidden = false
 				layer.backgroundColor = LightTargetControlView.EnabledBackgroundColor
 			} else {
