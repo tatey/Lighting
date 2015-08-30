@@ -24,15 +24,15 @@ struct BrightnessMap {
 		}
 	}
 
-	static func valueForKey(key: Key) -> Value {
-		return dictionary[key]!
-	}
-
-	private static let dictionary: [Key: Value] = [
+	private static let Dictionary: [Key: Value] = [
 		.Percent100: Value(description: "100%", value: 1.0),
 		.Percent80:  Value(description: "80%",  value: 0.8),
 		.Percent60:  Value(description: "60%",  value: 0.6),
 		.Percent40:  Value(description: "40%",  value: 0.4),
 		.Percent20:  Value(description: "20%",  value: 0.2)
 	]
+
+	static func valueForKey(key: Key) -> Value {
+		return Dictionary[key]!
+	}
 }

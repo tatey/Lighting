@@ -33,11 +33,7 @@ struct ColorMap {
 		}
 	}
 
-	static func valueForKey(key: Key) -> Value {
-		return dictionary[key]!
-	}
-
-	private static let dictionary: [Key: Value] = [
+	private static let Dictionary: [Key: Value] = [
 		.HotWhite:  Value(description: "Hot White",  value: Color.white(2500)),
 		.WarmWhite: Value(description: "Warm White", value: Color.white(3500)),
 		.CoolWhite: Value(description: "Cool White", value: Color.white(4500)),
@@ -52,4 +48,8 @@ struct ColorMap {
 		.Purple:    Value(description: "Purple",     value: Color.color(280, saturation: 1)),
 		.Pink:      Value(description: "Pink",       value: Color.color(320, saturation: 1)),
 	]
+
+	static func valueForKey(key: Key) -> Value {
+		return Dictionary[key]!
+	}
 }
