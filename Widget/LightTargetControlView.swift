@@ -6,7 +6,9 @@
 import Cocoa
 
 protocol LightTargetControlViewDelegate: class {
-	func controlViewDidGetClicked(view: LightTargetControlView)
+    func controlViewDidGetClicked(view: LightTargetControlView)
+    func controlViewDidSetColor(view: NSMenuItem)
+    func controlViewDidSetBrightness(view: NSMenuItem)
 }
 
 class LightTargetControlView: NSView {
@@ -89,7 +91,78 @@ class LightTargetControlView: NSView {
 		}
 	}
 
+    override func rightMouseDown(theEvent: NSEvent) {
+
+    }
+
+    override func rightMouseUp(theEvent: NSEvent) {
+        if enabled {
+            let mainMenu = NSMenu(title: "Context menu")
+            mainMenu.autoenablesItems = false
+
+            var brightnessMenu = addSubmenu("Brightness", mainMenu: mainMenu)
+            brightnessMenu.addItem(brightnessItemFor("100%"))
+            brightnessMenu.addItem(brightnessItemFor("80%"))
+            brightnessMenu.addItem(brightnessItemFor("60%"))
+            brightnessMenu.addItem(brightnessItemFor("40%"))
+            brightnessMenu.addItem(brightnessItemFor("20%"))
+
+            var whitesMenu = addSubmenu("Whites", mainMenu: mainMenu)
+            whitesMenu.addItem(colorItemFor("Hot White"))
+            whitesMenu.addItem(colorItemFor("Warm White"))
+            whitesMenu.addItem(colorItemFor("Cool White"))
+            whitesMenu.addItem(colorItemFor("Cold White"))
+            whitesMenu.addItem(colorItemFor("Blue White"))
+
+
+            var colorsMenu = addSubmenu("Colors", mainMenu: mainMenu)
+            colorsMenu.addItem(colorItemFor("Red"))
+            colorsMenu.addItem(colorItemFor("Blue"))
+            colorsMenu.addItem(colorItemFor("Green"))
+            colorsMenu.addItem(colorItemFor("Orange"))
+            colorsMenu.addItem(colorItemFor("Yellow"))
+            colorsMenu.addItem(colorItemFor("Cyan"))
+            colorsMenu.addItem(colorItemFor("Purple"))
+            colorsMenu.addItem(colorItemFor("Pink"))
+
+            NSMenu.popUpContextMenu(mainMenu, withEvent: theEvent, forView: self)
+        }
+    }
+
 	override func mouseDragged(theEvent: NSEvent) {
 
 	}
+
+    // Menu creation helpers
+
+    func addSubmenu(title: String, mainMenu: NSMenu) -> NSMenu {
+        var submenuItem = NSMenuItem(title: title, action:nil, keyEquivalent: "")
+        var submenu = NSMenu()
+        mainMenu.setSubmenu(submenu, forItem: submenuItem)
+        mainMenu.addItem(submenuItem)
+        return submenu
+    }
+
+    func colorItemFor(title: String) -> NSMenuItem{
+        var menuItem = NSMenuItem()
+        menuItem.title = title
+        menuItem.action = "controlViewDidSetColor:"
+        menuItem.target = delegate
+        menuItem.keyEquivalent = ""
+        menuItem.representedObject = title
+        menuItem.enabled = true
+        return menuItem
+    }
+
+    func brightnessItemFor(title: String) -> NSMenuItem{
+        var menuItem = NSMenuItem()
+        menuItem.title = title
+        menuItem.action = "controlViewDidSetBrightness:"
+        menuItem.target = delegate
+        menuItem.keyEquivalent = ""
+        menuItem.representedObject = title
+        menuItem.enabled = true
+        return menuItem
+    }
+
 }
