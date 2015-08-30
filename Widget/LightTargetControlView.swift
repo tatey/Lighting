@@ -81,7 +81,7 @@ class LightTargetControlView: NSView {
 		}
 	}
 
-	override func mouseUp(theEvent: NSEvent) {
+	override func mouseDown(theEvent: NSEvent) {
 		if !enabled {
 			return
 		}
