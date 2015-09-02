@@ -40,7 +40,7 @@ struct ColorMap {
 		.ColdWhite: Value(description: "Cold White", value: Color.white(5500)),
 		.BlueWhite: Value(description: "Blue White", value: Color.white(9000)),
 		.Red:       Value(description: "Red",        value: Color.color(0,   saturation: 1)),
-		.Orange:    Value(description: "Organse",    value: Color.color(40,  saturation: 1)),
+		.Orange:    Value(description: "Orange",    value: Color.color(40,  saturation: 1)),
 		.Yellow:    Value(description: "Yellow",     value: Color.color(60,  saturation: 1)),
 		.Green:     Value(description: "Green",      value: Color.color(120, saturation: 1)),
 		.Cyan:      Value(description: "Cyan",       value: Color.color(180, saturation: 1)),
