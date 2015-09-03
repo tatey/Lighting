@@ -61,6 +61,7 @@ for toggling lights on and off.
 
 Thanks to the following people for helping to improve this project:
 
+* [@lucymhdavies](https://github.com/lucymhdavies)
 * [@lparry](https://github.com/lparry)
 * [@jamesottaway](https://github.com/jamesottaway)
 

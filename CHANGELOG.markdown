@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.2 / 2015-09-03
+
+* Fixed setting orange colour. https://github.com/tatey/Lighting/pull/13
+
 ## 1.1.1 / 2015-09-02
 
 * Fixed adjusting brightness in context menu for light in OFF state does not update state to ON state. https://github.com/tatey/Lighting/issues/12
