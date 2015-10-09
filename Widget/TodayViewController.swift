@@ -62,9 +62,9 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	// MARK: NCWidgetProviding
 
     func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
-		client.fetch { (error) in
+		client.fetch { (errors) in
 			dispatch_async(dispatch_get_main_queue()) {
-				if error != nil {
+				if errors.count > 0 {
 					self.errorLabel?.stringValue = "An error occured fetching lights."
 					completionHandler(.Failed)
 				} else {
