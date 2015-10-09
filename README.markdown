@@ -24,7 +24,7 @@ Alternatively, you can install via Homebrew-Cask.
 
 First, you need the following system dependencies:
 
-* Swift 1.3 (Xcode 6.4)
+* Swift 2.0 (Xcode 7.0)
 * Mac OS X 10.10 Yosemite
 * [Carthage](https://github.com/Carthage/Carthage)
 

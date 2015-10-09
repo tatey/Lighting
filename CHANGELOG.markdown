@@ -1,5 +1,9 @@
 # Changelog
 
+## Current
+
+* Updated for Swift 2.0. You must build with Xcode 7+.
+
 ## 1.1.2 / 2015-09-03
 
 * Fixed setting orange colour. https://github.com/tatey/Lighting/pull/13
