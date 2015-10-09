@@ -35,6 +35,10 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 			self.setNeedsUpdate()
 		}
 
+		if #available(OSX 10.11, *) {
+			fetch()
+		}
+
 		lightsCollectionView?.backgroundColors = [NSColor.clearColor()]
 	}
 
@@ -59,21 +63,31 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		}
 	}
 
-	// MARK: NCWidgetProviding
-
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+	private func fetch(completionHandler: (([NSError]) -> Void)? = nil) {
 		client.fetch { (errors) in
 			dispatch_async(dispatch_get_main_queue()) {
 				if errors.count > 0 {
 					self.errorLabel?.stringValue = "An error occured fetching lights."
-					completionHandler(.Failed)
+					completionHandler?(errors)
 				} else {
 					self.errorLabel?.stringValue = TodayViewController.EmptyString
 					self.lightsCollectionView?.content = self.lightTargetsBySortingAlphabetically(self.allLightTarget)
-					completionHandler(.NewData)
+					completionHandler?([])
 				}
 
 				self.setNeedsUpdate()
+			}
+		}
+	}
+
+	// MARK: NCWidgetProviding
+
+	func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+		fetch { (errors) in
+			if errors.count > 0 {
+				completionHandler(.Failed)
+			} else {
+				completionHandler(.NewData)
 			}
 		}
     }
