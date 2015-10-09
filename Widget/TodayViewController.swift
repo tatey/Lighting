@@ -15,6 +15,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	@IBOutlet weak var errorLabel: NSTextField?
 
 	var accessToken: AccessToken!
+	var accessTokenObserver: DarwinNotification?
 	var client: Client!
 	var allLightTarget: LightTarget!
 
@@ -29,7 +30,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		client = Client(accessToken: accessToken.token ?? TodayViewController.EmptyString)
 		allLightTarget = client.allLightTarget()
 
-		accessToken.addObserver {
+		accessTokenObserver = accessToken.addObserver {
 			self.client = Client(accessToken: self.accessToken.token ?? TodayViewController.EmptyString)
 			self.lightsCollectionView?.content = self.lightTargetsBySortingAlphabetically(self.allLightTarget)
 			self.setNeedsUpdate()
@@ -40,6 +41,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		}
 
 		lightsCollectionView?.backgroundColors = [NSColor.clearColor()]
+	}
+
+	deinit {
+		if let observer = accessTokenObserver {
+			accessToken.removeObserver(observer)
+		}
 	}
 
 	private func lightTargetsBySortingAlphabetically(lightTarget: LightTarget) -> [LightTarget] {
