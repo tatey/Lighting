@@ -8,7 +8,7 @@ import Cocoa
 class LightTargetCollectionView: NSCollectionView {
 	func sizeThatFits(size: NSSize) -> NSSize {
 		let count = content.count
-		if count > 0 {
+		if let itemPrototype = self.itemPrototype where count > 0 {
 			let itemSize = itemPrototype.view.frame.size
 			let itemsPerRow = floor(size.width / itemSize.width)
 			let numberOfRows = Int(ceil(CGFloat(count) / itemsPerRow))
