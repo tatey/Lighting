@@ -38,7 +38,7 @@ class AccessToken {
 	}
 
 	func removeObserver(observer: DarwinNotification) {
-		for (index, other) in enumerate(observers) {
+		for (index, other) in observers.enumerate() {
 			if other === observer {
 				observers.removeAtIndex(index)
 				break

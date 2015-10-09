@@ -15,9 +15,9 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 		super.windowDidLoad()
 
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		loggedInViewController = storyboard!.instantiateControllerWithIdentifier("LoggedInViewController") as! LoggedInViewController
+		loggedInViewController = storyboard.instantiateControllerWithIdentifier("LoggedInViewController") as! LoggedInViewController
 		loggedInViewController.delegate = self
-		loggedOutViewController = storyboard!.instantiateControllerWithIdentifier("LoggedOutViewController") as! LoggedOutViewController
+		loggedOutViewController = storyboard.instantiateControllerWithIdentifier("LoggedOutViewController") as! LoggedOutViewController
 		loggedOutViewController.delegate = self
 
 		accessToken = AccessToken()

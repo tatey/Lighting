@@ -39,7 +39,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 	}
 
 	private func lightTargetsBySortingAlphabetically(lightTarget: LightTarget) -> [LightTarget] {
-		return [lightTarget] + lightTarget.toLightTargets().sorted { (lhs, rhs) in
+		return [lightTarget] + lightTarget.toLightTargets().sort { (lhs, rhs) in
 			return lhs.label < rhs.label
 		}
 	}

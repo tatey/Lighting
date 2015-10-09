@@ -270,6 +270,8 @@
 		5DBD846B1AC2784C00AF6B1A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0620;
 			};
 			buildConfigurationList = 5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "Lighting" */;
