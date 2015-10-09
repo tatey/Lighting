@@ -1,8 +1,9 @@
 # Changelog
 
-## Current
+## 1.1.3 / 2015-10-09
 
 * Added support for Mac OS X 10.11 El Capitan.
+* Updated LIFXHTTPKit depdendency to be compatible with LIFX HTTP API V1. Setting colour from powered off state doesn't implicitly power on the light.
 * Updated for Swift 2.0. You must build with Xcode 7.0+.
 
 ## 1.1.2 / 2015-09-03
