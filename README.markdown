@@ -1,11 +1,11 @@
 # Lighting - Control LIFX lights from your Mac [![GitHub release](https://img.shields.io/github/release/tatey/Lighting.svg)](https://github.com/tatey/Lighting/releases/latest) [![GitHub license](https://img.shields.io/github/license/tatey/Lighting.svg)](https://raw.githubusercontent.com/tatey/Lighting/master/LICENSE.txt)
 
-A Mac OS X widget for controlling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs).
+A Mac OS X widget for controlling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs). Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
 ![](Screenshot-Preview-1.gif)
 ![](Screenshot-Preview-2.gif)
 
-*Note: This is not an official LIFX project. Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).*
+*Note: This is not an official LIFX project.*
 
 ## Installation
 
