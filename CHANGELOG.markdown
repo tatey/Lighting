@@ -3,6 +3,7 @@
 ## 1.1.3 / 2015-10-09
 
 * Added support for Mac OS X 10.11 El Capitan.
+* Fixed removing reference to an observer when TodayViewController is deallocated.
 * Updated LIFXHTTPKit depdendency to be compatible with LIFX HTTP API V1. Setting colour from powered off state doesn't implicitly power on the light.
 * Updated for Swift 2.0. You must build with Xcode 7.0+.
 
