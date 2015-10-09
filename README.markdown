@@ -9,7 +9,7 @@ A Mac OS X widget for controlling LIFX lights via the [LIFX HTTP API](http://api
 
 ## Installation
 
-Requires Mac OS X 10.10 Yosemite.
+Requires Mac OS X 10.10 Yosemite or 10.11 El Capitan.
 
 1. Download the [latest zip file](https://github.com/tatey/Lighting/releases/latest),
    extract the binary, and drag into your Application folder.
@@ -25,7 +25,7 @@ Alternatively, you can install via Homebrew-Cask.
 First, you need the following system dependencies:
 
 * Swift 2.0 (Xcode 7.0)
-* Mac OS X 10.10 Yosemite
+* Mac OS X 10.10+
 * [Carthage](https://github.com/Carthage/Carthage)
 
 Then, install the ppplication dependencies:

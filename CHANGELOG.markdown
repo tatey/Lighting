@@ -2,7 +2,8 @@
 
 ## Current
 
-* Updated for Swift 2.0. You must build with Xcode 7+.
+* Added support for Mac OS X 10.11 El Capitan.
+* Updated for Swift 2.0. You must build with Xcode 7.0+.
 
 ## 1.1.2 / 2015-09-03
 
