@@ -272,7 +272,7 @@
 			attributes = {
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0620;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 5DBD846E1AC2784C00AF6B1A /* Build configuration list for PBXProject "Lighting" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -388,6 +388,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -458,6 +459,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatey.Lighting;
 				PRODUCT_NAME = Lighting;
 				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -477,6 +479,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Main/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tatey.Lighting;
 				PRODUCT_NAME = Lighting;
 				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 			};
@@ -498,6 +501,7 @@
 				);
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatey.Lighting.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Widget/Widget-Bridging-Header.h";
@@ -517,6 +521,7 @@
 				);
 				INFOPLIST_FILE = Widget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.tatey.Lighting.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Widget/Widget-Bridging-Header.h";
