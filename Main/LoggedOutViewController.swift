@@ -42,10 +42,10 @@ class LoggedOutViewController: NSViewController {
 			client.fetch { (errors) in
 				dispatch_async(dispatch_get_main_queue()) {
 					if errors.count > 0 {
+						self.errorLabel?.hidden = false
+					} else {
 						self.tokenTextField?.stringValue = ""
 						self.delegate?.loggedOutViewControllerDidLogin(self, withToken: newToken)
-					} else {
-						self.errorLabel?.hidden = false
 					}
 
 					self.spinner?.stopAnimation(self)
