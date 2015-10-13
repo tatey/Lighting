@@ -1,8 +1,8 @@
 # Changelog
 
-## Current
+## 1.1.5 / 2015-10-13
 
-* New app icon! A big thanks to @TheDaem0n for contributing this one.
+* New app icon! A very big thanks to @TheDaem0n for contributing this one.
 
 ## 1.1.4 / 2015-10-10
 
