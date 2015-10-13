@@ -1,9 +1,11 @@
-# Lighting - Control LIFX lights from your Mac [![GitHub release](https://img.shields.io/github/release/tatey/Lighting.svg)](https://github.com/tatey/Lighting/releases/latest) [![GitHub license](https://img.shields.io/github/license/tatey/Lighting.svg)](https://raw.githubusercontent.com/tatey/Lighting/master/LICENSE.txt)
+![](Design/README/Logo.png)
+
+# Lighting: Control LIFX lights from your Mac [![GitHub release](https://img.shields.io/github/release/tatey/Lighting.svg)](https://github.com/tatey/Lighting/releases/latest) [![GitHub license](https://img.shields.io/github/license/tatey/Lighting.svg)](https://raw.githubusercontent.com/tatey/Lighting/master/LICENSE.txt)
 
 A Mac OS X widget for controlling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs). Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
-![](Screenshot-Preview-1.gif)
-![](Screenshot-Preview-2.gif)
+![](Design/README/ScreenshotPreview1.gif)
+![](Design/README/ScreenshotPreview2.gif)
 
 *Note: This is not an official LIFX project.*
 
@@ -39,7 +41,7 @@ Finally, build the "Main" or "Widget" target.
 The main target is responsible for configuring the access token. It notifies
 the widget when the access token changes.
 
-![](Screenshot-Main-Target.jpg)
+![](Design/README/ScreenshotTargetMain.jpg)
 
 1. Open Lighting.xcodeproj
 2. Select "Main > My Mac"
@@ -50,7 +52,7 @@ the widget when the access token changes.
 The widget target implements a view controller conforming to `NCWidgetProviding`
 for toggling lights on and off.
 
-![](Screenshot-Widget-Target.jpg)
+![](Design/README/ScreenshotTargetWidget.jpg)
 
 1. Open Lighting.xcodeproj
 2. Select "Widget > My Mac"
@@ -61,6 +63,7 @@ for toggling lights on and off.
 
 Thanks to the following people for helping to improve this project:
 
+* [@TheDaem0n](https://github.com/TheDaem0n)
 * [@lucymhdavies](https://github.com/lucymhdavies)
 * [@lparry](https://github.com/lparry)
 * [@jamesottaway](https://github.com/jamesottaway)

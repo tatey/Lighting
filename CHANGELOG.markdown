@@ -1,5 +1,9 @@
 # Changelog
 
+## Current
+
+* New app icon! A big thanks to @TheDaem0n for contributing this one.
+
 ## 1.1.4 / 2015-10-10
 
 * Fixed a bug where logging in would fail.
