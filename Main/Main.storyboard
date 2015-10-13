@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="HAo-e1-c3R">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="HAo-e1-c3R">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -407,7 +407,7 @@
                         <outlet property="delegate" destination="Nqm-Y4-29n" id="bHo-NP-S8v"/>
                     </connections>
                 </application>
-                <customObject id="Nqm-Y4-29n" customClass="AppDelegate" customModule="Main" customModuleProvider="target"/>
+                <customObject id="Nqm-Y4-29n" customClass="AppDelegate" customModule="Lighting" customModuleProvider="target"/>
                 <customObject id="2lJ-7H-Gxm" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -415,7 +415,7 @@
         <!--Window Controller-->
         <scene sceneID="S9j-vj-hcA">
             <objects>
-                <windowController showSeguePresentationStyle="single" id="HAo-e1-c3R" customClass="AppWindowController" customModule="Main" customModuleProvider="target" sceneMemberID="viewController">
+                <windowController showSeguePresentationStyle="single" id="HAo-e1-c3R" customClass="AppWindowController" customModule="Lighting" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Account" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="4Gc-yD-9EV">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
                         <rect key="contentRect" x="163" y="199" width="480" height="270"/>
@@ -432,21 +432,23 @@
         <!--Logged Out View Controller-->
         <scene sceneID="k0m-iY-xCj">
             <objects>
-                <viewController storyboardIdentifier="LoggedOutViewController" showSeguePresentationStyle="single" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="Main" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedOutViewController" showSeguePresentationStyle="single" id="BqS-zR-elC" customClass="LoggedOutViewController" customModule="Lighting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="Pjp-Xq-8qU">
                         <rect key="frame" x="0.0" y="0.0" width="447" height="133"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-Ip-TQp">
                                 <rect key="frame" x="17" y="80" width="413" height="34"/>
+                                <animations/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="To get started, generate a personal acess token from your LIFX Cloud account and paste it in the field:" id="A5b-8W-pNd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-HB-Kkf">
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zQe-HB-Kkf">
                                 <rect key="frame" x="359" y="34" width="75" height="32"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lAP-31-UP3">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -455,16 +457,18 @@
                                     <action selector="loginButtonDidGetTapped:" target="BqS-zR-elC" id="GJJ-44-3bk"/>
                                 </connections>
                             </button>
-                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-So-iYz">
+                            <textField verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTL-So-iYz">
                                 <rect key="frame" x="136" y="40" width="221" height="22"/>
+                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Required" drawsBackground="YES" usesSingleLineMode="YES" id="gD6-QZ-osP">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Oup-w4-BFl">
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oup-w4-BFl">
                                 <rect key="frame" x="39" y="43" width="93" height="17"/>
+                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Access Token:" id="qlI-5t-tz8">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -473,9 +477,11 @@
                             </textField>
                             <progressIndicator horizontalHuggingPriority="750" verticalHuggingPriority="750" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="yia-In-XTn">
                                 <rect key="frame" x="19" y="43" width="16" height="16"/>
+                                <animations/>
                             </progressIndicator>
-                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-Gn-8O8">
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I9t-Gn-8O8">
                                 <rect key="frame" x="134" y="23" width="112" height="14"/>
+                                <animations/>
                                 <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Invalid access token" id="xOW-jA-1St">
                                     <font key="font" metaFont="smallSystem"/>
                                     <color key="textColor" red="1" green="0.13238170742988586" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -499,6 +505,7 @@
                             <constraint firstItem="I9t-Gn-8O8" firstAttribute="top" secondItem="XTL-So-iYz" secondAttribute="bottom" constant="3" id="ng6-Oe-D0H"/>
                             <constraint firstItem="I9t-Gn-8O8" firstAttribute="leading" secondItem="XTL-So-iYz" secondAttribute="leading" id="suc-1s-VyS"/>
                         </constraints>
+                        <animations/>
                     </view>
                     <connections>
                         <outlet property="errorLabel" destination="I9t-Gn-8O8" id="ZE1-qw-cdq"/>
@@ -514,13 +521,14 @@
         <!--Logged In View Controller-->
         <scene sceneID="mZH-is-6u5">
             <objects>
-                <viewController storyboardIdentifier="LoggedInViewController" showSeguePresentationStyle="single" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="Main" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoggedInViewController" showSeguePresentationStyle="single" id="0Gt-aU-jyb" customClass="LoggedInViewController" customModule="Lighting" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="5Pd-kl-ByC">
                         <rect key="frame" x="0.0" y="0.0" width="287" height="207"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iHu-av-fHS">
                                 <rect key="frame" x="17" y="171" width="253" height="17"/>
+                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="You're logged in!" id="Sn1-mX-FEI">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -529,10 +537,12 @@
                             </textField>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Gf-Wi-cBF">
                                 <rect key="frame" x="119" y="113" width="49" height="48"/>
+                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="logged-in-icon-success" id="wtu-eP-mS0"/>
                             </imageView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-lQ-ANI">
+                            <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iGH-lQ-ANI">
                                 <rect key="frame" x="101" y="13" width="84" height="32"/>
+                                <animations/>
                                 <buttonCell key="cell" type="push" title="Logout" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vXW-3g-hTK">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
@@ -543,6 +553,7 @@
                             </button>
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQg-CN-cFM">
                                 <rect key="frame" x="17" y="60" width="253" height="34"/>
+                                <animations/>
                                 <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Control lighting using the widget in Notification Center." id="es6-Dq-nbf">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -562,6 +573,7 @@
                             <constraint firstItem="vQg-CN-cFM" firstAttribute="leading" secondItem="5Pd-kl-ByC" secondAttribute="leading" constant="19" id="bux-vw-yoq"/>
                             <constraint firstAttribute="centerX" secondItem="iGH-lQ-ANI" secondAttribute="centerX" id="hcy-wa-DXW"/>
                         </constraints>
+                        <animations/>
                     </view>
                 </viewController>
                 <customObject id="dPE-z4-We1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
