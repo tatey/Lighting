@@ -30,7 +30,7 @@ First, you need the following system dependencies:
 * Mac OS X 10.10+
 * [Carthage](https://github.com/Carthage/Carthage)
 
-Then, install the ppplication dependencies:
+Then, install the application dependencies:
 
     $ carthage bootstrap --platform Mac
 
