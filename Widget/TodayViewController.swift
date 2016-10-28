@@ -89,7 +89,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 
 	// MARK: NCWidgetProviding
 
-	func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)!) {
+	func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
 		fetch { (errors) in
 			if errors.count > 0 {
 				completionHandler(.Failed)

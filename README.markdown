@@ -2,7 +2,7 @@
 
 # Lighting: Control LIFX lights from your Mac [![GitHub release](https://img.shields.io/github/release/tatey/Lighting.svg)](https://github.com/tatey/Lighting/releases/latest) [![GitHub license](https://img.shields.io/github/license/tatey/Lighting.svg)](https://raw.githubusercontent.com/tatey/Lighting/master/LICENSE.txt)
 
-A Mac OS X widget for controlling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs). Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
+A macOS widget for controlling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs). Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
 ![](Design/README/ScreenshotPreview1.gif)
 ![](Design/README/ScreenshotPreview2.gif)
@@ -11,7 +11,7 @@ A Mac OS X widget for controlling LIFX lights via the [LIFX HTTP API](http://api
 
 ## Installation
 
-Requires Mac OS X 10.10 Yosemite or 10.11 El Capitan.
+Requires macOS 10.10 Yosemite, 10.11 El Capitan, or 10.12 Sierra.
 
 1. Download the [latest zip file](https://github.com/tatey/Lighting/releases/latest),
    extract the binary, and drag into your Application folder.
@@ -26,8 +26,8 @@ Alternatively, you can install via Homebrew-Cask.
 
 First, you need the following system dependencies:
 
-* Swift 2.0 (Xcode 7.0)
-* Mac OS X 10.10+
+* Swift 2.3 (Xcode 8.0)
+* macOS 10.10+
 * [Carthage](https://github.com/Carthage/Carthage)
 
 Then, install the application dependencies:
