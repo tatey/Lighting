@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.6 / 2017-07-08
+
+* Fixed "invalid access token" on macOS 10.12 Sierra. Thanks @segan5! https://github.com/tatey/Lighting/pull/21
+
 ## 1.1.5 / 2015-10-13
 
 * New app icon! A very big thanks to @TheDaem0n for contributing this one.
