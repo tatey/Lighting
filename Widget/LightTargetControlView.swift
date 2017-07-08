@@ -6,14 +6,14 @@
 import Cocoa
 
 protocol LightTargetControlViewDelegate: class {
-    func controlViewDidGetClicked(view: LightTargetControlView)
-    func controlViewDidSetColor(view: NSMenuItem)
-    func controlViewDidSetBrightness(view: NSMenuItem)
+    func controlViewDidGetClicked(_ view: LightTargetControlView)
+    func controlViewDidSetColor(_ view: NSMenuItem)
+    func controlViewDidSetBrightness(_ view: NSMenuItem)
 }
 
 class LightTargetControlView: NSView {
-	static let EnabledBackgroundColor: CGColorRef = NSColor.whiteColor().colorWithAlphaComponent(0.1).CGColor
-	static let DisabledBackgroundColor: CGColorRef = NSColor.blackColor().colorWithAlphaComponent(0.2).CGColor
+	static let EnabledBackgroundColor: CGColor = NSColor.white.withAlphaComponent(0.1).cgColor
+	static let DisabledBackgroundColor: CGColor = NSColor.black.withAlphaComponent(0.2).cgColor
 	static let DefaultDuration: CFTimeInterval = 0.3
 	static let DefaultScale: CGFloat = 0.35
 	static let ZoomScale: CGFloat = 6.0
@@ -22,10 +22,10 @@ class LightTargetControlView: NSView {
 
 	var power: Bool = true
 	var enabled: Bool = true
-	var color: NSColor = NSColor.clearColor()
+	var color: NSColor = NSColor.clear
 
-	private weak var stateLayer: CAShapeLayer?
-	private var stateTransform: CATransform3D?
+	fileprivate weak var stateLayer: CAShapeLayer?
+	fileprivate var stateTransform: CATransform3D?
 
 	required init?(coder: NSCoder) {
 		super.init(coder: coder)
@@ -48,18 +48,18 @@ class LightTargetControlView: NSView {
 
 		let stateWidth = bounds.width * LightTargetControlView.DefaultScale
 		let stateHeight = bounds.height * LightTargetControlView.DefaultScale
-		let stateFrame = CGRect(x: CGRectGetMidX(bounds) - stateWidth / 2, y: CGRectGetMidY(bounds) - stateHeight / 2, width: stateWidth, height: stateHeight)
-		let statePath = NSBezierPath(ovalInRect: stateFrame).CGPath().takeUnretainedValue() as CGPathRef
+		let stateFrame = CGRect(x: bounds.midX - stateWidth / 2, y: bounds.midY - stateHeight / 2, width: stateWidth, height: stateHeight)
+		let statePath = NSBezierPath(ovalIn: stateFrame).cgPath().takeUnretainedValue() as CGPath
 		stateLayer?.frame = stateFrame
 		stateLayer?.bounds = stateFrame
 		stateLayer?.path = statePath
 		stateTransform = stateLayer?.transform
 	}
 
-	func setNeedsUpdateAnimated(animated: Bool) {
-		if let layer = self.layer, stateLayer = self.stateLayer, stateTransform = self.stateTransform {
+	func setNeedsUpdateAnimated(_ animated: Bool) {
+		if let layer = self.layer, let stateLayer = self.stateLayer, let stateTransform = self.stateTransform {
 			if enabled {
-				let newFillColor = color.CGColor
+				let newFillColor = color.cgColor
 				let newTransform = power ? CATransform3DScale(stateTransform, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale, LightTargetControlView.ZoomScale) : stateTransform
 
 				if animated {
@@ -67,27 +67,27 @@ class LightTargetControlView: NSView {
 					colorAnimation.duration = LightTargetControlView.DefaultDuration
 					colorAnimation.fromValue = stateLayer.fillColor
 					colorAnimation.toValue = newFillColor
-					stateLayer.addAnimation(colorAnimation, forKey: "color")
+					stateLayer.add(colorAnimation, forKey: "color")
 
 					let toggleAnimation = CABasicAnimation(keyPath: "transform.scale")
 					toggleAnimation.duration = LightTargetControlView.DefaultDuration
-					toggleAnimation.fromValue = NSValue(CATransform3D: stateLayer.transform)
-					toggleAnimation.toValue = NSValue(CATransform3D: newTransform)
-					stateLayer.addAnimation(toggleAnimation, forKey: "toggle")
+					toggleAnimation.fromValue = NSValue(caTransform3D: stateLayer.transform)
+					toggleAnimation.toValue = NSValue(caTransform3D: newTransform)
+					stateLayer.add(toggleAnimation, forKey: "toggle")
 				}
 
 				stateLayer.fillColor = newFillColor
 				stateLayer.transform = newTransform
-				stateLayer.hidden = false
+				stateLayer.isHidden = false
 				layer.backgroundColor = LightTargetControlView.EnabledBackgroundColor
 			} else {
-				stateLayer.hidden = true
+				stateLayer.isHidden = true
 				layer.backgroundColor = LightTargetControlView.DisabledBackgroundColor
 			}
 		}
 	}
 
-	override func mouseDown(theEvent: NSEvent) {
+	override func mouseDown(with theEvent: NSEvent) {
 		if !enabled {
 			return
 		}
@@ -95,7 +95,7 @@ class LightTargetControlView: NSView {
 		delegate?.controlViewDidGetClicked(self)
 	}
 
-    override func rightMouseUp(theEvent: NSEvent) {
+    override func rightMouseUp(with theEvent: NSEvent) {
 		if !enabled {
 			return
 		}
@@ -104,59 +104,59 @@ class LightTargetControlView: NSView {
 		mainMenu.autoenablesItems = false
 
 		let brightnessMenu = addSubmenu("Brightness", mainMenu: mainMenu)
-		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent100)))
-		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent80)))
-		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent60)))
-		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent40)))
-		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.Percent20)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.percent100)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.percent80)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.percent60)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.percent40)))
+		brightnessMenu.addItem(brightnessItemFor(BrightnessMap.valueForKey(.percent20)))
 
 		let whitesMenu = addSubmenu("Whites", mainMenu: mainMenu)
-		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.HotWhite)))
-		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.WarmWhite)))
-		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.CoolWhite)))
-		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.ColdWhite)))
-		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.BlueWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.hotWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.warmWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.coolWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.coldWhite)))
+		whitesMenu.addItem(colorItemFor(ColorMap.valueForKey(.blueWhite)))
 
 		let colorsMenu = addSubmenu("Colors", mainMenu: mainMenu)
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Red)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Blue)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Green)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Orange)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Yellow)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Cyan)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Purple)))
-		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.Pink)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.red)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.blue)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.green)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.orange)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.yellow)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.cyan)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.purple)))
+		colorsMenu.addItem(colorItemFor(ColorMap.valueForKey(.pink)))
 
-		NSMenu.popUpContextMenu(mainMenu, withEvent: theEvent, forView: self)
+		NSMenu.popUpContextMenu(mainMenu, with: theEvent, for: self)
     }
 
-    private func addSubmenu(title: String, mainMenu: NSMenu) -> NSMenu {
+    fileprivate func addSubmenu(_ title: String, mainMenu: NSMenu) -> NSMenu {
         let submenuItem = NSMenuItem(title: title, action: nil, keyEquivalent: "")
         let submenu = NSMenu()
-        mainMenu.setSubmenu(submenu, forItem: submenuItem)
+        mainMenu.setSubmenu(submenu, for: submenuItem)
         mainMenu.addItem(submenuItem)
         return submenu
     }
 
-	private func brightnessItemFor(value: BrightnessMap.Value) -> NSMenuItem{
+	fileprivate func brightnessItemFor(_ value: BrightnessMap.Value) -> NSMenuItem{
 		let menuItem = NSMenuItem()
 		menuItem.title = value.description
 		menuItem.action = "controlViewDidSetBrightness:"
 		menuItem.target = delegate
 		menuItem.keyEquivalent = ""
 		menuItem.representedObject = value
-		menuItem.enabled = true
+		menuItem.isEnabled = true
 		return menuItem
 	}
 
-    private func colorItemFor(value: ColorMap.Value) -> NSMenuItem{
+    fileprivate func colorItemFor(_ value: ColorMap.Value) -> NSMenuItem{
         let menuItem = NSMenuItem()
         menuItem.title = value.description
         menuItem.action = "controlViewDidSetColor:"
         menuItem.target = delegate
         menuItem.keyEquivalent = ""
         menuItem.representedObject = value
-        menuItem.enabled = true
+        menuItem.isEnabled = true
         return menuItem
     }
 }

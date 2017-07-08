@@ -15,9 +15,9 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 		super.windowDidLoad()
 
 		let storyboard = NSStoryboard(name: "Main", bundle: nil)
-		loggedInViewController = storyboard.instantiateControllerWithIdentifier("LoggedInViewController") as! LoggedInViewController
+		loggedInViewController = storyboard.instantiateController(withIdentifier: "LoggedInViewController") as! LoggedInViewController
 		loggedInViewController.delegate = self
-		loggedOutViewController = storyboard.instantiateControllerWithIdentifier("LoggedOutViewController") as! LoggedOutViewController
+		loggedOutViewController = storyboard.instantiateController(withIdentifier: "LoggedOutViewController") as! LoggedOutViewController
 		loggedOutViewController.delegate = self
 
 		accessToken = AccessToken()
@@ -28,7 +28,7 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 		}
 	}
 
-	private func setContentViewController(viewController: NSViewController) {
+	fileprivate func setContentViewController(_ viewController: NSViewController) {
 		if let window = self.window {
 			let newSize = viewController.preferredContentSize
 			let oldFrame = window.frame
@@ -40,14 +40,14 @@ class AppWindowController: NSWindowController, LoggedInViewControllerDelegate, L
 
 	// MARK: LoggedInViewControllerDelegate
 
-	func loggedInViewControllerDidLogout(viewController: LoggedInViewController) {
+	func loggedInViewControllerDidLogout(_ viewController: LoggedInViewController) {
 		accessToken.token = nil
 		setContentViewController(loggedOutViewController)
 	}
 
 	// MARK: LoggedOutViewControllerDelegate
 
-	func loggedOutViewControllerDidLogin(controller: LoggedOutViewController, withToken token: String) {
+	func loggedOutViewControllerDidLogin(_ controller: LoggedOutViewController, withToken token: String) {
 		accessToken.token = token
 		setContentViewController(loggedInViewController)
 	}

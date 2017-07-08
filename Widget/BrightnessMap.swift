@@ -8,19 +8,19 @@ import LIFXHTTPKit
 
 struct ColorMap {
 	enum Key {
-		case HotWhite
-		case WarmWhite
-		case CoolWhite
-		case ColdWhite
-		case BlueWhite
-		case Red
-		case Orange
-		case Yellow
-		case Green
-		case Cyan
-		case Blue
-		case Purple
-		case Pink
+		case hotWhite
+		case warmWhite
+		case coolWhite
+		case coldWhite
+		case blueWhite
+		case red
+		case orange
+		case yellow
+		case green
+		case cyan
+		case blue
+		case purple
+		case pink
 	}
 
 	class Value {
@@ -33,23 +33,23 @@ struct ColorMap {
 		}
 	}
 
-	private static let Dictionary: [Key: Value] = [
-		.HotWhite:  Value(description: "Hot White",  value: Color.white(2500)),
-		.WarmWhite: Value(description: "Warm White", value: Color.white(3500)),
-		.CoolWhite: Value(description: "Cool White", value: Color.white(4500)),
-		.ColdWhite: Value(description: "Cold White", value: Color.white(5500)),
-		.BlueWhite: Value(description: "Blue White", value: Color.white(9000)),
-		.Red:       Value(description: "Red",        value: Color.color(0,   saturation: 1)),
-		.Orange:    Value(description: "Orange",    value: Color.color(40,  saturation: 1)),
-		.Yellow:    Value(description: "Yellow",     value: Color.color(60,  saturation: 1)),
-		.Green:     Value(description: "Green",      value: Color.color(120, saturation: 1)),
-		.Cyan:      Value(description: "Cyan",       value: Color.color(180, saturation: 1)),
-		.Blue:      Value(description: "Blue",       value: Color.color(240, saturation: 1)),
-		.Purple:    Value(description: "Purple",     value: Color.color(280, saturation: 1)),
-		.Pink:      Value(description: "Pink",       value: Color.color(320, saturation: 1)),
+	fileprivate static let Dictionary: [Key: Value] = [
+		.hotWhite:  Value(description: "Hot White",  value: Color.white(2500)),
+		.warmWhite: Value(description: "Warm White", value: Color.white(3500)),
+		.coolWhite: Value(description: "Cool White", value: Color.white(4500)),
+		.coldWhite: Value(description: "Cold White", value: Color.white(5500)),
+		.blueWhite: Value(description: "Blue White", value: Color.white(9000)),
+		.red:       Value(description: "Red",        value: Color.color(0,   saturation: 1)),
+		.orange:    Value(description: "Orange",    value: Color.color(40,  saturation: 1)),
+		.yellow:    Value(description: "Yellow",     value: Color.color(60,  saturation: 1)),
+		.green:     Value(description: "Green",      value: Color.color(120, saturation: 1)),
+		.cyan:      Value(description: "Cyan",       value: Color.color(180, saturation: 1)),
+		.blue:      Value(description: "Blue",       value: Color.color(240, saturation: 1)),
+		.purple:    Value(description: "Purple",     value: Color.color(280, saturation: 1)),
+		.pink:      Value(description: "Pink",       value: Color.color(320, saturation: 1)),
 	]
 
-	static func valueForKey(key: Key) -> Value {
+	static func valueForKey(_ key: Key) -> Value {
 		return Dictionary[key]!
 	}
 }

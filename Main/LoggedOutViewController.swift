@@ -7,7 +7,7 @@ import Cocoa
 import LIFXHTTPKit
 
 protocol LoggedOutViewControllerDelegate: class {
-	func loggedOutViewControllerDidLogin(controller: LoggedOutViewController, withToken token: String)
+	func loggedOutViewControllerDidLogin(_ controller: LoggedOutViewController, withToken token: String)
 }
 
 class LoggedOutViewController: NSViewController {
@@ -30,27 +30,27 @@ class LoggedOutViewController: NSViewController {
 		tokenTextField?.becomeFirstResponder()
 	}
 
-	@IBAction func loginButtonDidGetTapped(sender: AnyObject?) {
+	@IBAction func loginButtonDidGetTapped(_ sender: AnyObject?) {
 		if let newToken = tokenTextField?.stringValue {
 			let client = Client(accessToken: newToken)
 
-			tokenTextField?.enabled = false
-			loginButton?.enabled = false
+			tokenTextField?.isEnabled = false
+			loginButton?.isEnabled = false
 			spinner?.startAnimation(self)
-			errorLabel?.hidden = true
+			errorLabel?.isHidden = true
 
 			client.fetch { (errors) in
-				dispatch_async(dispatch_get_main_queue()) {
+				DispatchQueue.main.async {
 					if errors.count > 0 {
-						self.errorLabel?.hidden = false
+						self.errorLabel?.isHidden = false
 					} else {
 						self.tokenTextField?.stringValue = ""
 						self.delegate?.loggedOutViewControllerDidLogin(self, withToken: newToken)
 					}
 
 					self.spinner?.stopAnimation(self)
-					self.tokenTextField?.enabled = true
-					self.loginButton?.enabled = true
+					self.tokenTextField?.isEnabled = true
+					self.loginButton?.isEnabled = true
 				}
 			}
 		}
