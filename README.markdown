@@ -11,7 +11,7 @@ A macOS widget for controlling LIFX lights via the [LIFX HTTP API](http://api.de
 
 ## Installation
 
-Requires macOS 10.10 Yosemite, 10.11 El Capitan, or 10.12 Sierra.
+Requires macOS 10.12 Sierra, 10.11 El Capitan, or 10.10 Yosemite.
 
 1. Download the [latest zip file](https://github.com/tatey/Lighting/releases/latest),
    extract the binary, and drag into your Application folder.
@@ -26,7 +26,7 @@ Alternatively, you can install via Homebrew-Cask.
 
 First, you need the following system dependencies:
 
-* Swift 2.3 (Xcode 8.0)
+* Swift 3.0 (Xcode 8.3)
 * macOS 10.10+
 * [Carthage](https://github.com/Carthage/Carthage)
 
@@ -63,6 +63,7 @@ for toggling lights on and off.
 
 Thanks to the following people for helping to improve this project:
 
+* [@segan5](https://github.com/segan5)
 * [@TheDaem0n](https://github.com/TheDaem0n)
 * [@lucymhdavies](https://github.com/lucymhdavies)
 * [@lparry](https://github.com/lparry)
