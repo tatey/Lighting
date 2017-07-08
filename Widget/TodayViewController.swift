@@ -40,7 +40,7 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 			fetch()
 		}
 
-		lightsCollectionView?.backgroundColors = [NSColor.clearColor()]
+		lightsCollectionView?.backgroundColors = [NSColor.clear]
 	}
 
 	deinit {
@@ -49,18 +49,18 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		}
 	}
 
-	private func lightTargetsBySortingAlphabetically(lightTarget: LightTarget) -> [LightTarget] {
-		return [lightTarget] + lightTarget.toLightTargets().sort { (lhs, rhs) in
+	fileprivate func lightTargetsBySortingAlphabetically(_ lightTarget: LightTarget) -> [LightTarget] {
+		return [lightTarget] + lightTarget.toLightTargets().sorted { (lhs, rhs) in
 			return lhs.label < rhs.label
 		}
 	}
 
-	private func setNeedsUpdate() {
-		if let lightsCollectionView = self.lightsCollectionView, errorLabel = self.errorLabel {
-			var newSize = lightsCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.max))
+	fileprivate func setNeedsUpdate() {
+		if let lightsCollectionView = self.lightsCollectionView, let errorLabel = self.errorLabel {
+			var newSize = lightsCollectionView.sizeThatFits(NSSize(width: view.frame.width, height: CGFloat.greatestFiniteMagnitude))
 
 			if errorLabel.stringValue == TodayViewController.EmptyString {
-				errorLabel.frame = CGRectZero
+				errorLabel.frame = CGRect.zero
 			} else {
 				errorLabel.sizeToFit()
 			}
@@ -70,12 +70,12 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 		}
 	}
 
-	private func fetch(completionHandler: (([NSError]) -> Void)? = nil) {
+	fileprivate func fetch(_ completionHandler: (([NSError]) -> Void)? = nil) {
 		client.fetch { (errors) in
-			dispatch_async(dispatch_get_main_queue()) {
+			DispatchQueue.main.async {
 				if errors.count > 0 {
 					self.errorLabel?.stringValue = "An error occured fetching lights."
-					completionHandler?(errors)
+					completionHandler?(errors as [NSError])
 				} else {
 					self.errorLabel?.stringValue = TodayViewController.EmptyString
 					self.lightsCollectionView?.content = self.lightTargetsBySortingAlphabetically(self.allLightTarget)
@@ -89,17 +89,17 @@ class TodayViewController: NSViewController, NCWidgetProviding {
 
 	// MARK: NCWidgetProviding
 
-	func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
+	func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
 		fetch { (errors) in
 			if errors.count > 0 {
-				completionHandler(.Failed)
+				completionHandler(.failed)
 			} else {
-				completionHandler(.NewData)
+				completionHandler(.newData)
 			}
 		}
     }
 
-	func widgetMarginInsetsForProposedMarginInsets(defaultMarginInset: NSEdgeInsets) -> NSEdgeInsets {
-		return NSEdgeInsets(top: defaultMarginInset.top + TodayViewController.DefaultMargin, left: defaultMarginInset.left - 20.0, bottom: defaultMarginInset.bottom, right: 0.0)
+	func widgetMarginInsets(forProposedMarginInsets defaultMarginInset: EdgeInsets) -> EdgeInsets {
+		return EdgeInsets(top: defaultMarginInset.top + TodayViewController.DefaultMargin, left: defaultMarginInset.left - 20.0, bottom: defaultMarginInset.bottom, right: 0.0)
 	}
 }

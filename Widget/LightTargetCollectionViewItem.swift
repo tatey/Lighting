@@ -19,7 +19,7 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 		super.viewWillAppear()
 
 		observer = lightTarget.addObserver { [unowned self] in
-			dispatch_async(dispatch_get_main_queue()) {
+			DispatchQueue.main.async {
 				self.setNeedsUpdateAnimated(true)
 			}
 		}
@@ -41,13 +41,13 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 		controlView?.delegate = nil
 	}
 
-	private func setNeedsUpdateAnimated(animated: Bool) {
+	fileprivate func setNeedsUpdateAnimated(_ animated: Bool) {
 		let newAlpha: CGFloat = lightTarget.connected ? 1.0 : 0.5
 		labelTextField?.alphaValue = newAlpha
 		labelTextField?.stringValue = lightTarget.label
 
 		if lightTarget.selector.type == .All {
-			controlView?.color = NSColor.whiteColor()
+			controlView?.color = NSColor.white
 		} else {
 			controlView?.color = lightTarget.color.toNSColor()
 		}
@@ -58,17 +58,17 @@ class LightTargetCollectionViewItem: NSCollectionViewItem, LightTargetControlVie
 
 	// MARK: LightControlViewDelegate
 
-	func controlViewDidGetClicked(view: LightTargetControlView) {
+	func controlViewDidGetClicked(_ view: LightTargetControlView) {
 		lightTarget.setPower(!lightTarget.power, duration: LightTargetCollectionViewItem.duration)
 	}
 
-    func controlViewDidSetColor(view: NSMenuItem) {
+    func controlViewDidSetColor(_ view: NSMenuItem) {
 		if let color = view.representedObject as? ColorMap.Value {
 			lightTarget.setColor(color.value, duration: LightTargetCollectionViewItem.duration)
 		}
     }
 
-    func controlViewDidSetBrightness(view: NSMenuItem) {
+    func controlViewDidSetBrightness(_ view: NSMenuItem) {
 		if let brightness = view.representedObject as? BrightnessMap.Value {
 			lightTarget.setBrightness(brightness.value, duration: LightTargetCollectionViewItem.duration)
 		}

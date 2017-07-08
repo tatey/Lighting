@@ -6,7 +6,7 @@
 import Cocoa
 
 protocol LoggedInViewControllerDelegate: class {
-	func loggedInViewControllerDidLogout(viewController: LoggedInViewController)
+	func loggedInViewControllerDidLogout(_ viewController: LoggedInViewController)
 }
 
 class LoggedInViewController: NSViewController {
@@ -18,7 +18,7 @@ class LoggedInViewController: NSViewController {
 		preferredContentSize = view.frame.size
 	}
 
-	@IBAction func logoutButtonDidgetTapped(sender: AnyObject?) {
+	@IBAction func logoutButtonDidgetTapped(_ sender: AnyObject?) {
 		delegate?.loggedInViewControllerDidLogout(self)
 	}
 }

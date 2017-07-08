@@ -7,11 +7,11 @@ import Foundation
 
 struct BrightnessMap {
 	enum Key {
-		case Percent100
-		case Percent80
-		case Percent60
-		case Percent40
-		case Percent20
+		case percent100
+		case percent80
+		case percent60
+		case percent40
+		case percent20
 	}
 
 	class Value {
@@ -24,15 +24,15 @@ struct BrightnessMap {
 		}
 	}
 
-	private static let Dictionary: [Key: Value] = [
-		.Percent100: Value(description: "100%", value: 1.0),
-		.Percent80:  Value(description: "80%",  value: 0.8),
-		.Percent60:  Value(description: "60%",  value: 0.6),
-		.Percent40:  Value(description: "40%",  value: 0.4),
-		.Percent20:  Value(description: "20%",  value: 0.2)
+	fileprivate static let Dictionary: [Key: Value] = [
+		.percent100: Value(description: "100%", value: 1.0),
+		.percent80:  Value(description: "80%",  value: 0.8),
+		.percent60:  Value(description: "60%",  value: 0.6),
+		.percent40:  Value(description: "40%",  value: 0.4),
+		.percent20:  Value(description: "20%",  value: 0.2)
 	]
 
-	static func valueForKey(key: Key) -> Value {
+	static func valueForKey(_ key: Key) -> Value {
 		return Dictionary[key]!
 	}
 }

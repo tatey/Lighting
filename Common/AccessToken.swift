@@ -3,14 +3,14 @@
 //  Copyright (c) 2015 Tate Johnson. All rights reserved.
 //
 
-import SSKeychain
+import SAMKeychain
 
 class AccessToken {
-	private static let AccessTokenDidChangeNotificationName: String = "com.tatey.Lighting.notification.access-token-did-change"
-	private static let KeychainService: String = "com.tatey.Lighting"
-	private static let KeychainAccount: String = "access-token"
+	fileprivate static let AccessTokenDidChangeNotificationName: String = "com.tatey.Lighting.notification.access-token-did-change"
+	fileprivate static let KeychainService: String = "com.tatey.Lighting"
+	fileprivate static let KeychainAccount: String = "access-token"
 
-	private var observers: [DarwinNotification]
+	fileprivate var observers: [DarwinNotification]
 
 	init() {
 		observers = []
@@ -18,29 +18,29 @@ class AccessToken {
 
 	var token: String? {
 		get {
-			return SSKeychain.passwordForService(AccessToken.KeychainService, account: AccessToken.KeychainAccount)
+			return SAMKeychain.password(forService: AccessToken.KeychainService, account: AccessToken.KeychainAccount)
 		}
 
 		set {
 			if let newValue = newValue {
-				SSKeychain.setPassword(newValue, forService: AccessToken.KeychainService, account: AccessToken.KeychainAccount)
+				SAMKeychain.setPassword(newValue, forService: AccessToken.KeychainService, account: AccessToken.KeychainAccount)
 			} else {
-				SSKeychain.deletePasswordForService(AccessToken.KeychainService, account: AccessToken.KeychainAccount)
+				SAMKeychain.deletePassword(forService: AccessToken.KeychainService, account: AccessToken.KeychainAccount)
 			}
-			DarwinNotification.postNotification(AccessToken.AccessTokenDidChangeNotificationName)
+			DarwinNotification.post(AccessToken.AccessTokenDidChangeNotificationName)
 		}
 	}
 
-	func addObserver(observerHandler: DarwinNotificationObserverHandler) -> DarwinNotification {
+	func addObserver(_ observerHandler: @escaping DarwinNotificationObserverHandler) -> DarwinNotification {
 		let observer = DarwinNotification(name: AccessToken.AccessTokenDidChangeNotificationName, observerHandler: observerHandler)
-		observers.append(observer)
-		return observer
+		observers.append(observer!)
+		return observer!
 	}
 
-	func removeObserver(observer: DarwinNotification) {
-		for (index, other) in observers.enumerate() {
+	func removeObserver(_ observer: DarwinNotification) {
+		for (index, other) in observers.enumerated() {
 			if other === observer {
-				observers.removeAtIndex(index)
+				observers.remove(at: index)
 				break
 			}
 		}

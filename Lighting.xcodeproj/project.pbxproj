@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5AC5D0F21F10B688001C2E4F /* SAMKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5D0F11F10B688001C2E4F /* SAMKeychain.framework */; };
+		5AC5D0F31F10B6B0001C2E4F /* SAMKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5D0F11F10B688001C2E4F /* SAMKeychain.framework */; };
+		5AC5D0F41F10B6B0001C2E4F /* SAMKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5AC5D0F11F10B688001C2E4F /* SAMKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D1BE8A51B2D558200198129 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; };
 		5D1BE8A61B2D55E600198129 /* LIFXHTTPKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; };
 		5D1BE8A71B2D55E600198129 /* LIFXHTTPKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -22,9 +25,6 @@
 		5D875A041B931C9B00DA5425 /* ColorMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D875A031B931C9B00DA5425 /* ColorMap.swift */; };
 		5D875A061B931CA800DA5425 /* BrightnessMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D875A051B931CA800DA5425 /* BrightnessMap.swift */; };
 		5D8B5E621B3169BB00CA7D70 /* LightTargetCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8B5E611B3169BB00CA7D70 /* LightTargetCollectionView.swift */; };
-		5DA7AB0D1B34EFA9008A8130 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; };
-		5DA7AB0E1B34EFA9008A8130 /* SSKeychain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5DA7AB0F1B34EFC4008A8130 /* SSKeychain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */; };
 		5DA7AB181B34FDF0008A8130 /* DarwinNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */; };
 		5DA7AB191B34FDF0008A8130 /* DarwinNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB171B34FDF0008A8130 /* DarwinNotification.m */; };
 		5DA7AB211B365EC3008A8130 /* AccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA7AB201B365EC3008A8130 /* AccessToken.swift */; };
@@ -66,7 +66,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5DA7AB0E1B34EFA9008A8130 /* SSKeychain.framework in Embed Frameworks */,
+				5AC5D0F41F10B6B0001C2E4F /* SAMKeychain.framework in Embed Frameworks */,
 				5D1BE8A71B2D55E600198129 /* LIFXHTTPKit.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -75,6 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5AC5D0F11F10B688001C2E4F /* SAMKeychain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SAMKeychain.framework; path = Carthage/Build/Mac/SAMKeychain.framework; sourceTree = "<group>"; };
 		5D271DFB1B61129300EB78B2 /* NSBezierPath+CGPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+CGPath.h"; sourceTree = "<group>"; };
 		5D271DFC1B61129300EB78B2 /* NSBezierPath+CGPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+CGPath.m"; sourceTree = "<group>"; };
 		5D5DA0A91AC2CB2B00F80D04 /* LightTargetControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightTargetControlView.swift; sourceTree = "<group>"; };
@@ -113,8 +114,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC5D0F31F10B6B0001C2E4F /* SAMKeychain.framework in Frameworks */,
 				5D1BE8A61B2D55E600198129 /* LIFXHTTPKit.framework in Frameworks */,
-				5DA7AB0D1B34EFA9008A8130 /* SSKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,9 +123,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AC5D0F21F10B688001C2E4F /* SAMKeychain.framework in Frameworks */,
 				5D1BE8A51B2D558200198129 /* LIFXHTTPKit.framework in Frameworks */,
 				5DBD849A1AC2785500AF6B1A /* NotificationCenter.framework in Frameworks */,
-				5DA7AB0F1B34EFC4008A8130 /* SSKeychain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +188,7 @@
 		5DBD84981AC2785500AF6B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AC5D0F11F10B688001C2E4F /* SAMKeychain.framework */,
 				5DF649DF1B2D4EBA0006EE03 /* LIFXHTTPKit.framework */,
 				5DBD84991AC2785500AF6B1A /* NotificationCenter.framework */,
 				5DA7AB0C1B34EFA9008A8130 /* SSKeychain.framework */,
@@ -275,10 +277,10 @@
 				LastUpgradeCheck = 0800;
 				TargetAttributes = {
 					5DBD84721AC2784C00AF6B1A = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 					5DBD84961AC2785500AF6B1A = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0830;
 					};
 				};
 			};
@@ -478,7 +480,7 @@
 				PRODUCT_NAME = Lighting;
 				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -498,7 +500,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.tatey.Lighting;
 				PRODUCT_NAME = Lighting;
 				SWIFT_OBJC_BRIDGING_HEADER = "Main/Main-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -523,7 +525,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Widget/Widget-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -543,7 +545,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "Widget/Widget-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
