@@ -1,6 +1,6 @@
 # Changelog
 
-## Current / Unreleased
+## 1.1.7 / 2017-07-16
 
 * Use light colour scheme on macOS 10.12 Sierra. Thanks @segan5. https://github.com/tatey/Lighting/pull/23
 * Fixed cell alignment on macOS 10.12 Sierra. Thanks @segan5. https://github.com/tatey/Lighting/pull/25
