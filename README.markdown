@@ -4,8 +4,8 @@
 
 A macOS widget for controlling LIFX lights via the [LIFX HTTP API](http://api.developer.lifx.com/docs). Built on top of [LIFXHTTPKit](https://github.com/tatey/LIFXHTTPKit).
 
-![](Design/README/ScreenshotPreview1.gif)
-![](Design/README/ScreenshotPreview2.gif)
+![](Design/README/ScreenshotPreview3.gif)
+![](Design/README/ScreenshotPreview4.gif)
 
 *Note: This is not an official LIFX project.*
 
