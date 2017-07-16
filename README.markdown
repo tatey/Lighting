@@ -52,7 +52,7 @@ the widget when the access token changes.
 The widget target implements a view controller conforming to `NCWidgetProviding`
 for toggling lights on and off.
 
-![](Design/README/ScreenshotTargetWidget.jpg)
+![](Design/README/ScreenshotTargetWidget.png)
 
 1. Open Lighting.xcodeproj
 2. Select "Widget > My Mac"
