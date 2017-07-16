@@ -12,8 +12,8 @@ protocol LightTargetControlViewDelegate: class {
 }
 
 class LightTargetControlView: NSView {
-	static let EnabledBackgroundColor: CGColor = NSColor.white.withAlphaComponent(0.1).cgColor
-	static let DisabledBackgroundColor: CGColor = NSColor.black.withAlphaComponent(0.2).cgColor
+	static let EnabledBackgroundColor: CGColor = NSColor.black.withAlphaComponent(0.2).cgColor
+	static let DisabledBackgroundColor: CGColor = NSColor.black.withAlphaComponent(0.05).cgColor
 	static let DefaultDuration: CFTimeInterval = 0.3
 	static let DefaultScale: CGFloat = 0.35
 	static let ZoomScale: CGFloat = 6.0
