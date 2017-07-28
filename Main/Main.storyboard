@@ -440,7 +440,7 @@
                             <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wxq-Ip-TQp">
                                 <rect key="frame" x="17" y="80" width="413" height="34"/>
                                 <animations/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="To get started, generate a personal acess token from your LIFX Cloud account and paste it in the field:" id="A5b-8W-pNd">
+                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="To get started, generate a personal access token from your LIFX Cloud account at https://cloud.lifx.com and paste it below:" id="A5b-8W-pNd">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
